@@ -20,7 +20,7 @@ export const Route = createFileRoute("/services/")({
 
 function ServicesPage() {
   return (
-    <PageShell transparentHeader>
+    <PageShell>
       <PageHero
         eyebrow="Services"
         title="Five specialist disciplines. One integrated assurance partner."

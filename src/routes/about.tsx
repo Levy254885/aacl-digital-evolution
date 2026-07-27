@@ -19,7 +19,7 @@ export const Route = createFileRoute("/about")({
 
 function AboutPage() {
   return (
-    <PageShell transparentHeader>
+    <PageShell>
       <PageHero
         eyebrow="About us"
         title="Executive assurance, engineered for the organisations East Africa relies on."

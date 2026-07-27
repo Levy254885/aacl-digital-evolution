@@ -45,7 +45,7 @@ function ServiceDetail() {
   const [openFaq, setOpenFaq] = useState<string>();
 
   return (
-    <PageShell transparentHeader>
+    <PageShell>
       <PageHero eyebrow={`Service ${s.number}`} title={s.title} lead={s.short} image={s.image} />
 
       {/* Overview */}

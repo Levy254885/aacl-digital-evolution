@@ -20,7 +20,7 @@ export const Route = createFileRoute("/industries/")({
 
 function IndustriesPage() {
   return (
-    <PageShell transparentHeader>
+    <PageShell>
       <PageHero
         eyebrow="Industries"
         title="Sector expertise across the regulated economy."

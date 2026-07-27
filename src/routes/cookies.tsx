@@ -13,7 +13,7 @@ export const Route = createFileRoute("/cookies")({
     links: [{ rel: "canonical", href: "/cookies" }],
   }),
   component: () => (
-    <PageShell transparentHeader>
+    <PageShell>
       <PageHero eyebrow="Legal" title="Cookie Policy" />
       <section className="py-20 bg-background">
         <div className="container-x max-w-3xl space-y-6 text-muted-foreground leading-relaxed">

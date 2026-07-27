@@ -38,7 +38,7 @@ export const Route = createFileRoute("/industries/$slug")({
 function IndustryDetail() {
   const { industry: i } = Route.useLoaderData() as { industry: IndustryMeta };
   return (
-    <PageShell transparentHeader>
+    <PageShell>
       <PageHero eyebrow="Industry" title={i.name} lead={i.short} image={i.image} />
 
       <section className="py-24 bg-background">

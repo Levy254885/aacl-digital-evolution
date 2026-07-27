@@ -15,7 +15,7 @@ export const Route = createFileRoute("/careers")({
     links: [{ rel: "canonical", href: "/careers" }],
   }),
   component: () => (
-    <PageShell transparentHeader>
+    <PageShell>
       <PageHero
         eyebrow="Careers"
         title="Build a career at the intersection of assurance, security and compliance."

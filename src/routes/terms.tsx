@@ -13,7 +13,7 @@ export const Route = createFileRoute("/terms")({
     links: [{ rel: "canonical", href: "/terms" }],
   }),
   component: () => (
-    <PageShell transparentHeader>
+    <PageShell>
       <PageHero eyebrow="Legal" title="Terms & Conditions" />
       <section className="py-20 bg-background">
         <div className="container-x max-w-3xl space-y-8 text-muted-foreground leading-relaxed">

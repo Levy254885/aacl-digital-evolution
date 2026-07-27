@@ -3,7 +3,7 @@ import { PageShell, PageHero } from "@/components/site/PageShell";
 
 function LegalPage({ title, sections }: { title: string; sections: { h: string; p: string[] }[] }) {
   return (
-    <PageShell transparentHeader>
+    <PageShell>
       <PageHero eyebrow="Legal" title={title} />
       <section className="py-20 bg-background">
         <div className="container-x max-w-3xl space-y-12">

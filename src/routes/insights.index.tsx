@@ -19,7 +19,7 @@ export const Route = createFileRoute("/insights/")({
 
 function InsightsPage() {
   return (
-    <PageShell transparentHeader>
+    <PageShell>
       <PageHero
         eyebrow="Insights"
         title="Analysis, guidance and practitioner perspectives."

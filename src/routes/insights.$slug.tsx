@@ -37,7 +37,7 @@ export const Route = createFileRoute("/insights/$slug")({
 function InsightDetail() {
   const { post } = Route.useLoaderData() as { post: typeof INSIGHTS[number] };
   return (
-    <PageShell transparentHeader>
+    <PageShell>
       <PageHero eyebrow={post.category} title={post.title} lead={post.excerpt} image={post.image} />
       <article className="py-24 bg-background">
         <div className="container-x max-w-3xl">
