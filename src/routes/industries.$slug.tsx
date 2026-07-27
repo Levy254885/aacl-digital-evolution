@@ -90,12 +90,12 @@ function IndustryDetail() {
       <section className="py-24 bg-[var(--navy-deep)] text-[var(--bone)]">
         <div className="container-x grid lg:grid-cols-2 gap-14">
           <Reveal>
-            <div className="eyebrow mb-4">AACL's approach</div>
+            <div className="eyebrow eyebrow-light mb-4">AACL's approach</div>
             <h2 className="font-display text-3xl md:text-4xl leading-tight mb-6">How we deliver in this sector.</h2>
             <p className="text-white/70 leading-relaxed">{i.approach}</p>
           </Reveal>
           <Reveal delay={120}>
-            <div className="eyebrow mb-4">Expected outcomes</div>
+            <div className="eyebrow eyebrow-light mb-4">Expected outcomes</div>
             <ul className="space-y-4">
               {i.outcomes.map((o) => (
                 <li key={o} className="flex gap-3 items-start"><Check size={18} className="text-[var(--gold)] mt-1 shrink-0" /><span>{o}</span></li>

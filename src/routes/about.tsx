@@ -73,7 +73,7 @@ function AboutPage() {
       <section className="py-24 bg-[var(--navy-deep)] text-[var(--bone)]">
         <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
           <Reveal>
-            <div className="eyebrow mb-6">Regional reach</div>
+            <div className="eyebrow eyebrow-light mb-6">Regional reach</div>
             <h2 className="font-display text-4xl md:text-5xl leading-tight">Headquartered in Nairobi. Delivering across East Africa and beyond.</h2>
             <p className="mt-6 text-white/70 leading-relaxed">From our base at Vision Towers in Westlands, we serve clients across Kenya, Uganda, Tanzania, Rwanda, Ethiopia and select international markets — combining regional presence with globally benchmarked expertise.</p>
             <Link to="/contact" className="btn-outline-gold mt-8 inline-flex">Visit our office <ArrowRight size={14} /></Link>

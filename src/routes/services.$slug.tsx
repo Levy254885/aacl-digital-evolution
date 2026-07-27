@@ -93,7 +93,7 @@ function ServiceDetail() {
       <section className="py-24 bg-[var(--navy-deep)] text-[var(--bone)]">
         <div className="container-x">
           <Reveal>
-            <div className="eyebrow mb-4">Consulting methodology</div>
+            <div className="eyebrow eyebrow-light mb-4">Consulting methodology</div>
             <h2 className="font-display text-3xl md:text-5xl leading-tight max-w-2xl mb-14">A structured, evidence-based delivery model.</h2>
           </Reveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10">
