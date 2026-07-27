@@ -215,7 +215,7 @@ function HomePage() {
               <Reveal key={s.code} delay={(i % 2) * 90}>
                 <Link
                   to="/services"
-                  className="group flex items-center gap-6 py-8 border-b border-[var(--grey-2)]"
+                  className="group relative flex items-center gap-6 py-8 border-b border-[var(--grey-2)]"
                 >
                   <span className="text-sm text-muted-foreground tabular-nums">
                     {String(i + 1).padStart(2, "0")}
@@ -228,7 +228,25 @@ function HomePage() {
                       {s.code}
                     </span>
                   </span>
-                  <ArrowCircle />
+                  <span className="relative">
+                    <ArrowCircle />
+                    <span
+                      role="tooltip"
+                      className="pointer-events-none absolute right-0 bottom-full mb-4 w-72 opacity-0 translate-y-2 scale-[0.98] transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 z-30"
+                    >
+                      <span className="block rounded-[14px] bg-[var(--navy)] text-white p-5 shadow-[0_24px_60px_-24px_rgba(20,33,53,0.55)]">
+                        <span className="block text-[11px] uppercase tracking-[0.14em] text-white/60">
+                          {s.label}
+                        </span>
+                        <span className="block font-display text-lg font-extrabold mt-1">
+                          {s.code}
+                        </span>
+                        <span className="block mt-3 text-[13px] leading-[1.6] text-white/80">
+                          {s.desc}
+                        </span>
+                      </span>
+                    </span>
+                  </span>
                 </Link>
               </Reveal>
             ))}
