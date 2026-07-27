@@ -504,6 +504,50 @@ function HomePage() {
         </div>
       </section>
 
+      {/* PAST CLIENTS */}
+      <section className="py-24 md:py-28">
+        <div className="container-x">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+            <div className="max-w-2xl">
+              <Reveal><div className="eyebrow mb-4">Past clients</div></Reveal>
+              <TextReveal
+                text="Trusted across sectors and borders."
+                className="font-display text-[2rem] md:text-[3rem] font-extrabold leading-[1.05]"
+              />
+            </div>
+            <Reveal delay={120}>
+              <p className="text-muted-foreground max-w-md leading-relaxed">
+                A selection of organisations we have supported with ISO certification, compliance and
+                assurance engagements across East Africa and beyond.
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-[var(--grey-2)] border border-[var(--grey-2)] rounded-[6px] overflow-hidden">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <Reveal key={i} delay={i * 60}>
+                <div className="group relative bg-background aspect-[3/2] flex items-center justify-center p-6 transition-colors duration-300 hover:bg-[var(--surface-grey)]">
+                  <div className="flex flex-col items-center gap-2 text-center">
+                    <span className="font-display text-xl md:text-2xl font-extrabold text-[var(--navy)]/80 tracking-tight">
+                      Client {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                      Logo placeholder
+                    </span>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={200}>
+            <p className="mt-8 text-sm text-muted-foreground text-center">
+              Client logos are displayed with permission. Full case studies available on request.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section className="py-24 surface-grey">
         <div className="container-x grid lg:grid-cols-2 gap-16 items-start">
