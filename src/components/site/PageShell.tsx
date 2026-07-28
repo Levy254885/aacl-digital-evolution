@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { SiteHeader } from "./SiteHeader";
 import { SiteFooter } from "./SiteFooter";
 import { ScrollTop } from "./ScrollTop";
+import { FloatingCTA } from "./FloatingCTA";
 import { Reveal, TextReveal } from "./Reveal";
 
 export function PageShell({
@@ -17,6 +18,7 @@ export function PageShell({
       <main className={`flex-1 ${transparentHeader ? "" : "pt-[72px] lg:pt-[92px]"}`}>{children}</main>
       <SiteFooter />
       <ScrollTop />
+      <FloatingCTA />
     </div>
   );
 }

@@ -17,6 +17,36 @@ export const Route = createFileRoute("/services/$slug")({
       return { meta: [{ title: "Service not found — AACL" }, { name: "robots", content: "noindex" }] };
     }
     const s = loaderData.service;
+    const jsonld = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          name: s.title,
+          serviceType: s.title,
+          description: s.summary,
+          provider: { "@type": "Organization", name: "Audits and Assurance Consult Ltd", url: "/" },
+          areaServed: ["Kenya", "East Africa"],
+          url: `/services/${s.slug}`,
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: s.faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+            { "@type": "ListItem", position: 2, name: "Services", item: "/services" },
+            { "@type": "ListItem", position: 3, name: s.title, item: `/services/${s.slug}` },
+          ],
+        },
+      ],
+    };
     return {
       meta: [
         { title: `${s.title} — AACL` },
@@ -29,6 +59,7 @@ export const Route = createFileRoute("/services/$slug")({
         { name: "twitter:image", content: s.image },
       ],
       links: [{ rel: "canonical", href: `/services/${s.slug}` }],
+      scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonld) }],
     };
   },
   component: ServiceDetail,
