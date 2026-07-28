@@ -74,15 +74,58 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const ORG_JSONLD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
+      "@id": "/#organization",
+      name: "Audits and Assurance Consult Ltd",
+      alternateName: "AACL",
+      url: "/",
+      logo: "/favicon.png",
+      image: "/favicon.png",
+      description:
+        "East Africa's specialist consultancy for security, compliance, governance, risk and ISO management systems.",
+      telephone: "+254 719 876 524",
+      email: "info@aacl.co.ke",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Vision Towers, Muthangari Drive, Westlands",
+        addressLocality: "Nairobi",
+        addressCountry: "KE",
+      },
+      areaServed: ["Kenya", "Uganda", "Tanzania", "Rwanda", "Ethiopia", "East Africa"],
+      sameAs: [] as string[],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "/#website",
+      url: "/",
+      name: "AACL — Audits and Assurance Consult Ltd",
+      publisher: { "@id": "/#organization" },
+      inLanguage: "en",
+    },
+  ],
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "author", content: "Audits and Assurance Consult Ltd" },
+      { name: "theme-color", content: "#142135" },
+      {
+        name: "keywords",
+        content:
+          "ISO certification Kenya, ISO 27001, ISO 9001, ISO 45001, ISO 22301, ISO 14001, PCI DSS, GSMA SAS, compliance consultancy, audit firm Nairobi, risk assessment Kenya, cybersecurity Kenya, data protection Kenya",
+      },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "AACL — Audits and Assurance Consult Ltd" },
+      { property: "og:locale", content: "en_KE" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@aacl" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -92,9 +135,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap",
       },
-
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/favicon.png" },
+      { rel: "manifest", href: "/site.webmanifest" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(ORG_JSONLD),
+      },
     ],
   }),
 
