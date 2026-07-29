@@ -1,27 +1,16 @@
 import { Reveal, TextReveal } from "./Reveal";
 
-import centrofood from "@/assets/clients/centrofood.jpg.asset.json";
-import complast from "@/assets/clients/complast.png.asset.json";
-import ddd from "@/assets/clients/digital-divide-data.jpg.asset.json";
-import dpl from "@/assets/clients/dpl.png.asset.json";
-import icps from "@/assets/clients/icps.jpg.asset.json";
-import medical from "@/assets/clients/medical-access.png.asset.json";
-import minimal from "@/assets/clients/minimal-frame-projects.png.asset.json";
-import reeds from "@/assets/clients/reeds-africa-consult.png.asset.json";
-import sintel from "@/assets/clients/sintel.jpg.asset.json";
-import skanem from "@/assets/clients/skanem.jpg.asset.json";
-
 const CLIENTS = [
-  { name: "Centrofood Industries Ltd", logo: centrofood.url },
-  { name: "Complast", logo: complast.url },
-  { name: "Digital Divide Data", logo: ddd.url },
-  { name: "DPL — The Packaging Experts", logo: dpl.url },
-  { name: "ICPS — Intelligent Card Production Systems", logo: icps.url },
-  { name: "Medical Access", logo: medical.url },
-  { name: "Minimal Frame Projects", logo: minimal.url },
-  { name: "Reeds Africa Consult", logo: reeds.url },
-  { name: "Sintel", logo: sintel.url },
-  { name: "Skanem", logo: skanem.url },
+  { name: "Centrofood Industries Ltd", logo: "/clients/centrofood.jpg", width: 225, height: 225 },
+  { name: "Complast", logo: "/clients/complast.png", width: 225, height: 225 },
+  { name: "Digital Divide Data", logo: "/clients/digital-divide-data.jpg", width: 603, height: 331 },
+  { name: "DPL — The Packaging Experts", logo: "/clients/dpl.png", width: 246, height: 104 },
+  { name: "ICPS — Intelligent Card Production Systems", logo: "/clients/icps.jpg", width: 200, height: 200 },
+  { name: "Medical Access", logo: "/clients/medical-access.png", width: 225, height: 225 },
+  { name: "Minimal Frame Projects", logo: "/clients/minimal-frame-projects.png", width: 225, height: 225 },
+  { name: "Reeds Africa Consult", logo: "/clients/reeds-africa-consult.png", width: 225, height: 224 },
+  { name: "Sintel", logo: "/clients/sintel.jpg", width: 200, height: 200 },
+  { name: "Skanem", logo: "/clients/skanem.jpg", width: 246, height: 108 },
 ];
 
 export function PastClients() {
@@ -57,6 +46,9 @@ export function PastClients() {
                 <img
                   src={c.logo}
                   alt={`${c.name} logo`}
+                  width={c.width}
+                  height={c.height}
+                  sizes="(min-width: 1024px) 16vw, (min-width: 640px) 28vw, 42vw"
                   loading="lazy"
                   decoding="async"
                   className="max-h-[64%] max-w-[80%] object-contain grayscale opacity-80 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"

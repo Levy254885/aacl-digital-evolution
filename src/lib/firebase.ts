@@ -11,6 +11,7 @@
  */
 
 import { initializeApp, getApps, getApp, type FirebaseApp } from "firebase/app";
+import { initializeAppCheck, ReCaptchaV3Provider, type AppCheck } from "firebase/app-check";
 import { getAuth, type Auth } from "firebase/auth";
 import { getFirestore, type Firestore } from "firebase/firestore";
 import { getStorage, type FirebaseStorage } from "firebase/storage";
@@ -35,11 +36,27 @@ export function getFirebaseApp(): FirebaseApp {
   return _app;
 }
 
+let _appCheck: AppCheck | null = null;
+export function getFirebaseAppCheck(): AppCheck | null {
+  if (typeof window === "undefined") return null;
+  if (_appCheck) return _appCheck;
+  const siteKey = import.meta.env.VITE_FIREBASE_APPCHECK_SITE_KEY;
+  if (!siteKey) return null;
+
+  _appCheck = initializeAppCheck(getFirebaseApp(), {
+    provider: new ReCaptchaV3Provider(siteKey),
+    isTokenAutoRefreshEnabled: true,
+  });
+
+  return _appCheck;
+}
+
 export function getFirebaseAuth(): Auth {
   return getAuth(getFirebaseApp());
 }
 
 export function getFirebaseDb(): Firestore {
+  getFirebaseAppCheck();
   return getFirestore(getFirebaseApp());
 }
 
