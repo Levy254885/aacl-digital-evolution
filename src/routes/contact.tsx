@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { toast } from "sonner";
+import { ContactForm } from "@/components/site/ContactForm";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { SITE } from "@/lib/aacl-content";
@@ -19,32 +18,7 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
-const EMPTY = { name: "", org: "", email: "", phone: "", subject: "", message: "" };
-
 function ContactPage() {
-  const [values, setValues] = useState(EMPTY);
-  const [sending, setSending] = useState(false);
-
-  const set = (k: keyof typeof EMPTY) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-    setValues((v) => ({ ...v, [k]: e.target.value }));
-
-  async function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setSending(true);
-    // Submissions are stored locally until the Firebase backend is connected.
-    try {
-      const key = "aacl:contact-enquiries";
-      const prev = JSON.parse(localStorage.getItem(key) || "[]");
-      localStorage.setItem(key, JSON.stringify([...prev, { ...values, at: new Date().toISOString() }]));
-      toast.success("Enquiry received", { description: "A senior consultant will respond within one business day." });
-      setValues(EMPTY);
-    } catch {
-      toast.error("Something went wrong", { description: "Please email us directly at " + SITE.email });
-    } finally {
-      setSending(false);
-    }
-  }
-
   return (
     <PageShell>
       <PageHero
@@ -75,19 +49,9 @@ function ContactPage() {
           </div>
 
           <Reveal delay={150} className="lg:col-span-7">
-            <form onSubmit={onSubmit} className="surface-grey rounded-[22px] p-8 md:p-10 space-y-5">
-              <div className="grid md:grid-cols-2 gap-5">
-                <input className="field-line" placeholder="Name" value={values.name} onChange={set("name")} required />
-                <input className="field-line" type="email" placeholder="Email Address" value={values.email} onChange={set("email")} required />
-                <input className="field-line" placeholder="Phone" value={values.phone} onChange={set("phone")} />
-                <input className="field-line" placeholder="Organisation Name" value={values.org} onChange={set("org")} />
-              </div>
-              <input className="field-line" placeholder="Subject" value={values.subject} onChange={set("subject")} required />
-              <textarea className="field-line" rows={6} placeholder="Message" value={values.message} onChange={set("message")} required />
-              <button className="btn-gold" type="submit" disabled={sending}>
-                {sending ? "Sending…" : "Send message"}
-              </button>
-            </form>
+            <div className="surface-grey rounded-[22px] p-8 md:p-10">
+              <ContactForm />
+            </div>
           </Reveal>
         </div>
       </section>

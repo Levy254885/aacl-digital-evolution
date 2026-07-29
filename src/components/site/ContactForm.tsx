@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { SITE } from "@/lib/aacl-content";
+import { submitContactLead } from "@/lib/contact-leads";
 
-const EMPTY = { name: "", org: "", email: "", phone: "", subject: "", message: "" };
+const EMPTY = { name: "", org: "", email: "", phone: "", service: "", message: "" };
 
 export function ContactForm({ compact = false }: { compact?: boolean }) {
   const [values, setValues] = useState(EMPTY);
@@ -16,11 +17,13 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     setSending(true);
-    // Submissions are stored locally until the Firebase backend is connected.
     try {
-      const key = "aacl:contact-enquiries";
-      const prev = JSON.parse(localStorage.getItem(key) || "[]");
-      localStorage.setItem(key, JSON.stringify([...prev, { ...values, at: new Date().toISOString() }]));
+      await submitContactLead({
+        name: values.name,
+        email: values.email,
+        service: values.service || values.org || "General enquiry",
+        message: values.message,
+      });
       toast.success("Enquiry received", {
         description: "A senior consultant will respond within one business day.",
       });
@@ -47,9 +50,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
         <input className="field-line" placeholder="Phone" value={values.phone} onChange={set("phone")} />
         <input className="field-line" placeholder="Organisation Name" value={values.org} onChange={set("org")} />
       </div>
-      {!compact && (
-        <input className="field-line" placeholder="Subject" value={values.subject} onChange={set("subject")} required />
-      )}
+      <input className="field-line" placeholder="Service required" value={values.service} onChange={set("service")} required />
       <textarea
         className="field-line"
         rows={compact ? 4 : 6}
