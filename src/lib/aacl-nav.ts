@@ -6,7 +6,7 @@ export type NavItem = { label: string; to: string; children?: NavChild[] };
 export const MENU: NavItem[] = [
   { label: "Who We Are", to: "/about" },
   {
-    label: "Services",
+    label: "ISO Management Systems",
     to: "/services",
     children: [
       { label: "All Services", to: "/services" },
@@ -17,6 +17,9 @@ export const MENU: NavItem[] = [
       })),
     ],
   },
+  { label: "eCompliance", to: "/ecompliance" },
+  { label: "Templates", to: "/templates" },
+
   {
     label: "Industries",
     to: "/industries",

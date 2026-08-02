@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TemplatesRouteImport } from './routes/templates'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as EcomplianceRouteImport } from './routes/ecompliance'
@@ -29,6 +30,11 @@ import { Route as IndustriesSlugRouteImport } from './routes/industries.$slug'
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TemplatesRoute = TemplatesRouteImport.update({
+  id: '/templates',
+  path: '/templates',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -117,6 +123,7 @@ export interface FileRoutesByFullPath {
   '/ecompliance': typeof EcomplianceRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
   '/industries/$slug': typeof IndustriesSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
@@ -135,6 +142,7 @@ export interface FileRoutesByTo {
   '/ecompliance': typeof EcomplianceRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
   '/industries/$slug': typeof IndustriesSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
@@ -154,6 +162,7 @@ export interface FileRoutesById {
   '/ecompliance': typeof EcomplianceRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
   '/industries/$slug': typeof IndustriesSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
@@ -174,6 +183,7 @@ export interface FileRouteTypes {
     | '/ecompliance'
     | '/privacy'
     | '/sitemap.xml'
+    | '/templates'
     | '/terms'
     | '/industries/$slug'
     | '/insights/$slug'
@@ -192,6 +202,7 @@ export interface FileRouteTypes {
     | '/ecompliance'
     | '/privacy'
     | '/sitemap.xml'
+    | '/templates'
     | '/terms'
     | '/industries/$slug'
     | '/insights/$slug'
@@ -210,6 +221,7 @@ export interface FileRouteTypes {
     | '/ecompliance'
     | '/privacy'
     | '/sitemap.xml'
+    | '/templates'
     | '/terms'
     | '/industries/$slug'
     | '/insights/$slug'
@@ -229,6 +241,7 @@ export interface RootRouteChildren {
   EcomplianceRoute: typeof EcomplianceRoute
   PrivacyRoute: typeof PrivacyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TemplatesRoute: typeof TemplatesRoute
   TermsRoute: typeof TermsRoute
   IndustriesSlugRoute: typeof IndustriesSlugRoute
   InsightsSlugRoute: typeof InsightsSlugRoute
@@ -245,6 +258,13 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/templates': {
+      id: '/templates'
+      path: '/templates'
+      fullPath: '/templates'
+      preLoaderRoute: typeof TemplatesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -365,6 +385,7 @@ const rootRouteChildren: RootRouteChildren = {
   EcomplianceRoute: EcomplianceRoute,
   PrivacyRoute: PrivacyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TemplatesRoute: TemplatesRoute,
   TermsRoute: TermsRoute,
   IndustriesSlugRoute: IndustriesSlugRoute,
   InsightsSlugRoute: InsightsSlugRoute,
