@@ -29,6 +29,28 @@ service cloud.firestore {
       allow read, update, delete: if false;
     }
 
+    match /documentRequests/{requestId} {
+      allow create: if request.resource.data.keys().hasOnly([
+          'templateSlug', 'templateName', 'standard', 'companyName', 'contactName',
+          'email', 'country', 'scope', 'requirements', 'amount', 'currency',
+          'paymentMethod', 'paymentReference', 'logoUrl', 'status', 'timestamp', 'source'
+        ])
+        && request.resource.data.companyName is string
+        && request.resource.data.companyName.size() >= 2
+        && request.resource.data.companyName.size() <= 160
+        && request.resource.data.email is string
+        && request.resource.data.email.matches('^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$')
+        && request.resource.data.templateSlug is string
+        && request.resource.data.templateSlug.size() <= 80
+        && request.resource.data.amount is number
+        && request.resource.data.amount >= 0
+        && request.resource.data.requirements.size() <= 5000
+        && request.resource.data.source == 'aacl-website'
+        && request.resource.data.timestamp == request.time;
+
+      allow read, update, delete: if false;
+    }
+
     match /{document=**} {
       allow read, write: if false;
     }
