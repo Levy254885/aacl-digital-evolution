@@ -95,7 +95,12 @@ function HomePage() {
           alt="AACL advisors in a client working session"
           className="absolute inset-0 h-full w-full object-cover hero-zoom"
         />
-        <div className="absolute inset-0 bg-[var(--navy)]/75" />
+        <div className="absolute inset-0 bg-[var(--navy)]/80" />
+        <div className="hero-aurora opacity-70" aria-hidden="true" />
+        <div className="hero-grid" aria-hidden="true" />
+        <div className="hero-sheen" aria-hidden="true" />
+        <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-[var(--red-soft)] to-transparent" aria-hidden="true" />
+
         <div className="container-x relative py-40 text-center text-white">
           <Reveal>
             <div className="eyebrow eyebrow-light justify-center mb-7">Expert guidance at every step</div>

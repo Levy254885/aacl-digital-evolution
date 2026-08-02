@@ -29,6 +29,8 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-navy: var(--navy);
+  --color-brand-red: var(--red);
+  --color-brand-red-deep: var(--red-deep);
   --color-navy-deep: var(--navy-deep);
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
@@ -50,6 +52,11 @@
   --ink: #232323;
   --grey: #f2f2f2;
   --grey-2: #e7e8ea;
+
+  /* AACL corporate dark red */
+  --red: #99182a;
+  --red-deep: #74111f;
+  --red-soft: #b8253a;
 
   /* legacy token names remapped to the navy system */
   --plum: var(--navy);
@@ -116,7 +123,7 @@
     content: "";
     width: 0;
     height: 0;
-    border-left: 7px solid var(--navy);
+    border-left: 7px solid var(--red);
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
   }
@@ -124,9 +131,9 @@
 
 @utility btn-gold {
   @apply inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-[13px] font-semibold uppercase tracking-[0.1em] transition-all duration-300;
-  background: var(--navy);
+  background: var(--red);
   color: #fff;
-  &:hover { background: var(--navy-soft); transform: translateY(-2px); }
+  &:hover { background: var(--red-deep); transform: translateY(-2px); }
 }
 
 @utility btn-lime {
@@ -175,7 +182,7 @@
   display: inline-block;
   width: 2.5rem;
   height: 2px;
-  background: var(--navy);
+  background: var(--red);
   vertical-align: middle;
 }
 
@@ -190,6 +197,7 @@
   @apply inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.1em];
   color: var(--navy);
   & svg { transition: transform 0.3s ease; }
+  &:hover { color: var(--red); }
   &:hover svg { transform: translateX(4px); }
 }
 
@@ -201,7 +209,7 @@
 
 @utility eyebrow-light {
   color: #fff;
-  &::before { border-left-color: #fff; }
+  &::before { border-left-color: var(--red-soft); }
 }
 
 @utility footer-dash {
@@ -221,6 +229,53 @@
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
   background-size: 200% 100%;
   animation: shimmer 4s linear infinite;
+}
+
+@utility hero-aurora {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  background:
+    radial-gradient(38% 42% at 18% 28%, rgba(153, 24, 42, 0.55), transparent 70%),
+    radial-gradient(34% 40% at 82% 24%, rgba(184, 37, 58, 0.38), transparent 72%),
+    radial-gradient(46% 48% at 60% 82%, rgba(20, 33, 53, 0.85), transparent 70%);
+  filter: blur(18px);
+  animation: aurora-drift 22s ease-in-out infinite alternate;
+}
+
+@utility hero-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(70% 60% at 50% 45%, #000 20%, transparent 80%);
+  animation: grid-pan 40s linear infinite;
+}
+
+@utility hero-sheen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(100deg, transparent 35%, rgba(255, 255, 255, 0.07) 50%, transparent 65%);
+  background-size: 250% 100%;
+  animation: shimmer 9s linear infinite;
+}
+
+@keyframes aurora-drift {
+  0%   { transform: translate3d(-3%, -2%, 0) scale(1.05); }
+  50%  { transform: translate3d(3%, 2%, 0) scale(1.14); }
+  100% { transform: translate3d(-2%, 3%, 0) scale(1.06); }
+}
+@keyframes grid-pan {
+  from { background-position: 0 0; }
+  to { background-position: 72px 72px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-aurora, .hero-grid, .hero-sheen, .hero-zoom { animation: none !important; }
 }
 
 @keyframes reveal-up {
