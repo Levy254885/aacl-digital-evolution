@@ -197,10 +197,13 @@ function HomePage() {
               {STATS.map((s, i) => (
                 <Reveal key={s.label} delay={i * 110} className={i === 0 ? "pr-4" : "px-4"}>
                   <div className="text-sm text-muted-foreground">{s.label}</div>
-                  <div className="font-display text-3xl md:text-[2.6rem] font-extrabold mt-2">{s.value}</div>
+                  <div className="font-display text-3xl md:text-[2.6rem] font-extrabold mt-2">
+                    <Counter value={s.value} />
+                  </div>
                 </Reveal>
               ))}
             </div>
+
           </div>
         </div>
       </section>
