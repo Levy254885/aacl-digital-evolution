@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { MENU } from "@/lib/aacl-nav";
 import { SITE } from "@/lib/aacl-content";
 import aaclLogo from "@/assets/aacl-logo.png";
+import { CurrencySelector } from "./CurrencySelector";
+
 
 function Chevron({ open }: { open?: boolean }) {
   return (
