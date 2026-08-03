@@ -21,11 +21,20 @@ function AboutPage() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="About us"
-        title="Executive assurance, engineered for the organisations East Africa relies on."
-        lead="AACL is an independent specialist consultancy in security, compliance, ISO management systems, governance and enterprise risk — trusted by regulated organisations across the region."
+        eyebrow="Who we are"
+        title="Compliance Expertise Without Borders."
+        lead="AACL Global works with organizations across Europe, the US, Africa, Asia and beyond — and we're expanding into new markets. Wherever you're headquartered, you get the same highly qualified and certified lead consultants and auditors, the same rigorous standards, and superior results."
         image="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2000&q=80"
       />
+
+      <section className="pt-10">
+        <div className="container-x">
+          <Reveal>
+            <Link to="/contact" className="btn-gold">Talk to Us</Link>
+          </Reveal>
+        </div>
+      </section>
+
 
       <section className="py-24 bg-background">
         <div className="container-x grid lg:grid-cols-12 gap-14">
@@ -73,10 +82,11 @@ function AboutPage() {
       <section className="py-24 bg-[var(--navy-deep)] text-[var(--bone)]">
         <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
           <Reveal>
-            <div className="eyebrow eyebrow-light mb-6">Regional reach</div>
-            <h2 className="font-display text-4xl md:text-5xl leading-tight">Headquartered in Nairobi. Delivering across East Africa and beyond.</h2>
-            <p className="mt-6 text-white/70 leading-relaxed">From our base at Vision Towers in Westlands, we serve clients across Kenya, Uganda, Tanzania, Rwanda, Ethiopia and select international markets — combining regional presence with globally benchmarked expertise.</p>
-            <Link to="/contact" className="btn-outline-gold mt-8 inline-flex">Visit our office <ArrowRight size={14} /></Link>
+            <div className="eyebrow eyebrow-light mb-6">Global reach</div>
+            <h2 className="font-display text-4xl md:text-5xl leading-tight text-white">Headquartered in Nairobi. Delivering worldwide — onsite or remote.</h2>
+            <p className="mt-6 text-white/70 leading-relaxed">From our base at Vision Towers in Westlands we serve clients across Africa, Europe, the UK, the US and Asia — combining local presence with globally benchmarked expertise. Every engagement is available Onsite or Remote — Worldwide.</p>
+            <Link to="/contact" className="btn-outline-gold mt-8 inline-flex">Talk to Us <ArrowRight size={14} /></Link>
+
           </Reveal>
           <Reveal delay={120}>
             <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80" alt="Consultants collaborating" className="w-full h-[500px] object-cover" />

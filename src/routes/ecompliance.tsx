@@ -17,6 +17,10 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { PageShell, PageHero } from "@/components/site/PageShell";
+import { PricingTable, PaymentMethods } from "@/components/site/PricingTable";
+import { CostBanner, CostFaq } from "@/components/site/CostObjection";
+import { ECOMPLIANCE_PRICING } from "@/lib/pricing-content";
+
 import { Reveal } from "@/components/site/Reveal";
 import { ServiceOptions } from "@/components/site/ServiceOptions";
 import {
@@ -104,9 +108,10 @@ function ECompliancePage() {
     <PageShell>
       <PageHero
         eyebrow="eCompliance"
-        title="Compliance run continuously — not rebuilt before every audit."
-        lead="eCompliance is AACL's managed compliance platform and service. Your dashboards, corrective actions, risk register, audit programme and controlled documents stay current all year, maintained by senior ISO consultants onsite or remotely, anywhere in the world."
+        title="World Class Compliance to Drive Your Business Forward."
+        lead="Cybersecurity audits, health & safety, physical and logical security and ongoing ISO maintenance — handled continuously for one predictable monthly fee, onsite or remote, anywhere in the world."
       />
+
 
       {/* Value strip */}
       <section className="py-16 bg-[var(--navy-deep)] text-[var(--bone)]">
@@ -195,15 +200,29 @@ function ECompliancePage() {
                       </li>
                     ))}
                   </ul>
-                  <Link to="/book" className={`mt-8 self-start ${p.featured ? "btn-gold" : "btn-outline-gold"}`}>
+                  <Link to="/book" className={`mt-8 self-start ${p.featured ? "btn-gold" : "btn-outline-navy"}`}>
                     Request a quote <ArrowRight size={16} />
                   </Link>
                 </div>
               </Reveal>
             ))}
           </div>
+
+          <div className="mt-16">
+            <PricingTable rows={ECOMPLIANCE_PRICING} columnLabel="eCompliance plan" />
+          </div>
+          <div className="mt-12 grid lg:grid-cols-2 gap-6 items-start">
+            <CostBanner variant="a" />
+            <CostFaq />
+          </div>
+          <div className="mt-16">
+            <h3 className="font-display text-2xl font-extrabold mb-6">Ways to pay</h3>
+            <PaymentMethods />
+          </div>
         </div>
       </section>
+
+
 
       {/* FAQ */}
       <section className="py-24 bg-[var(--bone)]">

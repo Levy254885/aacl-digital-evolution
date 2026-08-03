@@ -3,6 +3,10 @@ import { useEffect, useState } from "react";
 import { MENU } from "@/lib/aacl-nav";
 import { SITE } from "@/lib/aacl-content";
 import aaclLogo from "@/assets/aacl-logo.png";
+import { CurrencySelector } from "./CurrencySelector";
+import { ChatChannels } from "./ChatChannels";
+
+
 
 function Chevron({ open }: { open?: boolean }) {
   return (
@@ -47,31 +51,34 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
       }`}
     >
       <div className="container-x flex items-center justify-between h-[72px] lg:h-[92px] gap-6">
-        <Link to="/" className="flex items-center gap-3 shrink-0" onClick={() => setOpen(false)}>
+        <Link
+          to="/"
+          className="flex items-center gap-3 shrink-0"
+          onClick={() => setOpen(false)}
+          aria-label="AACL Global — home"
+        >
           <span
-            className={`h-11 w-11 rounded-full overflow-hidden flex items-center justify-center ${
-              solid ? "bg-white ring-1 ring-[var(--navy)]/10" : "bg-white/95"
+            className={`inline-flex items-center rounded-[10px] px-3 py-2 transition-colors ${
+              solid ? "bg-transparent" : "bg-white/95"
             }`}
           >
-            <img src={aaclLogo} alt="AACL logo" className="h-full w-full object-contain" />
+            <img
+              src={aaclLogo}
+              alt="AACL — Audits and Assurance Consult Ltd"
+              width={1920}
+              height={382}
+              className="h-6 lg:h-8 w-auto object-contain"
+            />
           </span>
-          <span>
-            <span
-              className={`block font-display text-xl font-extrabold leading-none tracking-tight ${
-                solid ? "text-[var(--navy)]" : "text-white"
-              }`}
-            >
-              AACL
-            </span>
-            <span
-              className={`block text-[9px] uppercase tracking-[0.14em] mt-1 ${
-                solid ? "text-muted-foreground" : "text-white/70"
-              }`}
-            >
-              Audits &amp; Assurance Consult Ltd
-            </span>
+          <span
+            className={`hidden sm:block text-[9px] uppercase tracking-[0.14em] leading-tight max-w-[9rem] ${
+              solid ? "text-muted-foreground" : "text-white/70"
+            }`}
+          >
+            Audits &amp; Assurance Consult Ltd
           </span>
         </Link>
+
 
         <nav className="hidden xl:flex items-center gap-1">
           {MENU.map((item) => (
@@ -109,7 +116,8 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
           ))}
         </nav>
 
-        <div className="hidden xl:flex items-center gap-5 shrink-0">
+        <div className="hidden xl:flex items-center gap-4 shrink-0">
+          <CurrencySelector variant={solid ? "light" : "dark"} />
           <a
             href={`tel:${SITE.phone.replace(/\s/g, "")}`}
             className={`text-[13px] font-semibold transition-colors ${
@@ -119,14 +127,23 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
             {SITE.phone}
           </a>
           <Link
+            to="/templates"
+            className={`inline-flex items-center rounded-full px-6 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] transition-all duration-300 hover:-translate-y-0.5 ${
+              solid ? "bg-[var(--red)] text-white hover:bg-[var(--red-deep)]" : "bg-[var(--red)] text-white"
+            }`}
+          >
+            Generate a Document
+          </Link>
+          <Link
             to="/book"
-            className={`inline-flex items-center rounded-full px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] transition-all duration-300 hover:-translate-y-0.5 ${
+            className={`inline-flex items-center rounded-full px-6 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] transition-all duration-300 hover:-translate-y-0.5 ${
               solid ? "bg-[var(--navy)] text-white" : "bg-white text-[var(--navy)]"
             }`}
           >
-            Book Now
+            Get Certified, Faster
           </Link>
         </div>
+
 
         <button
           className="xl:hidden flex flex-col gap-1.5 p-2"
@@ -195,15 +212,25 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
             ),
           )}
 
-          <a
-            href={`tel:${SITE.phone.replace(/\s/g, "")}`}
-            className="py-4 text-sm font-semibold text-muted-foreground"
-          >
-            {SITE.phone}
-          </a>
-          <Link to="/book" onClick={() => setOpen(false)} className="btn-gold mt-2 self-start">
-            Book Now
+          <div className="flex items-center justify-between gap-4 py-4">
+            <a
+              href={`tel:${SITE.phone.replace(/\s/g, "")}`}
+              className="text-sm font-semibold text-muted-foreground"
+            >
+              {SITE.phone}
+            </a>
+            <CurrencySelector />
+          </div>
+          <Link to="/templates" onClick={() => setOpen(false)} className="btn-gold mt-2 self-start">
+            Generate a Document
           </Link>
+          <Link to="/book" onClick={() => setOpen(false)} className="btn-lime mt-3 self-start">
+            Get Certified, Faster
+          </Link>
+          <div className="mt-6">
+            <ChatChannels />
+          </div>
+
         </div>
       </div>
     </header>

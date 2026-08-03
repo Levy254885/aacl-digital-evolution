@@ -64,7 +64,7 @@ export const Route = createFileRoute("/services/$slug")({
   },
   component: ServiceDetail,
   notFoundComponent: () => (
-    <PageShell><div className="container-x py-40 text-center"><h1 className="font-display text-4xl">Service not found</h1><Link to="/services" className="btn-outline-gold mt-8 inline-flex">Back to services</Link></div></PageShell>
+    <PageShell><div className="container-x py-40 text-center"><h1 className="font-display text-4xl">Service not found</h1><Link to="/services" className="btn-outline-navy mt-8 inline-flex">Back to services</Link></div></PageShell>
   ),
   errorComponent: () => (
     <PageShell><div className="container-x py-40 text-center"><h1 className="font-display text-4xl">Something went wrong</h1></div></PageShell>
@@ -211,7 +211,7 @@ function ServiceDetail() {
             <h2 className="font-display text-4xl md:text-5xl leading-tight">Speak with an AACL senior consultant about this engagement.</h2>
             <div className="mt-10 flex justify-center gap-4 flex-wrap">
               <Link to="/book" className="btn-gold">Book a consultation <ArrowRight size={16} /></Link>
-              <Link to="/services" className="btn-outline-gold">All services</Link>
+              <Link to="/services" className="btn-outline-navy">All services</Link>
             </div>
           </Reveal>
         </div>

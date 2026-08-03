@@ -151,6 +151,16 @@
   &:hover { background: #fff; color: var(--navy); border-color: #fff; }
 }
 
+@utility btn-outline-navy {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border px-8 py-4 text-[13px] font-semibold uppercase tracking-[0.1em] transition-all duration-300;
+  border-color: var(--navy);
+  color: var(--navy);
+  background: transparent;
+  &:hover { background: var(--navy); color: #fff; transform: translateY(-2px); }
+}
+
+
+
 @utility card-soft {
   @apply rounded-[18px] p-8 transition-all duration-300;
   background: var(--grey);

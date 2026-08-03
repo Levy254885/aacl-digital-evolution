@@ -185,9 +185,10 @@ function TemplatesPage() {
     <PageShell>
       <PageHero
         eyebrow="Templates — AI Document Generator"
-        title="Branded, audit-ready ISO documents in minutes."
-        lead="Select a document, upload your logo, describe your organisation, and generate a fully branded ISO manual, policy or procedure. Preview it before you pay, then download as PDF or DOCX."
+        title="Your Next Policy Document — Ready Before Your Coffee Gets Cold."
+        lead="Enter your company details, upload your logo, describe what you need — and download a fully branded, audit-ready ISO manual, policy or procedure in minutes. Preview before you pay, then export as PDF or DOCX."
       />
+
 
       {/* Stepper */}
       <section className="py-10 bg-background border-b border-border">
@@ -281,7 +282,7 @@ function TemplatesPage() {
                   {logoDataUrl && (
                     <button
                       type="button"
-                      className="btn-outline-gold"
+                      className="btn-outline-navy"
                       onClick={() => {
                         setLogoFile(null);
                         setLogoDataUrl(null);
@@ -418,7 +419,7 @@ function TemplatesPage() {
                 >
                   <Download size={16} /> Download PDF
                 </button>
-                <button type="button" className="btn-outline-gold" onClick={() => downloadDocx(template, details, html)}>
+                <button type="button" className="btn-outline-navy" onClick={() => downloadDocx(template, details, html)}>
                   <Download size={16} /> Download DOCX
                 </button>
               </div>
@@ -449,7 +450,7 @@ function TemplatesPage() {
             <div className="mt-12 flex items-center justify-between gap-4 border-t border-border pt-8">
               <button
                 type="button"
-                className="btn-outline-gold"
+                className="btn-outline-navy"
                 onClick={() => setStep((s) => Math.max(0, s - 1))}
                 disabled={step === 0}
               >
@@ -483,7 +484,7 @@ function TemplatesPage() {
               <Link to="/book" className="btn-gold">
                 Book a consultation <ArrowRight size={16} />
               </Link>
-              <Link to="/contact" className="btn-outline-gold">
+              <Link to="/contact" className="btn-outline-navy">
                 Talk to us
               </Link>
             </div>

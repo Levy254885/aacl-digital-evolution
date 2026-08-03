@@ -5,9 +5,57 @@ import { SERVICES, INDUSTRIES, INSIGHTS } from "@/lib/aacl-content";
 import { PILLARS, STATS, TESTIMONIALS } from "@/lib/aacl-nav";
 import { ContactForm } from "@/components/site/ContactForm";
 import { PastClients } from "@/components/site/PastClients";
+import { HeroSlider, type HeroSlide } from "@/components/site/HeroSlider";
+import { Counter } from "@/components/site/Counter";
+import { ChatChannels } from "@/components/site/ChatChannels";
+import { CostBanner, CostFaq, CostPillars } from "@/components/site/CostObjection";
 import { GraduationCap, FileText, ShieldCheck, Briefcase } from "lucide-react";
 
 const PILLAR_ICONS = [GraduationCap, FileText, ShieldCheck, Briefcase] as const;
+
+const HERO_SLIDES: HeroSlide[] = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2000&q=80",
+    alt: "AACL consultants in a client working session",
+    eyebrow: "Certified. Compliant. Trusted.",
+    headline: "Certified. Compliant. Trusted — Anywhere in the World.",
+    sub: "AACL Global turns ISO certification and everyday compliance into one done-for-you system — expert consultants, wherever you operate.",
+    primary: { label: "Get Certified, Faster", to: "/services" },
+    secondary: { label: "Talk Budget First", to: "/contact" },
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2000&q=80",
+    alt: "Management review meeting reviewing compliance evidence",
+    eyebrow: "ISO management systems",
+    headline: "Certification, Without the Guesswork.",
+    sub: "Whichever standard you need — ISO 9001, 27001, 45001, 22000 or any other — we walk you from gap assessment to certificate, onsite or remote.",
+    primary: { label: "Start Your Journey", to: "/services" },
+    secondary: { label: "Available Onsite or Remote", to: "/ecompliance" },
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2000&q=80",
+    alt: "Compliance team collaborating on a monitoring dashboard",
+    eyebrow: "eCompliance",
+    headline: "World Class Compliance to Drive Your Business Forward.",
+    sub: "Cybersecurity audits, health & safety, physical and logical security and ongoing ISO maintenance — handled for one predictable monthly fee.",
+    primary: { label: "Get My eCompliance Quote", to: "/ecompliance" },
+    secondary: { label: "Outsource My Compliance", to: "/contact" },
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=2000&q=80",
+    alt: "Consultant preparing a branded policy document",
+    eyebrow: "AI document generator",
+    headline: "Your Next Policy Document — Ready Before Your Coffee Gets Cold.",
+    sub: "Enter your company details, upload your logo, describe what you need — download a fully branded, audit-ready document in minutes.",
+    primary: { label: "Generate My Document Now", to: "/templates" },
+    secondary: { label: "Try It Free — First Draft On Us", to: "/templates" },
+  },
+];
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -88,42 +136,9 @@ function ArrowCircle() {
 function HomePage() {
   return (
     <PageShell transparentHeader>
-      {/* HERO — full-bleed image with overlay */}
-      <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2000&q=80"
-          alt="AACL advisors in a client working session"
-          className="absolute inset-0 h-full w-full object-cover hero-zoom"
-        />
-        <div className="absolute inset-0 bg-[var(--navy)]/80" />
-        <div className="hero-aurora opacity-70" aria-hidden="true" />
-        <div className="hero-grid" aria-hidden="true" />
-        <div className="hero-sheen" aria-hidden="true" />
-        <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-[var(--red-soft)] to-transparent" aria-hidden="true" />
+      {/* HERO — animated image slides with per-slide headline reveal */}
+      <HeroSlider slides={HERO_SLIDES} />
 
-        <div className="container-x relative py-40 text-center text-white">
-          <Reveal>
-            <div className="eyebrow eyebrow-light justify-center mb-7">Expert guidance at every step</div>
-          </Reveal>
-          <TextReveal
-            as="h1"
-            text="We Support Your Compliance Journey"
-            className="font-display text-[2.6rem] leading-[1.06] md:text-[4.6rem] md:leading-[1.02] font-extrabold text-white max-w-5xl mx-auto"
-          />
-          <Reveal delay={420}>
-            <p className="mt-8 mx-auto max-w-2xl text-base md:text-lg leading-relaxed text-white/80">
-              Security, risk and ISO management systems for banks, telcos, hospitals and critical
-              infrastructure across East Africa — built to pass audit, and built to be used.
-            </p>
-          </Reveal>
-          <Reveal delay={520}>
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <Link to="/services" className="btn-gold">Discover more</Link>
-              <Link to="/book" className="btn-outline-gold">Book a consultation</Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
 
       {/* PILLARS — navy band with notch */}
       <section className="relative bg-[var(--navy)] text-white/72 pt-20 pb-32">
@@ -197,10 +212,13 @@ function HomePage() {
               {STATS.map((s, i) => (
                 <Reveal key={s.label} delay={i * 110} className={i === 0 ? "pr-4" : "px-4"}>
                   <div className="text-sm text-muted-foreground">{s.label}</div>
-                  <div className="font-display text-3xl md:text-[2.6rem] font-extrabold mt-2">{s.value}</div>
+                  <div className="font-display text-3xl md:text-[2.6rem] font-extrabold mt-2">
+                    <Counter value={s.value} />
+                  </div>
                 </Reveal>
               ))}
             </div>
+
           </div>
         </div>
       </section>
@@ -259,6 +277,34 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* COST OBJECTION */}
+      <section className="py-24 md:py-28">
+        <div className="container-x">
+          <div className="max-w-3xl">
+            <Reveal><div className="eyebrow mb-5">Premium compliance, scoped to fit</div></Reveal>
+            <TextReveal
+              text="Cost should never be the reason you stay off the register."
+              className="font-display text-[2rem] md:text-[2.9rem] font-extrabold leading-[1.08]"
+            />
+            <Reveal delay={200}>
+              <p className="mt-7 text-base leading-[1.95] text-muted-foreground">
+                We listen first, then design the right-sized path to certification or to your ongoing
+                compliance needs — so cost is never the reason you stay off the register.
+              </p>
+            </Reveal>
+          </div>
+          <div className="mt-14">
+            <CostPillars />
+          </div>
+          <div className="mt-10 grid lg:grid-cols-2 gap-6 items-start">
+            <CostBanner variant="a" />
+            <CostFaq />
+          </div>
+        </div>
+      </section>
+
+
 
       {/* WHY CHOOSE US */}
       <section className="py-24 md:py-32">
@@ -513,7 +559,30 @@ function HomePage() {
       {/* PAST CLIENTS */}
       <PastClients />
 
+      {/* ENCRYPTED CHAT CHANNELS */}
+      <section className="py-24 bg-[var(--navy)] text-white">
+        <div className="container-x grid lg:grid-cols-2 gap-14 items-center">
+          <div>
+            <Reveal><div className="eyebrow eyebrow-light mb-6">However you trust most</div></Reveal>
+            <TextReveal
+              text="Talk to Us However You Trust Most."
+              className="font-display text-[2.1rem] md:text-[3rem] font-extrabold leading-[1.08] text-white"
+            />
+            <Reveal delay={200}>
+              <p className="mt-7 text-base leading-[1.95] text-white/75 max-w-xl">
+                Prefer end-to-end encrypted chat? So do we. Reach our team on WhatsApp, Signal or
+                Threema — if we take your data seriously, we take our own conversations seriously too.
+              </p>
+            </Reveal>
+          </div>
+          <Reveal delay={140}>
+            <ChatChannels variant="dark" showNotes />
+          </Reveal>
+        </div>
+      </section>
+
       {/* CONTACT */}
+
       <section className="py-24 surface-grey">
         <div className="container-x grid lg:grid-cols-2 gap-16 items-start">
           <div>
