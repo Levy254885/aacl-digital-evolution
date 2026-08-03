@@ -17,6 +17,10 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { PageShell, PageHero } from "@/components/site/PageShell";
+import { PricingTable, PaymentMethods } from "@/components/site/PricingTable";
+import { CostBanner, CostFaq } from "@/components/site/CostObjection";
+import { ECOMPLIANCE_PRICING } from "@/lib/pricing-content";
+
 import { Reveal } from "@/components/site/Reveal";
 import { ServiceOptions } from "@/components/site/ServiceOptions";
 import {
