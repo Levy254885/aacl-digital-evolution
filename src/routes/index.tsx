@@ -88,42 +88,9 @@ function ArrowCircle() {
 function HomePage() {
   return (
     <PageShell transparentHeader>
-      {/* HERO — full-bleed image with overlay */}
-      <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2000&q=80"
-          alt="AACL advisors in a client working session"
-          className="absolute inset-0 h-full w-full object-cover hero-zoom"
-        />
-        <div className="absolute inset-0 bg-[var(--navy)]/80" />
-        <div className="hero-aurora opacity-70" aria-hidden="true" />
-        <div className="hero-grid" aria-hidden="true" />
-        <div className="hero-sheen" aria-hidden="true" />
-        <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-[var(--red-soft)] to-transparent" aria-hidden="true" />
+      {/* HERO — animated image slides with per-slide headline reveal */}
+      <HeroSlider slides={HERO_SLIDES} />
 
-        <div className="container-x relative py-40 text-center text-white">
-          <Reveal>
-            <div className="eyebrow eyebrow-light justify-center mb-7">Expert guidance at every step</div>
-          </Reveal>
-          <TextReveal
-            as="h1"
-            text="We Support Your Compliance Journey"
-            className="font-display text-[2.6rem] leading-[1.06] md:text-[4.6rem] md:leading-[1.02] font-extrabold text-white max-w-5xl mx-auto"
-          />
-          <Reveal delay={420}>
-            <p className="mt-8 mx-auto max-w-2xl text-base md:text-lg leading-relaxed text-white/80">
-              Security, risk and ISO management systems for banks, telcos, hospitals and critical
-              infrastructure across East Africa — built to pass audit, and built to be used.
-            </p>
-          </Reveal>
-          <Reveal delay={520}>
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <Link to="/services" className="btn-gold">Discover more</Link>
-              <Link to="/book" className="btn-outline-gold">Book a consultation</Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
 
       {/* PILLARS — navy band with notch */}
       <section className="relative bg-[var(--navy)] text-white/72 pt-20 pb-32">
