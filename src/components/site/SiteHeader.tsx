@@ -112,7 +112,8 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
           ))}
         </nav>
 
-        <div className="hidden xl:flex items-center gap-5 shrink-0">
+        <div className="hidden xl:flex items-center gap-4 shrink-0">
+          <CurrencySelector variant={solid ? "light" : "dark"} />
           <a
             href={`tel:${SITE.phone.replace(/\s/g, "")}`}
             className={`text-[13px] font-semibold transition-colors ${
@@ -122,14 +123,23 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
             {SITE.phone}
           </a>
           <Link
+            to="/templates"
+            className={`inline-flex items-center rounded-full px-6 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] transition-all duration-300 hover:-translate-y-0.5 ${
+              solid ? "bg-[var(--red)] text-white hover:bg-[var(--red-deep)]" : "bg-[var(--red)] text-white"
+            }`}
+          >
+            Generate a Document
+          </Link>
+          <Link
             to="/book"
-            className={`inline-flex items-center rounded-full px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] transition-all duration-300 hover:-translate-y-0.5 ${
+            className={`inline-flex items-center rounded-full px-6 py-3.5 text-[13px] font-semibold uppercase tracking-[0.1em] transition-all duration-300 hover:-translate-y-0.5 ${
               solid ? "bg-[var(--navy)] text-white" : "bg-white text-[var(--navy)]"
             }`}
           >
-            Book Now
+            Get Certified, Faster
           </Link>
         </div>
+
 
         <button
           className="xl:hidden flex flex-col gap-1.5 p-2"
