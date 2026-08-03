@@ -52,6 +52,27 @@ function ServicesPage() {
           ))}
         </div>
       </section>
+
+      <ServiceOptions />
+
+      <section className="py-24 bg-background">
+        <div className="container-x">
+          <Reveal>
+            <div className="eyebrow mb-4">Indicative pricing</div>
+            <h2 className="font-display text-3xl md:text-4xl leading-tight max-w-3xl">
+              Transparent starting prices. Final scope confirmed on a short call.
+            </h2>
+          </Reveal>
+          <div className="mt-12">
+            <PricingTable rows={ISO_PRICING} notes={ISO_PRICING_NOTES} />
+          </div>
+          <div className="mt-12 grid lg:grid-cols-2 gap-6 items-start">
+            <CostBanner variant="b" />
+            <CostFaq />
+          </div>
+        </div>
+      </section>
     </PageShell>
+
   );
 }
