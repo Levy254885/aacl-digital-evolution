@@ -22,11 +22,12 @@ function ServicesPage() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="Services"
-        title="Five specialist disciplines. One integrated assurance partner."
-        lead="From enterprise-wide risk assessment through certification and outsourced security leadership, AACL delivers coherent programmes calibrated to your regulatory environment and operating model."
+        eyebrow="ISO management systems"
+        title="Certification, Without the Guesswork."
+        lead="Whichever standard you need — ISO 9001, 27001, 45001, 22000 or any other — we walk you from gap assessment to certificate. Available Onsite or Remote — Worldwide."
         image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2000&q=80"
       />
+
       <section className="py-24 bg-background">
         <div className="container-x space-y-px bg-border">
           {SERVICES.map((s, i) => (
