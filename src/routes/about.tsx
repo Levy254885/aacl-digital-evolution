@@ -82,10 +82,11 @@ function AboutPage() {
       <section className="py-24 bg-[var(--navy-deep)] text-[var(--bone)]">
         <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
           <Reveal>
-            <div className="eyebrow eyebrow-light mb-6">Regional reach</div>
-            <h2 className="font-display text-4xl md:text-5xl leading-tight">Headquartered in Nairobi. Delivering across East Africa and beyond.</h2>
-            <p className="mt-6 text-white/70 leading-relaxed">From our base at Vision Towers in Westlands, we serve clients across Kenya, Uganda, Tanzania, Rwanda, Ethiopia and select international markets — combining regional presence with globally benchmarked expertise.</p>
-            <Link to="/contact" className="btn-outline-gold mt-8 inline-flex">Visit our office <ArrowRight size={14} /></Link>
+            <div className="eyebrow eyebrow-light mb-6">Global reach</div>
+            <h2 className="font-display text-4xl md:text-5xl leading-tight text-white">Headquartered in Nairobi. Delivering worldwide — onsite or remote.</h2>
+            <p className="mt-6 text-white/70 leading-relaxed">From our base at Vision Towers in Westlands we serve clients across Africa, Europe, the UK, the US and Asia — combining local presence with globally benchmarked expertise. Every engagement is available Onsite or Remote — Worldwide.</p>
+            <Link to="/contact" className="btn-outline-gold mt-8 inline-flex">Talk to Us <ArrowRight size={14} /></Link>
+
           </Reveal>
           <Reveal delay={120}>
             <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80" alt="Consultants collaborating" className="w-full h-[500px] object-cover" />
