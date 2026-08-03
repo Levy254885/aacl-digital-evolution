@@ -260,6 +260,34 @@ function HomePage() {
         </div>
       </section>
 
+      {/* COST OBJECTION */}
+      <section className="py-24 md:py-28">
+        <div className="container-x">
+          <div className="max-w-3xl">
+            <Reveal><div className="eyebrow mb-5">Premium compliance, scoped to fit</div></Reveal>
+            <TextReveal
+              text="Cost should never be the reason you stay off the register."
+              className="font-display text-[2rem] md:text-[2.9rem] font-extrabold leading-[1.08]"
+            />
+            <Reveal delay={200}>
+              <p className="mt-7 text-base leading-[1.95] text-muted-foreground">
+                We listen first, then design the right-sized path to certification or to your ongoing
+                compliance needs — so cost is never the reason you stay off the register.
+              </p>
+            </Reveal>
+          </div>
+          <div className="mt-14">
+            <CostPillars />
+          </div>
+          <div className="mt-10 grid lg:grid-cols-2 gap-6 items-start">
+            <CostBanner variant="a" />
+            <CostFaq />
+          </div>
+        </div>
+      </section>
+
+
+
       {/* WHY CHOOSE US */}
       <section className="py-24 md:py-32">
         <div className="container-x grid lg:grid-cols-12 gap-14">
