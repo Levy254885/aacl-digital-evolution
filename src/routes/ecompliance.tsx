@@ -195,7 +195,7 @@ function ECompliancePage() {
                       </li>
                     ))}
                   </ul>
-                  <Link to="/book" className={`mt-8 self-start ${p.featured ? "btn-gold" : "btn-outline-gold"}`}>
+                  <Link to="/book" className={`mt-8 self-start ${p.featured ? "btn-gold" : "btn-outline-navy"}`}>
                     Request a quote <ArrowRight size={16} />
                   </Link>
                 </div>

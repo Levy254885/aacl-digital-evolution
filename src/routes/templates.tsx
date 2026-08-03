@@ -281,7 +281,7 @@ function TemplatesPage() {
                   {logoDataUrl && (
                     <button
                       type="button"
-                      className="btn-outline-gold"
+                      className="btn-outline-navy"
                       onClick={() => {
                         setLogoFile(null);
                         setLogoDataUrl(null);
@@ -418,7 +418,7 @@ function TemplatesPage() {
                 >
                   <Download size={16} /> Download PDF
                 </button>
-                <button type="button" className="btn-outline-gold" onClick={() => downloadDocx(template, details, html)}>
+                <button type="button" className="btn-outline-navy" onClick={() => downloadDocx(template, details, html)}>
                   <Download size={16} /> Download DOCX
                 </button>
               </div>
@@ -449,7 +449,7 @@ function TemplatesPage() {
             <div className="mt-12 flex items-center justify-between gap-4 border-t border-border pt-8">
               <button
                 type="button"
-                className="btn-outline-gold"
+                className="btn-outline-navy"
                 onClick={() => setStep((s) => Math.max(0, s - 1))}
                 disabled={step === 0}
               >
@@ -483,7 +483,7 @@ function TemplatesPage() {
               <Link to="/book" className="btn-gold">
                 Book a consultation <ArrowRight size={16} />
               </Link>
-              <Link to="/contact" className="btn-outline-gold">
+              <Link to="/contact" className="btn-outline-navy">
                 Talk to us
               </Link>
             </div>
