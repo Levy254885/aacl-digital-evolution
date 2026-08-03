@@ -3,6 +3,11 @@ import { PageShell, PageHero } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { SERVICES } from "@/lib/aacl-content";
 import { ArrowRight } from "lucide-react";
+import { ServiceOptions } from "@/components/site/ServiceOptions";
+import { PricingTable } from "@/components/site/PricingTable";
+import { CostBanner, CostFaq } from "@/components/site/CostObjection";
+import { ISO_PRICING, ISO_PRICING_NOTES } from "@/lib/pricing-content";
+
 
 export const Route = createFileRoute("/services/")({
   head: () => ({
