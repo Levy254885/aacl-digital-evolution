@@ -21,11 +21,20 @@ function AboutPage() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="About us"
-        title="Executive assurance, engineered for the organisations East Africa relies on."
-        lead="AACL is an independent specialist consultancy in security, compliance, ISO management systems, governance and enterprise risk — trusted by regulated organisations across the region."
+        eyebrow="Who we are"
+        title="Compliance Expertise Without Borders."
+        lead="AACL Global works with organizations across Europe, the US, Africa, Asia and beyond — and we're expanding into new markets. Wherever you're headquartered, you get the same highly qualified and certified lead consultants and auditors, the same rigorous standards, and superior results."
         image="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2000&q=80"
       />
+
+      <section className="pt-10">
+        <div className="container-x">
+          <Reveal>
+            <Link to="/contact" className="btn-gold">Talk to Us</Link>
+          </Reveal>
+        </div>
+      </section>
+
 
       <section className="py-24 bg-background">
         <div className="container-x grid lg:grid-cols-12 gap-14">
