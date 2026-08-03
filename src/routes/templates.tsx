@@ -185,9 +185,10 @@ function TemplatesPage() {
     <PageShell>
       <PageHero
         eyebrow="Templates — AI Document Generator"
-        title="Branded, audit-ready ISO documents in minutes."
-        lead="Select a document, upload your logo, describe your organisation, and generate a fully branded ISO manual, policy or procedure. Preview it before you pay, then download as PDF or DOCX."
+        title="Your Next Policy Document — Ready Before Your Coffee Gets Cold."
+        lead="Enter your company details, upload your logo, describe what you need — and download a fully branded, audit-ready ISO manual, policy or procedure in minutes. Preview before you pay, then export as PDF or DOCX."
       />
+
 
       {/* Stepper */}
       <section className="py-10 bg-background border-b border-border">
