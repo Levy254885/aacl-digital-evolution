@@ -47,31 +47,34 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
       }`}
     >
       <div className="container-x flex items-center justify-between h-[72px] lg:h-[92px] gap-6">
-        <Link to="/" className="flex items-center gap-3 shrink-0" onClick={() => setOpen(false)}>
+        <Link
+          to="/"
+          className="flex items-center gap-3 shrink-0"
+          onClick={() => setOpen(false)}
+          aria-label="AACL Global — home"
+        >
           <span
-            className={`h-11 w-11 rounded-full overflow-hidden flex items-center justify-center ${
-              solid ? "bg-white ring-1 ring-[var(--navy)]/10" : "bg-white/95"
+            className={`inline-flex items-center rounded-[10px] px-3 py-2 transition-colors ${
+              solid ? "bg-transparent" : "bg-white/95"
             }`}
           >
-            <img src={aaclLogo} alt="AACL logo" className="h-full w-full object-contain" />
+            <img
+              src={aaclLogo}
+              alt="AACL — Audits and Assurance Consult Ltd"
+              width={1920}
+              height={382}
+              className="h-6 lg:h-8 w-auto object-contain"
+            />
           </span>
-          <span>
-            <span
-              className={`block font-display text-xl font-extrabold leading-none tracking-tight ${
-                solid ? "text-[var(--navy)]" : "text-white"
-              }`}
-            >
-              AACL
-            </span>
-            <span
-              className={`block text-[9px] uppercase tracking-[0.14em] mt-1 ${
-                solid ? "text-muted-foreground" : "text-white/70"
-              }`}
-            >
-              Audits &amp; Assurance Consult Ltd
-            </span>
+          <span
+            className={`hidden sm:block text-[9px] uppercase tracking-[0.14em] leading-tight max-w-[9rem] ${
+              solid ? "text-muted-foreground" : "text-white/70"
+            }`}
+          >
+            Audits &amp; Assurance Consult Ltd
           </span>
         </Link>
+
 
         <nav className="hidden xl:flex items-center gap-1">
           {MENU.map((item) => (
