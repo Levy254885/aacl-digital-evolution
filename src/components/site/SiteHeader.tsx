@@ -210,15 +210,25 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
             ),
           )}
 
-          <a
-            href={`tel:${SITE.phone.replace(/\s/g, "")}`}
-            className="py-4 text-sm font-semibold text-muted-foreground"
-          >
-            {SITE.phone}
-          </a>
-          <Link to="/book" onClick={() => setOpen(false)} className="btn-gold mt-2 self-start">
-            Book Now
+          <div className="flex items-center justify-between gap-4 py-4">
+            <a
+              href={`tel:${SITE.phone.replace(/\s/g, "")}`}
+              className="text-sm font-semibold text-muted-foreground"
+            >
+              {SITE.phone}
+            </a>
+            <CurrencySelector />
+          </div>
+          <Link to="/templates" onClick={() => setOpen(false)} className="btn-gold mt-2 self-start">
+            Generate a Document
           </Link>
+          <Link to="/book" onClick={() => setOpen(false)} className="btn-lime mt-3 self-start">
+            Get Certified, Faster
+          </Link>
+          <div className="mt-6">
+            <ChatChannels />
+          </div>
+
         </div>
       </div>
     </header>
