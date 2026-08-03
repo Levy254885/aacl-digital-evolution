@@ -513,7 +513,30 @@ function HomePage() {
       {/* PAST CLIENTS */}
       <PastClients />
 
+      {/* ENCRYPTED CHAT CHANNELS */}
+      <section className="py-24 bg-[var(--navy)] text-white">
+        <div className="container-x grid lg:grid-cols-2 gap-14 items-center">
+          <div>
+            <Reveal><div className="eyebrow eyebrow-light mb-6">However you trust most</div></Reveal>
+            <TextReveal
+              text="Talk to Us However You Trust Most."
+              className="font-display text-[2.1rem] md:text-[3rem] font-extrabold leading-[1.08] text-white"
+            />
+            <Reveal delay={200}>
+              <p className="mt-7 text-base leading-[1.95] text-white/75 max-w-xl">
+                Prefer end-to-end encrypted chat? So do we. Reach our team on WhatsApp, Signal or
+                Threema — if we take your data seriously, we take our own conversations seriously too.
+              </p>
+            </Reveal>
+          </div>
+          <Reveal delay={140}>
+            <ChatChannels variant="dark" showNotes />
+          </Reveal>
+        </div>
+      </section>
+
       {/* CONTACT */}
+
       <section className="py-24 surface-grey">
         <div className="container-x grid lg:grid-cols-2 gap-16 items-start">
           <div>
