@@ -203,8 +203,22 @@ function ECompliancePage() {
               </Reveal>
             ))}
           </div>
+
+          <div className="mt-16">
+            <PricingTable rows={ECOMPLIANCE_PRICING} columnLabel="eCompliance plan" />
+          </div>
+          <div className="mt-12 grid lg:grid-cols-2 gap-6 items-start">
+            <CostBanner variant="a" />
+            <CostFaq />
+          </div>
+          <div className="mt-16">
+            <h3 className="font-display text-2xl font-extrabold mb-6">Ways to pay</h3>
+            <PaymentMethods />
+          </div>
         </div>
       </section>
+
+
 
       {/* FAQ */}
       <section className="py-24 bg-[var(--bone)]">
