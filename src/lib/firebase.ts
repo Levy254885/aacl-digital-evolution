@@ -1,13 +1,12 @@
 /**
- * Firebase integration — AACL main-aacl project.
+ * Firebase integration — AACL (project: aacl-ltd).
  *
- * The Firebase Web `apiKey` is a public identifier for the project and is
- * safe to include in client bundles (Firebase docs). Security is enforced
- * server-side by Firebase Security Rules, App Check and Auth.
+ * No credentials are hardcoded. The Web API key is supplied at build time via
+ * the VITE_FIREBASE_API_KEY environment variable, and every privileged
+ * operation (Admin SDK, service accounts, payment secrets) must live in a
+ * server function reading process.env — never in this file.
  *
- * Any privileged Firebase Admin work MUST live in a server function
- * (see src/lib/*.functions.ts) and read a service-account key from
- * process.env, never here.
+ * Access control is enforced by Firestore/Storage Security Rules and App Check.
  */
 
 import { initializeApp, getApps, getApp, type FirebaseApp } from "firebase/app";
@@ -18,13 +17,12 @@ import { getStorage, type FirebaseStorage } from "firebase/storage";
 import { getAnalytics, isSupported as analyticsSupported, type Analytics } from "firebase/analytics";
 
 export const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY ?? "AIzaSyAQYOxI8fQAnFWW3-y4oSG_10BH_PQ5kHQ",
-  authDomain: "main-aacl.firebaseapp.com",
-  projectId: "main-aacl",
-  storageBucket: "main-aacl.firebasestorage.app",
-  messagingSenderId: "536810084839",
-  appId: "1:536810084839:web:7f08e799e459080ee90542",
-  measurementId: "G-T6HEWGXKYG",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY ?? "",
+  authDomain: "aacl-ltd.firebaseapp.com",
+  projectId: "aacl-ltd",
+  storageBucket: "aacl-ltd.firebasestorage.app",
+  messagingSenderId: "371824774824",
+  appId: "1:371824774824:web:137d29ffca457f2fe1bc9d",
 } as const;
 
 export const isFirebaseConfigured = Boolean(firebaseConfig.apiKey && firebaseConfig.projectId);
@@ -32,9 +30,13 @@ export const isFirebaseConfigured = Boolean(firebaseConfig.apiKey && firebaseCon
 let _app: FirebaseApp | null = null;
 export function getFirebaseApp(): FirebaseApp {
   if (_app) return _app;
+  if (!isFirebaseConfigured) {
+    throw new Error("Firebase is not configured: VITE_FIREBASE_API_KEY is missing.");
+  }
   _app = getApps().length ? getApp() : initializeApp(firebaseConfig);
   return _app;
 }
+
 
 let _appCheck: AppCheck | null = null;
 export function getFirebaseAppCheck(): AppCheck | null {
