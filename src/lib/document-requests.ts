@@ -1,5 +1,5 @@
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { ref, uploadBytes } from "firebase/storage";
 import { getFirebaseDb, getFirebaseStorageBucket } from "@/lib/firebase";
 
 export type DocumentRequestInput = {
@@ -19,15 +19,20 @@ export type DocumentRequestInput = {
   logoUrl: string | null;
 };
 
-/** Uploads the company logo to Firebase Storage and returns its download URL. */
+/**
+ * Uploads the company logo to Cloud Storage and returns its storage path.
+ * The bucket is private (see storage.rules) — no public download URL is
+ * created, so uploaded artwork is never exposed on the internet.
+ */
 export async function uploadCompanyLogo(file: File, companyName: string): Promise<string> {
   const slug = (companyName || "company").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   const ext = (file.name.split(".").pop() ?? "png").toLowerCase();
   const path = `documentRequests/${slug}/${Date.now()}-logo.${ext}`;
   const storageRef = ref(getFirebaseStorageBucket(), path);
   await uploadBytes(storageRef, file, { contentType: file.type });
-  return getDownloadURL(storageRef);
+  return path;
 }
+
 
 /** Stores document-request metadata in Firestore. */
 export async function saveDocumentRequest(input: DocumentRequestInput) {
