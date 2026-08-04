@@ -6,7 +6,8 @@ import { ArrowRight } from "lucide-react";
 import { ServiceOptions } from "@/components/site/ServiceOptions";
 import { PricingTable } from "@/components/site/PricingTable";
 import { CostBanner, CostFaq } from "@/components/site/CostObjection";
-import { ISO_PRICING, ISO_PRICING_NOTES } from "@/lib/pricing-content";
+import { ISO_PRICING, ISO_PRICING_NOTES, type PricingRow } from "@/lib/pricing-content";
+import { useCms } from "@/lib/cms";
 
 
 export const Route = createFileRoute("/services/")({
@@ -24,6 +25,9 @@ export const Route = createFileRoute("/services/")({
 });
 
 function ServicesPage() {
+  const services = useCms<typeof SERVICES>("services", SERVICES);
+  const pricing = useCms<PricingRow[]>("pricing_iso", ISO_PRICING);
+
   return (
     <PageShell>
       <PageHero
@@ -35,7 +39,7 @@ function ServicesPage() {
 
       <section className="py-24 bg-background">
         <div className="container-x space-y-px bg-border">
-          {SERVICES.map((s, i) => (
+          {services.map((s, i) => (
             <Reveal key={s.slug} delay={i * 60}>
               <Link
                 to="/services/$slug"
@@ -69,7 +73,7 @@ function ServicesPage() {
             </h2>
           </Reveal>
           <div className="mt-12">
-            <PricingTable rows={ISO_PRICING} notes={ISO_PRICING_NOTES} />
+            <PricingTable rows={pricing} notes={ISO_PRICING_NOTES} />
           </div>
           <div className="mt-12 grid lg:grid-cols-2 gap-6 items-start">
             <CostBanner variant="b" />
