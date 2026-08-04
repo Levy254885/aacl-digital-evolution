@@ -28,6 +28,8 @@ import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as InsightsSlugRouteImport } from './routes/insights.$slug'
 import { Route as IndustriesSlugRouteImport } from './routes/industries.$slug'
+import { Route as AdminTeamRouteImport } from './routes/admin.team'
+import { Route as AdminContentKeyRouteImport } from './routes/admin.content.$key'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -124,6 +126,16 @@ const IndustriesSlugRoute = IndustriesSlugRouteImport.update({
   path: '/industries/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminTeamRoute = AdminTeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminContentKeyRoute = AdminContentKeyRouteImport.update({
+  id: '/content/$key',
+  path: '/content/$key',
+  getParentRoute: () => AdminRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -138,6 +150,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
+  '/admin/team': typeof AdminTeamRoute
   '/industries/$slug': typeof IndustriesSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -145,6 +158,7 @@ export interface FileRoutesByFullPath {
   '/industries/': typeof IndustriesIndexRoute
   '/insights/': typeof InsightsIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/admin/content/$key': typeof AdminContentKeyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -158,6 +172,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
+  '/admin/team': typeof AdminTeamRoute
   '/industries/$slug': typeof IndustriesSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -165,6 +180,7 @@ export interface FileRoutesByTo {
   '/industries': typeof IndustriesIndexRoute
   '/insights': typeof InsightsIndexRoute
   '/services': typeof ServicesIndexRoute
+  '/admin/content/$key': typeof AdminContentKeyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -180,6 +196,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
+  '/admin/team': typeof AdminTeamRoute
   '/industries/$slug': typeof IndustriesSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -187,6 +204,7 @@ export interface FileRoutesById {
   '/industries/': typeof IndustriesIndexRoute
   '/insights/': typeof InsightsIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/admin/content/$key': typeof AdminContentKeyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -203,6 +221,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/templates'
     | '/terms'
+    | '/admin/team'
     | '/industries/$slug'
     | '/insights/$slug'
     | '/services/$slug'
@@ -210,6 +229,7 @@ export interface FileRouteTypes {
     | '/industries/'
     | '/insights/'
     | '/services/'
+    | '/admin/content/$key'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -223,6 +243,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/templates'
     | '/terms'
+    | '/admin/team'
     | '/industries/$slug'
     | '/insights/$slug'
     | '/services/$slug'
@@ -230,6 +251,7 @@ export interface FileRouteTypes {
     | '/industries'
     | '/insights'
     | '/services'
+    | '/admin/content/$key'
   id:
     | '__root__'
     | '/'
@@ -244,6 +266,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/templates'
     | '/terms'
+    | '/admin/team'
     | '/industries/$slug'
     | '/insights/$slug'
     | '/services/$slug'
@@ -251,6 +274,7 @@ export interface FileRouteTypes {
     | '/industries/'
     | '/insights/'
     | '/services/'
+    | '/admin/content/$key'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -409,15 +433,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndustriesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/team': {
+      id: '/admin/team'
+      path: '/team'
+      fullPath: '/admin/team'
+      preLoaderRoute: typeof AdminTeamRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/content/$key': {
+      id: '/admin/content/$key'
+      path: '/content/$key'
+      fullPath: '/admin/content/$key'
+      preLoaderRoute: typeof AdminContentKeyRouteImport
+      parentRoute: typeof AdminRoute
+    }
   }
 }
 
 interface AdminRouteChildren {
+  AdminTeamRoute: typeof AdminTeamRoute
   AdminIndexRoute: typeof AdminIndexRoute
+  AdminContentKeyRoute: typeof AdminContentKeyRoute
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
+  AdminTeamRoute: AdminTeamRoute,
   AdminIndexRoute: AdminIndexRoute,
+  AdminContentKeyRoute: AdminContentKeyRoute,
 }
 
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
