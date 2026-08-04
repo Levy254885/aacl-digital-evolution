@@ -2,6 +2,23 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+    function userRole() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/roles/$(request.auth.uid))
+        ? get(/databases/$(database)/documents/roles/$(request.auth.uid)).data.role
+        : 'none';
+    }
+    function isSuperAdmin() {
+      return request.auth != null
+        && (request.auth.token.email == 'Levybatanga@gmail.com' || userRole() == 'super_admin');
+    }
+    function isAdmin() {
+      return isSuperAdmin() || userRole() == 'admin';
+    }
+    function isEditor() {
+      return isAdmin() || userRole() in ['editor', 'consultant'];
+    }
+
     match /contactLeads/{leadId} {
       allow create: if request.resource.data.keys().hasOnly([
           'name',
@@ -49,6 +66,19 @@ service cloud.firestore {
         && request.resource.data.timestamp == request.time;
 
       allow read, update, delete: if false;
+    }
+
+    // Website content, editable from /admin. Public read, role-gated write.
+    match /cms/{docId} {
+      allow read: if true;
+      allow write: if isEditor();
+    }
+
+    // Role assignments. Readable by the owner and admins; only Super Admins write.
+    match /roles/{uid} {
+      allow read: if request.auth != null && (request.auth.uid == uid || isAdmin());
+      allow list: if isAdmin();
+      allow write: if isSuperAdmin();
     }
 
     match /{document=**} {

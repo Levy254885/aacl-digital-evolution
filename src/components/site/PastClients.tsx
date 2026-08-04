@@ -1,19 +1,11 @@
 import { Reveal, TextReveal } from "./Reveal";
+import { CLIENT_LOGOS, type ClientLogo } from "@/lib/clients-content";
+import { useCms } from "@/lib/cms";
 
-const CLIENTS = [
-  { name: "Centrofood Industries Ltd", logo: "/clients/centrofood.jpg", width: 225, height: 225 },
-  { name: "Complast", logo: "/clients/complast.png", width: 225, height: 225 },
-  { name: "Digital Divide Data", logo: "/clients/digital-divide-data.jpg", width: 603, height: 331 },
-  { name: "DPL — The Packaging Experts", logo: "/clients/dpl.png", width: 246, height: 104 },
-  { name: "ICPS — Intelligent Card Production Systems", logo: "/clients/icps.jpg", width: 200, height: 200 },
-  { name: "Medical Access", logo: "/clients/medical-access.png", width: 225, height: 225 },
-  { name: "Minimal Frame Projects", logo: "/clients/minimal-frame-projects.png", width: 225, height: 225 },
-  { name: "Reeds Africa Consult", logo: "/clients/reeds-africa-consult.png", width: 225, height: 224 },
-  { name: "Sintel", logo: "/clients/sintel.jpg", width: 200, height: 200 },
-  { name: "Skanem", logo: "/clients/skanem.jpg", width: 246, height: 108 },
-];
 
 export function PastClients() {
+  const clients = useCms<ClientLogo[]>("logos", CLIENT_LOGOS);
+
   return (
     <section className="py-24 md:py-28" aria-labelledby="past-clients-heading">
       <div className="container-x">
@@ -40,7 +32,7 @@ export function PastClients() {
         </div>
 
         <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-px bg-[var(--grey-2)] border border-[var(--grey-2)] rounded-[12px] overflow-hidden">
-          {CLIENTS.map((c, i) => (
+          {clients.map((c, i) => (
             <Reveal key={c.name} delay={i * 50}>
               <li className="group relative bg-background aspect-[3/2] flex flex-col items-center justify-center p-5 transition-colors duration-300 hover:bg-[var(--grey)]">
                 <img

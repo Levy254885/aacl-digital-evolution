@@ -57,19 +57,16 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
           onClick={() => setOpen(false)}
           aria-label="AACL Global — home"
         >
-          <span
-            className={`inline-flex items-center rounded-[10px] px-3 py-2 transition-colors ${
-              solid ? "bg-transparent" : "bg-white/95"
+          <img
+            src={aaclLogo}
+            alt="AACL — Audits and Assurance Consult Ltd"
+            width={1920}
+            height={382}
+            className={`h-7 lg:h-9 w-auto object-contain transition-all duration-300 ${
+              solid ? "" : "brightness-0 invert drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]"
             }`}
-          >
-            <img
-              src={aaclLogo}
-              alt="AACL — Audits and Assurance Consult Ltd"
-              width={1920}
-              height={382}
-              className="h-6 lg:h-8 w-auto object-contain"
-            />
-          </span>
+          />
+
           <span
             className={`hidden sm:block text-[9px] uppercase tracking-[0.14em] leading-tight max-w-[9rem] ${
               solid ? "text-muted-foreground" : "text-white/70"

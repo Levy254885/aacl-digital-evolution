@@ -5,7 +5,10 @@ import { SERVICES, INDUSTRIES, INSIGHTS } from "@/lib/aacl-content";
 import { PILLARS, STATS, TESTIMONIALS } from "@/lib/aacl-nav";
 import { ContactForm } from "@/components/site/ContactForm";
 import { PastClients } from "@/components/site/PastClients";
-import { HeroSlider, type HeroSlide } from "@/components/site/HeroSlider";
+import { HeroSlider } from "@/components/site/HeroSlider";
+import { HERO_SLIDES, type HeroSlide } from "@/lib/hero-content";
+import { STANDARDS, type StandardItem } from "@/lib/standards-content";
+import { useCms } from "@/lib/cms";
 import { Counter } from "@/components/site/Counter";
 import { ChatChannels } from "@/components/site/ChatChannels";
 import { CostBanner, CostFaq, CostPillars } from "@/components/site/CostObjection";
@@ -13,48 +16,6 @@ import { GraduationCap, FileText, ShieldCheck, Briefcase } from "lucide-react";
 
 const PILLAR_ICONS = [GraduationCap, FileText, ShieldCheck, Briefcase] as const;
 
-const HERO_SLIDES: HeroSlide[] = [
-  {
-    image:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2000&q=80",
-    alt: "AACL consultants in a client working session",
-    eyebrow: "Certified. Compliant. Trusted.",
-    headline: "Certified. Compliant. Trusted — Anywhere in the World.",
-    sub: "AACL Global turns ISO certification and everyday compliance into one done-for-you system — expert consultants, wherever you operate.",
-    primary: { label: "Get Certified, Faster", to: "/services" },
-    secondary: { label: "Talk Budget First", to: "/contact" },
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2000&q=80",
-    alt: "Management review meeting reviewing compliance evidence",
-    eyebrow: "ISO management systems",
-    headline: "Certification, Without the Guesswork.",
-    sub: "Whichever standard you need — ISO 9001, 27001, 45001, 22000 or any other — we walk you from gap assessment to certificate, onsite or remote.",
-    primary: { label: "Start Your Journey", to: "/services" },
-    secondary: { label: "Available Onsite or Remote", to: "/ecompliance" },
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2000&q=80",
-    alt: "Compliance team collaborating on a monitoring dashboard",
-    eyebrow: "eCompliance",
-    headline: "World Class Compliance to Drive Your Business Forward.",
-    sub: "Cybersecurity audits, health & safety, physical and logical security and ongoing ISO maintenance — handled for one predictable monthly fee.",
-    primary: { label: "Get My eCompliance Quote", to: "/ecompliance" },
-    secondary: { label: "Outsource My Compliance", to: "/contact" },
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=2000&q=80",
-    alt: "Consultant preparing a branded policy document",
-    eyebrow: "AI document generator",
-    headline: "Your Next Policy Document — Ready Before Your Coffee Gets Cold.",
-    sub: "Enter your company details, upload your logo, describe what you need — download a fully branded, audit-ready document in minutes.",
-    primary: { label: "Generate My Document Now", to: "/templates" },
-    secondary: { label: "Try It Free — First Draft On Us", to: "/templates" },
-  },
-];
 
 
 export const Route = createFileRoute("/")({
@@ -89,16 +50,6 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const STANDARDS = [
-  { label: "Information Security", code: "ISO/IEC 27001:2022", desc: "Information security management systems — protect confidentiality, integrity and availability of information assets." },
-  { label: "Quality Management", code: "ISO 9001:2015", desc: "Quality management systems that consistently meet customer and regulatory requirements." },
-  { label: "Occupational Health & Safety", code: "ISO 45001:2018", desc: "Occupational health and safety management — prevent work-related injury and ill health." },
-  { label: "Business Continuity", code: "ISO 22301:2019", desc: "Business continuity management — prepare for, respond to and recover from disruptive incidents." },
-  { label: "Environmental Management", code: "ISO 14001:2015", desc: "Environmental management systems that improve environmental performance and compliance." },
-  { label: "Payment Card Security", code: "PCI DSS v4.0", desc: "Payment card industry data security standard for cardholder-data environments." },
-  { label: "Risk Management", code: "ISO 31000:2018", desc: "Enterprise-wide risk management principles, framework and process." },
-  { label: "Security Operations", code: "ISO 18788:2015", desc: "Management system for private security operations — governance, accountability and human rights." },
-];
 
 const WHY = [
   {
@@ -134,16 +85,24 @@ function ArrowCircle() {
 }
 
 function HomePage() {
+  const heroSlides = useCms<HeroSlide[]>("hero", HERO_SLIDES);
+  const standards = useCms<StandardItem[]>("standards", STANDARDS);
+  const pillars = useCms<typeof PILLARS>("pillars", PILLARS);
+  const stats = useCms<typeof STATS>("stats", STATS);
+  const testimonials = useCms<typeof TESTIMONIALS>("testimonials", TESTIMONIALS);
+  const industries = useCms<typeof INDUSTRIES>("industries", INDUSTRIES);
+  const posts = useCms<typeof INSIGHTS>("blog", INSIGHTS);
+
   return (
     <PageShell transparentHeader>
       {/* HERO — animated image slides with per-slide headline reveal */}
-      <HeroSlider slides={HERO_SLIDES} />
+      <HeroSlider slides={heroSlides} />
 
 
       {/* PILLARS — navy band with notch */}
       <section className="relative bg-[var(--navy)] text-white/72 pt-20 pb-32">
         <div className="container-x grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-          {PILLARS.map((p, i) => {
+          {pillars.map((p, i) => {
             const Icon = PILLAR_ICONS[i] ?? Briefcase;
             return (
               <Reveal key={p.title} delay={i * 90}>
@@ -209,7 +168,7 @@ function HomePage() {
             </Reveal>
 
             <div className="mt-12 pt-10 border-t border-border grid grid-cols-3 divide-x divide-border">
-              {STATS.map((s, i) => (
+              {stats.map((s, i) => (
                 <Reveal key={s.label} delay={i * 110} className={i === 0 ? "pr-4" : "px-4"}>
                   <div className="text-sm text-muted-foreground">{s.label}</div>
                   <div className="font-display text-3xl md:text-[2.6rem] font-extrabold mt-2">
@@ -235,7 +194,7 @@ function HomePage() {
           </div>
 
           <div className="mt-16 grid md:grid-cols-2 gap-x-20">
-            {STANDARDS.map((s, i) => (
+            {standards.map((s, i) => (
               <Reveal key={s.code} delay={(i % 2) * 90}>
                 <Link
                   to="/services"
@@ -414,7 +373,7 @@ function HomePage() {
             </Reveal>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-5">
-            {INDUSTRIES.map((i, idx) => (
+            {industries.map((i, idx) => (
               <Reveal key={i.slug} delay={idx * 40}>
                 <Link
                   to="/industries/$slug"
@@ -451,7 +410,7 @@ function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {INSIGHTS.slice(0, 3).map((p, i) => (
+            {posts.slice(0, 3).map((p, i) => (
               <Reveal key={p.slug} delay={i * 100}>
                 <article className="h-full flex flex-col">
                   <Link
@@ -520,7 +479,7 @@ function HomePage() {
           </div>
 
           <div className="lg:col-span-7 grid sm:grid-cols-2 gap-6">
-            {TESTIMONIALS.filter((t) => t.featured).map((t, i) => (
+            {testimonials.filter((t) => t.featured).map((t, i) => (
               <Reveal key={t.name} delay={i * 100}>
                 <figure className="h-full flex flex-col rounded-[18px] overflow-hidden">
                   <blockquote className="flex-1 surface-grey p-8 text-sm leading-[1.95] text-muted-foreground">
@@ -541,7 +500,7 @@ function HomePage() {
           </div>
 
           <div className="lg:col-span-12 grid md:grid-cols-3 gap-6">
-            {TESTIMONIALS.filter((t) => !t.featured).map((t, i) => (
+            {testimonials.filter((t) => !t.featured).map((t, i) => (
               <Reveal key={t.name} delay={i * 90}>
                 <figure className="h-full surface-grey rounded-[18px] p-8">
                   <blockquote className="text-sm leading-[1.95] text-muted-foreground">{t.quote}</blockquote>

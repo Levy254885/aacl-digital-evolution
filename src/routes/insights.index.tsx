@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { INSIGHTS } from "@/lib/aacl-content";
+import { useCms } from "@/lib/cms";
 
 export const Route = createFileRoute("/insights/")({
   head: () => ({
@@ -18,6 +19,8 @@ export const Route = createFileRoute("/insights/")({
 });
 
 function InsightsPage() {
+  const posts = useCms<typeof INSIGHTS>("blog", INSIGHTS);
+
   return (
     <PageShell>
       <PageHero
@@ -28,7 +31,7 @@ function InsightsPage() {
       />
       <section className="py-24 bg-background">
         <div className="container-x grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {INSIGHTS.map((p, i) => (
+          {posts.map((p, i) => (
             <Reveal key={p.slug} delay={i * 70}>
               <Link to="/insights/$slug" params={{ slug: p.slug }} className="group block">
                 <div className="overflow-hidden mb-6">
