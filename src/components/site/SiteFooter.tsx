@@ -23,9 +23,14 @@ export function SiteFooter() {
                   </textPath>
                 </text>
               </svg>
-              <div className="absolute inset-[34px] rounded-full bg-white flex items-center justify-center">
-                <img src={aaclLogo} alt="AACL" className="h-16 w-16 object-contain" />
+              <div className="absolute inset-[34px] flex items-center justify-center">
+                <img
+                  src={aaclLogo}
+                  alt="AACL"
+                  className="w-[86%] object-contain brightness-0 invert"
+                />
               </div>
+
             </div>
           </div>
         </div>
@@ -34,17 +39,17 @@ export function SiteFooter() {
 
         <div className="mt-14 grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="h-11 w-11 rounded-full bg-white flex items-center justify-center overflow-hidden">
-                <img src={aaclLogo} alt="AACL" className="h-full w-full object-contain" />
-              </span>
-              <span>
-                <span className="block font-display text-xl font-extrabold text-white leading-none">AACL</span>
-                <span className="block text-[9px] uppercase tracking-[0.14em] text-white/40 mt-1">
-                  Audits &amp; Assurance Consult Ltd
-                </span>
+            <div className="mb-6">
+              <img
+                src={aaclLogo}
+                alt="AACL — Audits and Assurance Consult Ltd"
+                className="h-7 w-auto object-contain brightness-0 invert"
+              />
+              <span className="mt-3 block text-[9px] uppercase tracking-[0.14em] text-white/40">
+                Audits &amp; Assurance Consult Ltd
               </span>
             </div>
+
             <p className="text-sm leading-[1.9] max-w-sm">
               At AACL, we believe in clarity, credibility and systems that turn compliance into lasting trust.
             </p>
