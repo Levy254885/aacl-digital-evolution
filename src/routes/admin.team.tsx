@@ -147,7 +147,7 @@ function TeamPage() {
                     onChange={async (e) => {
                       if (!user) return;
                       try {
-                        await upsertTeamMember({ ...m, role: e.target.value as Role }, user.uid);
+                        await upsertTeamMember({ ...m, role: e.target.value as Role }, user.uid, user.email);
                         toast.success("Role updated");
                         await refresh();
                       } catch {
