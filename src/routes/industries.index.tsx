@@ -12,8 +12,23 @@ export const Route = createFileRoute("/industries/")({
       { property: "og:title", content: "Industries — AACL" },
       { property: "og:description", content: "Sector expertise across regulated industries." },
       { property: "og:url", content: "/industries" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/industries" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+            { "@type": "ListItem", position: 2, name: "Industries", item: "/industries" },
+          ],
+        }),
+      },
+    ],
   }),
   component: IndustriesPage,
 });

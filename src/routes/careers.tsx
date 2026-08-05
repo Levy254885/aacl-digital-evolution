@@ -11,8 +11,23 @@ export const Route = createFileRoute("/careers")({
       { property: "og:title", content: "Careers at AACL" },
       { property: "og:description", content: "Careers at AACL." },
       { property: "og:url", content: "/careers" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/careers" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+            { "@type": "ListItem", position: 2, name: "Careers", item: "/careers" },
+          ],
+        }),
+      },
+    ],
   }),
   component: () => (
     <PageShell>

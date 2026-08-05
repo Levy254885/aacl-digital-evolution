@@ -12,8 +12,23 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact AACL" },
       { property: "og:description", content: "Speak with AACL about your assurance, certification or compliance programme." },
       { property: "og:url", content: "/contact" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+            { "@type": "ListItem", position: 2, name: "Contact", item: "/contact" },
+          ],
+        }),
+      },
+    ],
   }),
   component: ContactPage,
 });

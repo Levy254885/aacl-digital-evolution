@@ -18,8 +18,23 @@ export const Route = createFileRoute("/services/")({
       { property: "og:title", content: "AACL Services" },
       { property: "og:description", content: "Executive-grade security, compliance and ISO consultancy across five practice areas." },
       { property: "og:url", content: "/services" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/services" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+            { "@type": "ListItem", position: 2, name: "ISO Management Systems", item: "/services" },
+          ],
+        }),
+      },
+    ],
   }),
   component: ServicesPage,
 });

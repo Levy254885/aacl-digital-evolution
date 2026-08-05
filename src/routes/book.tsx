@@ -13,8 +13,23 @@ export const Route = createFileRoute("/book")({
       { property: "og:title", content: "Book a Consultation — AACL" },
       { property: "og:description", content: "Schedule a discovery call with AACL." },
       { property: "og:url", content: "/book" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/book" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+            { "@type": "ListItem", position: 2, name: "Book a Consultation", item: "/book" },
+          ],
+        }),
+      },
+    ],
   }),
   component: BookPage,
 });
