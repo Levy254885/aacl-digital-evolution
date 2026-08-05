@@ -190,7 +190,7 @@ export function useCms<T>(key: string, fallback: T): T {
 }
 
 /** Admin write path — guarded by Firestore rules on the server side. */
-export async function saveCmsDoc(key: string, value: unknown, uid: string) {
+export async function saveCmsDoc(key: string, value: unknown, uid: string, email?: string | null) {
   const collectionDef = getCmsCollection(key);
   if (!collectionDef) throw new Error(`Unknown content collection: ${key}`);
 
@@ -204,6 +204,18 @@ export async function saveCmsDoc(key: string, value: unknown, uid: string) {
     { ...payload, updatedAt: serverTimestamp(), updatedBy: uid },
     { merge: true },
   );
+
+  await recordAudit({
+    action: "content.publish",
+    target: key,
+    targetLabel: collectionDef.label,
+    summary:
+      collectionDef.kind === "list"
+        ? `Published ${(value as unknown[])?.length ?? 0} item(s)`
+        : `Updated ${Object.keys((value ?? {}) as Record<string, unknown>).length} field(s)`,
+    actorUid: uid,
+    actorEmail: email,
+  });
 }
 
 /** Load the current stored value for the admin editor (null when unset). */
