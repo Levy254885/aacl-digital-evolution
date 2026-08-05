@@ -44,9 +44,14 @@ function AdminOverview() {
           <p className="mt-2 text-sm text-muted-foreground">
             Grant Super Admin, Admin, Consultant, Editor, Support or Client access.
           </p>
-          <Link to="/admin/team" className="btn-outline-navy mt-4 inline-flex">
-            Manage team
-          </Link>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link to="/admin/team" className="btn-outline-navy inline-flex">
+              Manage team
+            </Link>
+            <Link to="/admin/audit" className="btn-outline-navy inline-flex">
+              View audit log
+            </Link>
+          </div>
         </div>
       )}
     </div>

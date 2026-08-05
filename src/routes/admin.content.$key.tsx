@@ -157,7 +157,7 @@ function ContentEditor() {
     if (!user) return;
     setSaving(true);
     try {
-      await saveCmsDoc(key, next, user.uid);
+      await saveCmsDoc(key, next, user.uid, user.email);
       await queryClient.invalidateQueries({ queryKey: ["cms", key] });
       toast.success(`${def!.label} published`);
     } catch {

@@ -59,7 +59,7 @@ function TeamPage() {
           e.preventDefault();
           if (!user) return;
           try {
-            await upsertTeamMember(draft, user.uid);
+            await upsertTeamMember(draft, user.uid, user.email);
             toast.success("Role saved");
             setDraft({ uid: "", email: "", name: "", role: "editor" });
             await refresh();
@@ -147,7 +147,7 @@ function TeamPage() {
                     onChange={async (e) => {
                       if (!user) return;
                       try {
-                        await upsertTeamMember({ ...m, role: e.target.value as Role }, user.uid);
+                        await upsertTeamMember({ ...m, role: e.target.value as Role }, user.uid, user.email);
                         toast.success("Role updated");
                         await refresh();
                       } catch {
@@ -169,7 +169,7 @@ function TeamPage() {
                     aria-label={`Remove ${m.email}`}
                     onClick={async () => {
                       try {
-                        await removeTeamMember(m.uid);
+                        await removeTeamMember(m.uid, user?.uid, user?.email);
                         toast.success("Access removed");
                         await refresh();
                       } catch {

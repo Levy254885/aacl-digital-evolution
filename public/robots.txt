@@ -10,5 +10,3 @@ User-agent: Google-Extended
 Allow: /
 User-agent: ClaudeBot
 Allow: /
-
-Sitemap: /sitemap.xml

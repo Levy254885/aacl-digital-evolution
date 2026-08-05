@@ -12,8 +12,23 @@ export const Route = createFileRoute("/insights/")({
       { property: "og:title", content: "AACL Insights" },
       { property: "og:description", content: "Practitioner analysis from AACL consultants." },
       { property: "og:url", content: "/insights" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/insights" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+            { "@type": "ListItem", position: 2, name: "Insights", item: "/insights" },
+          ],
+        }),
+      },
+    ],
   }),
   component: InsightsPage,
 });

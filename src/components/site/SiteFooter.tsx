@@ -132,6 +132,7 @@ export function SiteFooter() {
             <Link to="/privacy" className="hover:text-white">Privacy</Link>
             <Link to="/terms" className="hover:text-white">Terms</Link>
             <Link to="/cookies" className="hover:text-white">Cookies</Link>
+            <Link to="/careers" className="hover:text-white">Careers</Link>
           </div>
         </div>
       </div>
