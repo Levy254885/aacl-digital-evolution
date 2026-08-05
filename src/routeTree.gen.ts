@@ -29,6 +29,7 @@ import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as InsightsSlugRouteImport } from './routes/insights.$slug'
 import { Route as IndustriesSlugRouteImport } from './routes/industries.$slug'
 import { Route as AdminTeamRouteImport } from './routes/admin.team'
+import { Route as AdminAuditRouteImport } from './routes/admin.audit'
 import { Route as AdminContentKeyRouteImport } from './routes/admin.content.$key'
 
 const TermsRoute = TermsRouteImport.update({
@@ -131,6 +132,11 @@ const AdminTeamRoute = AdminTeamRouteImport.update({
   path: '/team',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminAuditRoute = AdminAuditRouteImport.update({
+  id: '/audit',
+  path: '/audit',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminContentKeyRoute = AdminContentKeyRouteImport.update({
   id: '/content/$key',
   path: '/content/$key',
@@ -150,6 +156,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
+  '/admin/audit': typeof AdminAuditRoute
   '/admin/team': typeof AdminTeamRoute
   '/industries/$slug': typeof IndustriesSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
@@ -172,6 +179,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
+  '/admin/audit': typeof AdminAuditRoute
   '/admin/team': typeof AdminTeamRoute
   '/industries/$slug': typeof IndustriesSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
@@ -196,6 +204,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/templates': typeof TemplatesRoute
   '/terms': typeof TermsRoute
+  '/admin/audit': typeof AdminAuditRoute
   '/admin/team': typeof AdminTeamRoute
   '/industries/$slug': typeof IndustriesSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
@@ -221,6 +230,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/templates'
     | '/terms'
+    | '/admin/audit'
     | '/admin/team'
     | '/industries/$slug'
     | '/insights/$slug'
@@ -243,6 +253,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/templates'
     | '/terms'
+    | '/admin/audit'
     | '/admin/team'
     | '/industries/$slug'
     | '/insights/$slug'
@@ -266,6 +277,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/templates'
     | '/terms'
+    | '/admin/audit'
     | '/admin/team'
     | '/industries/$slug'
     | '/insights/$slug'
@@ -440,6 +452,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminTeamRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/audit': {
+      id: '/admin/audit'
+      path: '/audit'
+      fullPath: '/admin/audit'
+      preLoaderRoute: typeof AdminAuditRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/content/$key': {
       id: '/admin/content/$key'
       path: '/content/$key'
@@ -451,12 +470,14 @@ declare module '@tanstack/react-router' {
 }
 
 interface AdminRouteChildren {
+  AdminAuditRoute: typeof AdminAuditRoute
   AdminTeamRoute: typeof AdminTeamRoute
   AdminIndexRoute: typeof AdminIndexRoute
   AdminContentKeyRoute: typeof AdminContentKeyRoute
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
+  AdminAuditRoute: AdminAuditRoute,
   AdminTeamRoute: AdminTeamRoute,
   AdminIndexRoute: AdminIndexRoute,
   AdminContentKeyRoute: AdminContentKeyRoute,

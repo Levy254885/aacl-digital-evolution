@@ -74,6 +74,27 @@ service cloud.firestore {
       allow write: if isEditor();
     }
 
+    // Append-only audit trail of content publishes and role changes.
+    match /auditLog/{entryId} {
+      allow read, list: if isAdmin();
+      allow create: if isEditor()
+        && request.resource.data.keys().hasOnly([
+          'action', 'target', 'targetLabel', 'summary', 'actorUid', 'actorEmail', 'at'
+        ])
+        && request.resource.data.action in [
+          'content.publish', 'content.reset', 'role.assign', 'role.remove'
+        ]
+        && request.resource.data.actorUid == request.auth.uid
+        && request.resource.data.target is string
+        && request.resource.data.target.size() <= 120
+        && request.resource.data.targetLabel is string
+        && request.resource.data.targetLabel.size() <= 160
+        && request.resource.data.summary is string
+        && request.resource.data.summary.size() <= 500
+        && request.resource.data.at == request.time;
+      allow update, delete: if false;
+    }
+
     // Role assignments. Readable by the owner and admins; only Super Admins write.
     match /roles/{uid} {
       allow read: if request.auth != null && (request.auth.uid == uid || isAdmin());
