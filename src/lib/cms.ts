@@ -11,6 +11,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
 import { getFirebaseDb, isFirebaseConfigured } from "@/lib/firebase";
+import { recordAudit } from "@/lib/audit";
 
 import { SITE, SERVICES, INSIGHTS, INDUSTRIES } from "@/lib/aacl-content";
 import { PILLARS, STATS, TESTIMONIALS } from "@/lib/aacl-nav";
