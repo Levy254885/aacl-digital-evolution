@@ -13,6 +13,8 @@ export const Route = createFileRoute("/book")({
       { name: "description", content: "Book a consultation with an AACL senior consultant on your certification, risk or compliance programme." },
       { property: "og:title", content: "Book a Consultation — AACL" },
       { property: "og:description", content: "Schedule a discovery call with AACL." },
+      { name: "twitter:title", content: "Book a Consultation — AACL" },
+      { name: "twitter:description", content: "Schedule a discovery call with AACL." },
       { property: "og:url", content: absUrl("/book") },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

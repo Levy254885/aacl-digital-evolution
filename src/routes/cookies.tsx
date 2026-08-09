@@ -9,6 +9,8 @@ export const Route = createFileRoute("/cookies")({
       { name: "description", content: "How the AACL website uses cookies and similar technologies." },
       { property: "og:title", content: "Cookie Policy — AACL" },
       { property: "og:description", content: "AACL cookie usage." },
+      { name: "twitter:title", content: "Cookie Policy — AACL" },
+      { name: "twitter:description", content: "AACL cookie usage." },
       { property: "og:url", content: absUrl("/cookies") },
     ],
     links: [{ rel: "canonical", href: absUrl("/cookies") }],

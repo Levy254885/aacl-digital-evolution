@@ -54,6 +54,8 @@ export const Route = createFileRoute("/services/$slug")({
         { name: "description", content: s.summary },
         { property: "og:title", content: `${s.title} — AACL` },
         { property: "og:description", content: s.summary },
+        { name: "twitter:title", content: `${s.title} — AACL` },
+        { name: "twitter:description", content: s.summary },
         { property: "og:url", content: absUrl(`/services/${s.slug}`) },
         { property: "og:type", content: "article" },
         { property: "og:image", content: s.image },

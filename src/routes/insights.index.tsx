@@ -12,6 +12,8 @@ export const Route = createFileRoute("/insights/")({
       { name: "description", content: "Analysis, guidance and practitioner perspectives on security, compliance, ISO management systems and enterprise risk." },
       { property: "og:title", content: "AACL Insights" },
       { property: "og:description", content: "Practitioner analysis from AACL consultants." },
+      { name: "twitter:title", content: "AACL Insights" },
+      { name: "twitter:description", content: "Practitioner analysis from AACL consultants." },
       { property: "og:url", content: absUrl("/insights") },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

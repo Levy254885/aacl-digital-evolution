@@ -9,6 +9,8 @@ export const Route = createFileRoute("/terms")({
       { name: "description", content: "Terms and conditions governing use of the AACL website and services." },
       { property: "og:title", content: "Terms & Conditions — AACL" },
       { property: "og:description", content: "AACL website terms." },
+      { name: "twitter:title", content: "Terms & Conditions — AACL" },
+      { name: "twitter:description", content: "AACL website terms." },
       { property: "og:url", content: absUrl("/terms") },
     ],
     links: [{ rel: "canonical", href: absUrl("/terms") }],

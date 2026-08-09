@@ -18,6 +18,8 @@ export const Route = createFileRoute("/services/")({
       { name: "description", content: "AACL delivers risk assessments, ISO management systems, security standards implementation, SMaaS and statutory compliance consultancy." },
       { property: "og:title", content: "AACL Services" },
       { property: "og:description", content: "Executive-grade security, compliance and ISO consultancy across five practice areas." },
+      { name: "twitter:title", content: "AACL Services" },
+      { name: "twitter:description", content: "Executive-grade security, compliance and ISO consultancy across five practice areas." },
       { property: "og:url", content: absUrl("/services") },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

@@ -11,6 +11,8 @@ export const Route = createFileRoute("/careers")({
       { name: "description", content: "Explore career opportunities at Audits and Assurance Consult Ltd — a specialist consultancy for security, compliance and ISO management systems." },
       { property: "og:title", content: "Careers at AACL" },
       { property: "og:description", content: "Careers at AACL." },
+      { name: "twitter:title", content: "Careers at AACL" },
+      { name: "twitter:description", content: "Careers at AACL." },
       { property: "og:url", content: absUrl("/careers") },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

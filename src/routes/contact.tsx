@@ -12,6 +12,8 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: `Contact AACL at ${SITE.address.line1}, ${SITE.address.line2}, Nairobi. Phone ${SITE.phone}. Email ${SITE.email}.` },
       { property: "og:title", content: "Contact AACL" },
       { property: "og:description", content: "Speak with AACL about your assurance, certification or compliance programme." },
+      { name: "twitter:title", content: "Contact AACL" },
+      { name: "twitter:description", content: "Speak with AACL about your assurance, certification or compliance programme." },
       { property: "og:url", content: absUrl("/contact") },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

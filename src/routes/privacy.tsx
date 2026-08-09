@@ -28,6 +28,8 @@ export const Route = createFileRoute("/privacy")({
       { name: "description", content: "How Audits and Assurance Consult Ltd collects, uses and protects personal information." },
       { property: "og:title", content: "Privacy Policy — AACL" },
       { property: "og:description", content: "AACL privacy policy." },
+      { name: "twitter:title", content: "Privacy Policy — AACL" },
+      { name: "twitter:description", content: "AACL privacy policy." },
       { property: "og:url", content: absUrl("/privacy") },
     ],
     links: [{ rel: "canonical", href: absUrl("/privacy") }],

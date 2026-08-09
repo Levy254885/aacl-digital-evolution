@@ -18,6 +18,8 @@ export const Route = createFileRoute("/insights/$slug")({
         { name: "description", content: p.excerpt },
         { property: "og:title", content: p.title },
         { property: "og:description", content: p.excerpt },
+        { name: "twitter:title", content: p.title },
+        { name: "twitter:description", content: p.excerpt },
         { property: "og:type", content: "article" },
         { property: "og:url", content: absUrl(`/insights/${p.slug}`) },
         { property: "og:image", content: p.image },

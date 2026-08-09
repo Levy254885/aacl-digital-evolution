@@ -12,6 +12,8 @@ export const Route = createFileRoute("/industries/")({
       { name: "description", content: "AACL delivers specialist assurance across banking, security printing, manufacturing, hospitality, pharmaceuticals, telecommunications and more." },
       { property: "og:title", content: "Industries — AACL" },
       { property: "og:description", content: "Sector expertise across regulated industries." },
+      { name: "twitter:title", content: "Industries — AACL" },
+      { name: "twitter:description", content: "Sector expertise across regulated industries." },
       { property: "og:url", content: absUrl("/industries") },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
