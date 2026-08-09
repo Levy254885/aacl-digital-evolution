@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { absUrl } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { INSIGHTS } from "@/lib/aacl-content";
 
@@ -18,11 +19,11 @@ export const Route = createFileRoute("/insights/$slug")({
         { property: "og:title", content: p.title },
         { property: "og:description", content: p.excerpt },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: `/insights/${p.slug}` },
+        { property: "og:url", content: absUrl(`/insights/${p.slug}`) },
         { property: "og:image", content: p.image },
         { name: "twitter:image", content: p.image },
       ],
-      links: [{ rel: "canonical", href: `/insights/${p.slug}` }],
+      links: [{ rel: "canonical", href: absUrl(`/insights/${p.slug}`) }],
     };
   },
   component: InsightDetail,

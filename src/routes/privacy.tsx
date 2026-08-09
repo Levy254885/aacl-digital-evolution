@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { absUrl } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 
 function LegalPage({ title, sections }: { title: string; sections: { h: string; p: string[] }[] }) {
@@ -27,9 +28,9 @@ export const Route = createFileRoute("/privacy")({
       { name: "description", content: "How Audits and Assurance Consult Ltd collects, uses and protects personal information." },
       { property: "og:title", content: "Privacy Policy — AACL" },
       { property: "og:description", content: "AACL privacy policy." },
-      { property: "og:url", content: "/privacy" },
+      { property: "og:url", content: absUrl("/privacy") },
     ],
-    links: [{ rel: "canonical", href: "/privacy" }],
+    links: [{ rel: "canonical", href: absUrl("/privacy") }],
   }),
   component: () => (
     <LegalPage

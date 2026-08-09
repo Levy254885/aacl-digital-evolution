@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { absUrl } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { ArrowRight } from "lucide-react";
@@ -10,11 +11,11 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "AACL is a specialist East African consultancy in security, compliance, ISO management systems and enterprise risk." },
       { property: "og:title", content: "About AACL" },
       { property: "og:description", content: "Executive assurance consultancy for regulated organisations." },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: absUrl("/about") },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: absUrl("/about") }],
     scripts: [
       {
         type: "application/ld+json",

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { absUrl } from "@/lib/site-url";
 import { useState } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import {
@@ -91,10 +92,10 @@ export const Route = createFileRoute("/ecompliance")({
         { property: "og:title", content: TITLE },
         { property: "og:description", content: DESCRIPTION },
         { property: "og:type", content: "website" },
-        { property: "og:url", content: "/ecompliance" },
+        { property: "og:url", content: absUrl("/ecompliance") },
         { name: "twitter:card", content: "summary_large_image" },
       ],
-      links: [{ rel: "canonical", href: "/ecompliance" }],
+      links: [{ rel: "canonical", href: absUrl("/ecompliance") }],
       scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonld) }],
     };
   },

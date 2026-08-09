@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { absUrl } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { INDUSTRIES, type IndustryMeta } from "@/lib/aacl-content";
@@ -19,11 +20,11 @@ export const Route = createFileRoute("/industries/$slug")({
         { name: "description", content: i.short },
         { property: "og:title", content: `${i.name} — AACL` },
         { property: "og:description", content: i.short },
-        { property: "og:url", content: `/industries/${i.slug}` },
+        { property: "og:url", content: absUrl(`/industries/${i.slug}`) },
         { property: "og:image", content: i.image },
         { name: "twitter:image", content: i.image },
       ],
-      links: [{ rel: "canonical", href: `/industries/${i.slug}` }],
+      links: [{ rel: "canonical", href: absUrl(`/industries/${i.slug}`) }],
     };
   },
   component: IndustryDetail,

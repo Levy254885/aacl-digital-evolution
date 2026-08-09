@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { absUrl } from "@/lib/site-url";
 import { PageShell } from "@/components/site/PageShell";
 import { Reveal, TextReveal } from "@/components/site/Reveal";
 import { SERVICES, INDUSTRIES, INSIGHTS } from "@/lib/aacl-content";
@@ -33,7 +34,7 @@ export const Route = createFileRoute("/")({
         content:
           "Executive consultancy for security, compliance, governance, risk and ISO management systems across East Africa.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: absUrl("/") },
       {
         property: "og:image",
         content:
@@ -45,7 +46,7 @@ export const Route = createFileRoute("/")({
           "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=80",
       },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: absUrl("/") }],
   }),
   component: HomePage,
 });

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { absUrl } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { ArrowRight } from "lucide-react";
@@ -10,11 +11,11 @@ export const Route = createFileRoute("/careers")({
       { name: "description", content: "Explore career opportunities at Audits and Assurance Consult Ltd — a specialist consultancy for security, compliance and ISO management systems." },
       { property: "og:title", content: "Careers at AACL" },
       { property: "og:description", content: "Careers at AACL." },
-      { property: "og:url", content: "/careers" },
+      { property: "og:url", content: absUrl("/careers") },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/careers" }],
+    links: [{ rel: "canonical", href: absUrl("/careers") }],
     scripts: [
       {
         type: "application/ld+json",

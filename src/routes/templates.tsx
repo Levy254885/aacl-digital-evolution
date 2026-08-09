@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { absUrl } from "@/lib/site-url";
 import { useMemo, useRef, useState } from "react";
 import { toast } from "sonner";
 import {
@@ -66,10 +67,10 @@ export const Route = createFileRoute("/templates")({
         { property: "og:title", content: TITLE },
         { property: "og:description", content: DESCRIPTION },
         { property: "og:type", content: "website" },
-        { property: "og:url", content: "/templates" },
+        { property: "og:url", content: absUrl("/templates") },
         { name: "twitter:card", content: "summary_large_image" },
       ],
-      links: [{ rel: "canonical", href: "/templates" }],
+      links: [{ rel: "canonical", href: absUrl("/templates") }],
       scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonld) }],
     };
   },
