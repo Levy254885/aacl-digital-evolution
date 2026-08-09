@@ -35,6 +35,12 @@ export const Route = createFileRoute("/")({
           "Executive consultancy for security, compliance, governance, risk and ISO management systems across East Africa.",
       },
       { property: "og:url", content: absUrl("/") },
+      { name: "twitter:title", content: "AACL — Security, Compliance & ISO Management Systems" },
+      {
+        name: "twitter:description",
+        content:
+          "Executive consultancy for security, compliance, governance, risk and ISO management systems.",
+      },
       {
         property: "og:image",
         content:
