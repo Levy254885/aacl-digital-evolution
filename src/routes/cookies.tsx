@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { absUrl } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 
 export const Route = createFileRoute("/cookies")({
@@ -8,9 +9,11 @@ export const Route = createFileRoute("/cookies")({
       { name: "description", content: "How the AACL website uses cookies and similar technologies." },
       { property: "og:title", content: "Cookie Policy — AACL" },
       { property: "og:description", content: "AACL cookie usage." },
-      { property: "og:url", content: "/cookies" },
+      { name: "twitter:title", content: "Cookie Policy — AACL" },
+      { name: "twitter:description", content: "AACL cookie usage." },
+      { property: "og:url", content: absUrl("/cookies") },
     ],
-    links: [{ rel: "canonical", href: "/cookies" }],
+    links: [{ rel: "canonical", href: absUrl("/cookies") }],
   }),
   component: () => (
     <PageShell>

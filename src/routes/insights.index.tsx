@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { absUrl } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { INSIGHTS } from "@/lib/aacl-content";
@@ -11,11 +12,13 @@ export const Route = createFileRoute("/insights/")({
       { name: "description", content: "Analysis, guidance and practitioner perspectives on security, compliance, ISO management systems and enterprise risk." },
       { property: "og:title", content: "AACL Insights" },
       { property: "og:description", content: "Practitioner analysis from AACL consultants." },
-      { property: "og:url", content: "/insights" },
+      { name: "twitter:title", content: "AACL Insights" },
+      { name: "twitter:description", content: "Practitioner analysis from AACL consultants." },
+      { property: "og:url", content: absUrl("/insights") },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/insights" }],
+    links: [{ rel: "canonical", href: absUrl("/insights") }],
     scripts: [
       {
         type: "application/ld+json",
@@ -23,8 +26,8 @@ export const Route = createFileRoute("/insights/")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "Insights", item: "/insights" },
+            { "@type": "ListItem", position: 1, name: "Home", item: absUrl("/") },
+            { "@type": "ListItem", position: 2, name: "Insights", item: absUrl("/insights") },
           ],
         }),
       },

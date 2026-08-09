@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { absUrl } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 
 export const Route = createFileRoute("/terms")({
@@ -8,9 +9,11 @@ export const Route = createFileRoute("/terms")({
       { name: "description", content: "Terms and conditions governing use of the AACL website and services." },
       { property: "og:title", content: "Terms & Conditions — AACL" },
       { property: "og:description", content: "AACL website terms." },
-      { property: "og:url", content: "/terms" },
+      { name: "twitter:title", content: "Terms & Conditions — AACL" },
+      { name: "twitter:description", content: "AACL website terms." },
+      { property: "og:url", content: absUrl("/terms") },
     ],
-    links: [{ rel: "canonical", href: "/terms" }],
+    links: [{ rel: "canonical", href: absUrl("/terms") }],
   }),
   component: () => (
     <PageShell>

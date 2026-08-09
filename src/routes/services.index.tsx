@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { absUrl } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { SERVICES } from "@/lib/aacl-content";
@@ -17,11 +18,13 @@ export const Route = createFileRoute("/services/")({
       { name: "description", content: "AACL delivers risk assessments, ISO management systems, security standards implementation, SMaaS and statutory compliance consultancy." },
       { property: "og:title", content: "AACL Services" },
       { property: "og:description", content: "Executive-grade security, compliance and ISO consultancy across five practice areas." },
-      { property: "og:url", content: "/services" },
+      { name: "twitter:title", content: "AACL Services" },
+      { name: "twitter:description", content: "Executive-grade security, compliance and ISO consultancy across five practice areas." },
+      { property: "og:url", content: absUrl("/services") },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: absUrl("/services") }],
     scripts: [
       {
         type: "application/ld+json",
@@ -29,8 +32,8 @@ export const Route = createFileRoute("/services/")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "ISO Management Systems", item: "/services" },
+            { "@type": "ListItem", position: 1, name: "Home", item: absUrl("/") },
+            { "@type": "ListItem", position: 2, name: "ISO Management Systems", item: absUrl("/services") },
           ],
         }),
       },

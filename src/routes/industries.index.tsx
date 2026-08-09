@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { absUrl } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { INDUSTRIES } from "@/lib/aacl-content";
@@ -11,11 +12,13 @@ export const Route = createFileRoute("/industries/")({
       { name: "description", content: "AACL delivers specialist assurance across banking, security printing, manufacturing, hospitality, pharmaceuticals, telecommunications and more." },
       { property: "og:title", content: "Industries — AACL" },
       { property: "og:description", content: "Sector expertise across regulated industries." },
-      { property: "og:url", content: "/industries" },
+      { name: "twitter:title", content: "Industries — AACL" },
+      { name: "twitter:description", content: "Sector expertise across regulated industries." },
+      { property: "og:url", content: absUrl("/industries") },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/industries" }],
+    links: [{ rel: "canonical", href: absUrl("/industries") }],
     scripts: [
       {
         type: "application/ld+json",
@@ -23,8 +26,8 @@ export const Route = createFileRoute("/industries/")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "Industries", item: "/industries" },
+            { "@type": "ListItem", position: 1, name: "Home", item: absUrl("/") },
+            { "@type": "ListItem", position: 2, name: "Industries", item: absUrl("/industries") },
           ],
         }),
       },

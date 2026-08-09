@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { absUrl, SITE_URL } from "@/lib/site-url";
 import { PageShell } from "@/components/site/PageShell";
 import { Reveal, TextReveal } from "@/components/site/Reveal";
 import { SERVICES, INDUSTRIES, INSIGHTS } from "@/lib/aacl-content";
@@ -33,7 +34,13 @@ export const Route = createFileRoute("/")({
         content:
           "Executive consultancy for security, compliance, governance, risk and ISO management systems across East Africa.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: absUrl("/") },
+      { name: "twitter:title", content: "AACL — Security, Compliance & ISO Management Systems" },
+      {
+        name: "twitter:description",
+        content:
+          "Executive consultancy for security, compliance, governance, risk and ISO management systems.",
+      },
       {
         property: "og:image",
         content:
@@ -45,7 +52,24 @@ export const Route = createFileRoute("/")({
           "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=80",
       },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: absUrl("/") }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": absUrl("/"),
+          url: absUrl("/"),
+          name: "AACL — Security, Compliance & ISO Management Systems",
+          description:
+            "Audits and Assurance Consult Ltd (AACL) delivers security, compliance, governance, risk and ISO management system consultancy.",
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+          about: { "@id": `${SITE_URL}/#organization` },
+          inLanguage: "en",
+        }),
+      },
+    ],
   }),
   component: HomePage,
 });

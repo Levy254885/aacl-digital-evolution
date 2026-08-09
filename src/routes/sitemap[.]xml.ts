@@ -2,7 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { SERVICES, INDUSTRIES, INSIGHTS } from "@/lib/aacl-content";
 
-const BASE_URL = "";
+import { SITE_URL } from "@/lib/site-url";
+
+const BASE_URL = SITE_URL;
 
 interface SitemapEntry { path: string; changefreq?: string; priority?: string; }
 

@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { absUrl } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { SERVICES, type ServiceMeta } from "@/lib/aacl-content";
@@ -40,9 +41,9 @@ export const Route = createFileRoute("/services/$slug")({
         {
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "Services", item: "/services" },
-            { "@type": "ListItem", position: 3, name: s.title, item: `/services/${s.slug}` },
+            { "@type": "ListItem", position: 1, name: "Home", item: absUrl("/") },
+            { "@type": "ListItem", position: 2, name: "Services", item: absUrl("/services") },
+            { "@type": "ListItem", position: 3, name: s.title, item: absUrl(`/services/${s.slug}`) },
           ],
         },
       ],
@@ -53,12 +54,14 @@ export const Route = createFileRoute("/services/$slug")({
         { name: "description", content: s.summary },
         { property: "og:title", content: `${s.title} — AACL` },
         { property: "og:description", content: s.summary },
-        { property: "og:url", content: `/services/${s.slug}` },
+        { name: "twitter:title", content: `${s.title} — AACL` },
+        { name: "twitter:description", content: s.summary },
+        { property: "og:url", content: absUrl(`/services/${s.slug}`) },
         { property: "og:type", content: "article" },
         { property: "og:image", content: s.image },
         { name: "twitter:image", content: s.image },
       ],
-      links: [{ rel: "canonical", href: `/services/${s.slug}` }],
+      links: [{ rel: "canonical", href: absUrl(`/services/${s.slug}`) }],
       scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonld) }],
     };
   },

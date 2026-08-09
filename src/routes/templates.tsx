@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { absUrl } from "@/lib/site-url";
 import { useMemo, useRef, useState } from "react";
 import { toast } from "sonner";
 import {
@@ -53,8 +54,8 @@ export const Route = createFileRoute("/templates")({
         {
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "Templates", item: "/templates" },
+            { "@type": "ListItem", position: 1, name: "Home", item: absUrl("/") },
+            { "@type": "ListItem", position: 2, name: "Templates", item: absUrl("/templates") },
           ],
         },
       ],
@@ -65,11 +66,13 @@ export const Route = createFileRoute("/templates")({
         { name: "description", content: DESCRIPTION },
         { property: "og:title", content: TITLE },
         { property: "og:description", content: DESCRIPTION },
+        { name: "twitter:title", content: TITLE },
+        { name: "twitter:description", content: DESCRIPTION },
         { property: "og:type", content: "website" },
-        { property: "og:url", content: "/templates" },
+        { property: "og:url", content: absUrl("/templates") },
         { name: "twitter:card", content: "summary_large_image" },
       ],
-      links: [{ rel: "canonical", href: "/templates" }],
+      links: [{ rel: "canonical", href: absUrl("/templates") }],
       scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonld) }],
     };
   },

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { absUrl } from "@/lib/site-url";
 import { ContactForm } from "@/components/site/ContactForm";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
@@ -11,11 +12,13 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: `Contact AACL at ${SITE.address.line1}, ${SITE.address.line2}, Nairobi. Phone ${SITE.phone}. Email ${SITE.email}.` },
       { property: "og:title", content: "Contact AACL" },
       { property: "og:description", content: "Speak with AACL about your assurance, certification or compliance programme." },
-      { property: "og:url", content: "/contact" },
+      { name: "twitter:title", content: "Contact AACL" },
+      { name: "twitter:description", content: "Speak with AACL about your assurance, certification or compliance programme." },
+      { property: "og:url", content: absUrl("/contact") },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: absUrl("/contact") }],
     scripts: [
       {
         type: "application/ld+json",
@@ -23,8 +26,8 @@ export const Route = createFileRoute("/contact")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "Contact", item: "/contact" },
+            { "@type": "ListItem", position: 1, name: "Home", item: absUrl("/") },
+            { "@type": "ListItem", position: 2, name: "Contact", item: absUrl("/contact") },
           ],
         }),
       },
