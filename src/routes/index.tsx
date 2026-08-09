@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { absUrl } from "@/lib/site-url";
+import { absUrl, SITE_URL } from "@/lib/site-url";
 import { PageShell } from "@/components/site/PageShell";
 import { Reveal, TextReveal } from "@/components/site/Reveal";
 import { SERVICES, INDUSTRIES, INSIGHTS } from "@/lib/aacl-content";
@@ -47,6 +47,23 @@ export const Route = createFileRoute("/")({
       },
     ],
     links: [{ rel: "canonical", href: absUrl("/") }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": absUrl("/"),
+          url: absUrl("/"),
+          name: "AACL — Security, Compliance & ISO Management Systems",
+          description:
+            "Audits and Assurance Consult Ltd (AACL) delivers security, compliance, governance, risk and ISO management system consultancy.",
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+          about: { "@id": `${SITE_URL}/#organization` },
+          inLanguage: "en",
+        }),
+      },
+    ],
   }),
   component: HomePage,
 });

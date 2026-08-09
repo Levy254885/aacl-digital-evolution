@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/sonner";
 import { CurrencyProvider } from "@/lib/currency";
+import { absUrl, SITE_URL } from "@/lib/site-url";
 
 
 
@@ -81,12 +82,12 @@ const ORG_JSONLD = {
   "@graph": [
     {
       "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
-      "@id": "/#organization",
+      "@id": `${SITE_URL}/#organization`,
       name: "Audits and Assurance Consult Ltd",
       alternateName: "AACL",
-      url: "/",
-      logo: "/favicon.png",
-      image: "/favicon.png",
+      url: absUrl("/"),
+      logo: absUrl("/favicon.png"),
+      image: absUrl("/favicon.png"),
       description:
         "East Africa's specialist consultancy for security, compliance, governance, risk and ISO management systems.",
       telephone: "+254 719 876 524",
@@ -102,10 +103,10 @@ const ORG_JSONLD = {
     },
     {
       "@type": "WebSite",
-      "@id": "/#website",
-      url: "/",
+      "@id": `${SITE_URL}/#website`,
+      url: absUrl("/"),
       name: "AACL — Audits and Assurance Consult Ltd",
-      publisher: { "@id": "/#organization" },
+      publisher: { "@id": `${SITE_URL}/#organization` },
       inLanguage: "en",
     },
   ],
