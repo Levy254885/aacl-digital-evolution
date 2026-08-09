@@ -30,8 +30,8 @@ export const Route = createFileRoute("/services/")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "ISO Management Systems", item: "/services" },
+            { "@type": "ListItem", position: 1, name: "Home", item: absUrl("/") },
+            { "@type": "ListItem", position: 2, name: "ISO Management Systems", item: absUrl("/services") },
           ],
         }),
       },

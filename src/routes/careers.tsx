@@ -23,8 +23,8 @@ export const Route = createFileRoute("/careers")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "Careers", item: "/careers" },
+            { "@type": "ListItem", position: 1, name: "Home", item: absUrl("/") },
+            { "@type": "ListItem", position: 2, name: "Careers", item: absUrl("/careers") },
           ],
         }),
       },

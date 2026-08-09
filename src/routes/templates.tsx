@@ -54,8 +54,8 @@ export const Route = createFileRoute("/templates")({
         {
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "Templates", item: "/templates" },
+            { "@type": "ListItem", position: 1, name: "Home", item: absUrl("/") },
+            { "@type": "ListItem", position: 2, name: "Templates", item: absUrl("/templates") },
           ],
         },
       ],

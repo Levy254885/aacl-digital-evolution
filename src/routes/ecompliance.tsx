@@ -79,8 +79,8 @@ export const Route = createFileRoute("/ecompliance")({
         {
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "eCompliance", item: "/ecompliance" },
+            { "@type": "ListItem", position: 1, name: "Home", item: absUrl("/") },
+            { "@type": "ListItem", position: 2, name: "eCompliance", item: absUrl("/ecompliance") },
           ],
         },
       ],
