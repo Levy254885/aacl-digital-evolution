@@ -64,7 +64,7 @@ function TeamPage() {
             setDraft({ uid: "", email: "", name: "", role: "editor" });
             await refresh();
           } catch {
-            toast.error("Save failed — Super Admin rights may be required.");
+            toast.error("Save failed. Super Admin rights may be required.");
           }
         }}
         className="mt-8 grid gap-4 rounded-[16px] border border-border p-6 sm:grid-cols-4"

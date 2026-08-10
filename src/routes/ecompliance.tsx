@@ -31,9 +31,9 @@ import {
   DELIVERY_STRAPLINE,
 } from "@/lib/ecompliance-content";
 
-const TITLE = "eCompliance — Compliance as a Service, Onsite or Remote | AACL";
+const TITLE = "eCompliance. Compliance as a Service, Onsite or Remote | AACL";
 const DESCRIPTION =
-  "AACL eCompliance is a managed compliance platform: dashboards, CAPA, risk registers, audit tracking, compliance calendars and document workflows — delivered onsite or remotely, worldwide.";
+  "AACL eCompliance is a managed compliance platform: dashboards, CAPA, risk registers, audit tracking, compliance calendars and document workflows. Delivered onsite or remotely, worldwide.";
 
 const ICONS: Record<string, LucideIcon> = {
   gauge: Gauge,
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/ecompliance")({
       "@graph": [
         {
           "@type": "Service",
-          name: "eCompliance — Compliance as a Service",
+          name: "eCompliance. Compliance as a Service",
           serviceType: "Managed ISO compliance platform and consultancy",
           description: DESCRIPTION,
           provider: { "@type": "Organization", name: "Audits and Assurance Consult Ltd", url: "/" },
@@ -112,7 +112,7 @@ function ECompliancePage() {
       <PageHero
         eyebrow="eCompliance"
         title="World Class Compliance to Drive Your Business Forward."
-        lead="Cybersecurity audits, health & safety, physical and logical security and ongoing ISO maintenance — handled continuously for one predictable monthly fee, onsite or remote, anywhere in the world."
+        lead="Cybersecurity audits, health & safety, physical and logical security and ongoing ISO maintenance. Handled continuously for one predictable monthly fee, onsite or remote, anywhere in the world."
       />
 
 

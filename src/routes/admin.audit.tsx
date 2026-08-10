@@ -72,7 +72,7 @@ function AuditPage() {
         <div>
           <h1 className="font-display text-2xl md:text-3xl font-extrabold">Audit log</h1>
           <p className="mt-3 max-w-2xl text-sm leading-[1.9] text-muted-foreground">
-            An append-only record of every content publish and role change — who did it, what
+            An append-only record of every content publish and role change. Who did it, what
             changed and when. Entries cannot be edited or deleted by anyone, including Super Admins.
           </p>
         </div>

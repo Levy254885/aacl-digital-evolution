@@ -105,7 +105,7 @@ export const CMS_COLLECTIONS: CmsCollection[] = [
   },
   {
     key: "pricing_iso",
-    label: "Pricing — ISO certification",
+    label: "Pricing. ISO certification",
     description: "Tier, from (number, USD), price label and notes.",
     kind: "list",
     editableBy: "admin",
@@ -113,7 +113,7 @@ export const CMS_COLLECTIONS: CmsCollection[] = [
   },
   {
     key: "pricing_templates",
-    label: "Pricing — document templates",
+    label: "Pricing. Document templates",
     description: "Template pricing tiers.",
     kind: "list",
     editableBy: "admin",
@@ -121,7 +121,7 @@ export const CMS_COLLECTIONS: CmsCollection[] = [
   },
   {
     key: "pricing_ecompliance",
-    label: "Pricing — eCompliance",
+    label: "Pricing. ECompliance",
     description: "Monthly eCompliance subscription tiers.",
     kind: "list",
     editableBy: "admin",
@@ -190,7 +190,7 @@ export function useCms<T>(key: string, fallback: T): T {
   return (data as T | null | undefined) ?? fallback;
 }
 
-/** Admin write path — guarded by Firestore rules on the server side. */
+/** Admin write path. Guarded by Firestore rules on the server side. */
 export async function saveCmsDoc(key: string, value: unknown, uid: string, email?: string | null) {
   const collectionDef = getCmsCollection(key);
   if (!collectionDef) throw new Error(`Unknown content collection: ${key}`);

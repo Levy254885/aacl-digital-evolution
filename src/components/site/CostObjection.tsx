@@ -12,7 +12,7 @@ export function CostBanner({ variant = "a" }: { variant?: "a" | "b" }) {
           {COST_BANNERS[variant]}
         </p>
         <Link to="/contact" className="btn-outline-gold mt-8">
-          Talk Budget First — No Obligation
+          Talk Budget First. No Obligation
         </Link>
       </div>
     </Reveal>

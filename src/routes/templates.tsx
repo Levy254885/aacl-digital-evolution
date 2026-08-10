@@ -26,7 +26,7 @@ import {
 } from "@/lib/doc-generator";
 import { saveDocumentRequest, uploadCompanyLogo } from "@/lib/document-requests";
 
-const TITLE = "AI ISO Document Generator — Branded Templates | AACL";
+const TITLE = "AI ISO Document Generator. Branded Templates | AACL";
 const DESCRIPTION =
   "Generate branded, audit-ready ISO manuals, policies and procedures in minutes. Choose a document, add your logo and company details, preview, pay securely and download as PDF or DOCX.";
 
@@ -187,9 +187,9 @@ function TemplatesPage() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="Templates — AI Document Generator"
-        title="Your Next Policy Document — Ready Before Your Coffee Gets Cold."
-        lead="Enter your company details, upload your logo, describe what you need — and download a fully branded, audit-ready ISO manual, policy or procedure in minutes. Preview before you pay, then export as PDF or DOCX."
+        eyebrow="Templates. AI Document Generator"
+        title="Your Next Policy Document. Ready Before Your Coffee Gets Cold."
+        lead="Enter your company details, upload your logo, describe what you need. And download a fully branded, audit-ready ISO manual, policy or procedure in minutes. Preview before you pay, then export as PDF or DOCX."
       />
 
 
@@ -219,7 +219,7 @@ function TemplatesPage() {
 
       <section className="py-16 md:py-20 bg-background">
         <div className="container-x">
-          {/* Step 0 — choose document */}
+          {/* Step 0, choose document */}
           {step === 0 && (
             <div>
               <h2 className="font-display text-3xl mb-8">Choose a document type</h2>
@@ -256,7 +256,7 @@ function TemplatesPage() {
             </div>
           )}
 
-          {/* Step 1 — branding */}
+          {/* Step 1, branding */}
           {step === 1 && (
             <div className="max-w-2xl">
               <h2 className="font-display text-3xl mb-4">Upload your company logo</h2>
@@ -299,7 +299,7 @@ function TemplatesPage() {
             </div>
           )}
 
-          {/* Step 2 — details */}
+          {/* Step 2, details */}
           {step === 2 && (
             <div className="max-w-3xl">
               <h2 className="font-display text-3xl mb-8">Company details and requirements</h2>
@@ -319,7 +319,7 @@ function TemplatesPage() {
               <textarea
                 className="field-line mt-5"
                 rows={6}
-                placeholder="Describe your requirements — sites, headcount, existing certifications, regulators, anything the document must reflect."
+                placeholder="Describe your requirements. Sites, headcount, existing certifications, regulators, anything the document must reflect."
                 value={details.requirements}
                 onChange={set("requirements")}
               />
@@ -331,7 +331,7 @@ function TemplatesPage() {
             </div>
           )}
 
-          {/* Step 3 — preview */}
+          {/* Step 3, preview */}
           {step === 3 && template && (
             <div>
               <div className="flex items-end justify-between flex-wrap gap-4 mb-6">
@@ -356,12 +356,12 @@ function TemplatesPage() {
             </div>
           )}
 
-          {/* Step 4 — payment */}
+          {/* Step 4, payment */}
           {step === 4 && template && (
             <div className="max-w-2xl">
               <h2 className="font-display text-3xl mb-2">Payment</h2>
               <p className="text-muted-foreground mb-8">
-                {template.name} — <span className="text-foreground">${template.price} USD</span>. One-time payment,
+                {template.name}, <span className="text-foreground">${template.price} USD</span>. One-time payment,
                 includes the editable DOCX and print-ready PDF.
               </p>
               <div className="grid sm:grid-cols-3 gap-4">
@@ -400,7 +400,7 @@ function TemplatesPage() {
             </div>
           )}
 
-          {/* Step 5 — download */}
+          {/* Step 5, download */}
           {step === 5 && template && (
             <div className="max-w-2xl">
               <div className="w-12 h-12 rounded-full bg-[var(--gold)] text-[var(--navy-deep)] grid place-items-center">

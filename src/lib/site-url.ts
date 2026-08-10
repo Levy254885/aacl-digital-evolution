@@ -2,7 +2,7 @@
  * Single source of truth for the canonical production origin.
  *
  * Change it in one place (or set VITE_SITE_URL in Vercel) when the official
- * AACL custom domain goes live — no URLs are hardcoded anywhere else.
+ * AACL custom domain goes live, no URLs are hardcoded anywhere else.
  */
 const FALLBACK_SITE_URL = "https://aacl-assurance.vercel.app";
 

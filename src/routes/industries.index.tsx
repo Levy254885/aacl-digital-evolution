@@ -8,11 +8,11 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/industries/")({
   head: () => ({
     meta: [
-      { title: "Industries — AACL Sector Expertise" },
+      { title: "Industries | AACL Sector Expertise" },
       { name: "description", content: "AACL delivers specialist assurance across banking, security printing, manufacturing, hospitality, pharmaceuticals, telecommunications and more." },
-      { property: "og:title", content: "Industries — AACL" },
+      { property: "og:title", content: "Industries | AACL" },
       { property: "og:description", content: "Sector expertise across regulated industries." },
-      { name: "twitter:title", content: "Industries — AACL" },
+      { name: "twitter:title", content: "Industries | AACL" },
       { name: "twitter:description", content: "Sector expertise across regulated industries." },
       { property: "og:url", content: absUrl("/industries") },
       { property: "og:type", content: "website" },
@@ -42,7 +42,7 @@ function IndustriesPage() {
       <PageHero
         eyebrow="Industries"
         title="Sector expertise across the regulated economy."
-        lead="AACL consultants have delivered assurance programmes across ten priority sectors — each with distinctive regulatory expectations, operational risks and certification demands."
+        lead="AACL consultants have delivered assurance programmes across ten priority sectors. Each with distinctive regulatory expectations, operational risks and certification demands."
         image="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2000&q=80"
       />
       <section className="py-24 bg-background">

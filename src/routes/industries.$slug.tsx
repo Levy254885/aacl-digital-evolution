@@ -12,15 +12,15 @@ export const Route = createFileRoute("/industries/$slug")({
     return { industry };
   },
   head: ({ loaderData }) => {
-    if (!loaderData) return { meta: [{ title: "Industry not found — AACL" }, { name: "robots", content: "noindex" }] };
+    if (!loaderData) return { meta: [{ title: "Industry not found | AACL" }, { name: "robots", content: "noindex" }] };
     const i = loaderData.industry;
     return {
       meta: [
-        { title: `${i.name} — Industry Expertise | AACL` },
+        { title: `${i.name}. Industry Expertise | AACL` },
         { name: "description", content: i.short },
-        { property: "og:title", content: `${i.name} — AACL` },
+        { property: "og:title", content: `${i.name} | AACL` },
         { property: "og:description", content: i.short },
-        { name: "twitter:title", content: `${i.name} — AACL` },
+        { name: "twitter:title", content: `${i.name} | AACL` },
         { name: "twitter:description", content: i.short },
         { property: "og:url", content: absUrl(`/industries/${i.slug}`) },
         { property: "og:image", content: i.image },

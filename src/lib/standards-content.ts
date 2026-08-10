@@ -4,7 +4,7 @@ export const STANDARDS: StandardItem[] = [
   {
     label: "Information Security",
     code: "ISO/IEC 27001:2022",
-    desc: "Information security management systems — protect confidentiality, integrity and availability of information assets.",
+    desc: "Information security management systems. Protect confidentiality, integrity and availability of information assets.",
   },
   {
     label: "Quality Management",
@@ -14,12 +14,12 @@ export const STANDARDS: StandardItem[] = [
   {
     label: "Occupational Health & Safety",
     code: "ISO 45001:2018",
-    desc: "Occupational health and safety management — prevent work-related injury and ill health.",
+    desc: "Occupational health and safety management. Prevent work-related injury and ill health.",
   },
   {
     label: "Business Continuity",
     code: "ISO 22301:2019",
-    desc: "Business continuity management — prepare for, respond to and recover from disruptive incidents.",
+    desc: "Business continuity management. Prepare for, respond to and recover from disruptive incidents.",
   },
   {
     label: "Environmental Management",
@@ -39,6 +39,6 @@ export const STANDARDS: StandardItem[] = [
   {
     label: "Security Operations",
     code: "ISO 18788:2015",
-    desc: "Management system for private security operations — governance, accountability and human rights.",
+    desc: "Management system for private security operations. Governance, accountability and human rights.",
   },
 ];

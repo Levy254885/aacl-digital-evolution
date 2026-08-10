@@ -22,20 +22,20 @@ const PILLAR_ICONS = [GraduationCap, FileText, ShieldCheck, Briefcase] as const;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AACL — Security, Compliance & ISO Management Systems" },
+      { title: "AACL. Security, Compliance & ISO Management Systems" },
       {
         name: "description",
         content:
           "Audits and Assurance Consult Ltd (AACL) is East Africa's specialist consultancy for security, compliance, governance, risk and ISO management systems.",
       },
-      { property: "og:title", content: "AACL — Security, Compliance & ISO Management Systems" },
+      { property: "og:title", content: "AACL. Security, Compliance & ISO Management Systems" },
       {
         property: "og:description",
         content:
           "Executive consultancy for security, compliance, governance, risk and ISO management systems across East Africa.",
       },
       { property: "og:url", content: absUrl("/") },
-      { name: "twitter:title", content: "AACL — Security, Compliance & ISO Management Systems" },
+      { name: "twitter:title", content: "AACL. Security, Compliance & ISO Management Systems" },
       {
         name: "twitter:description",
         content:
@@ -61,7 +61,7 @@ export const Route = createFileRoute("/")({
           "@type": "WebPage",
           "@id": absUrl("/"),
           url: absUrl("/"),
-          name: "AACL — Security, Compliance & ISO Management Systems",
+          name: "AACL. Security, Compliance & ISO Management Systems",
           description:
             "Audits and Assurance Consult Ltd (AACL) delivers security, compliance, governance, risk and ISO management system consultancy.",
           isPartOf: { "@id": `${SITE_URL}/#website` },
@@ -119,11 +119,11 @@ function HomePage() {
 
   return (
     <PageShell transparentHeader>
-      {/* HERO — animated image slides with per-slide headline reveal */}
+      {/* HERO, animated image slides with per-slide headline reveal */}
       <HeroSlider slides={heroSlides} />
 
 
-      {/* PILLARS — navy band with notch */}
+      {/* PILLARS, navy band with notch */}
       <section className="relative bg-[var(--navy)] text-white/72 pt-20 pb-32">
         <div className="container-x grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {pillars.map((p, i) => {
@@ -157,7 +157,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ABOUT — overlapping images + stats */}
+      {/* ABOUT, overlapping images + stats */}
       <section id="about" className="py-24 md:py-32 scroll-mt-24">
         <div className="container-x grid lg:grid-cols-2 gap-16 items-center">
           <Reveal>
@@ -273,7 +273,7 @@ function HomePage() {
             <Reveal delay={200}>
               <p className="mt-7 text-base leading-[1.95] text-muted-foreground">
                 We listen first, then design the right-sized path to certification or to your ongoing
-                compliance needs — so cost is never the reason you stay off the register.
+                compliance needs. So cost is never the reason you stay off the register.
               </p>
             </Reveal>
           </div>
@@ -554,7 +554,7 @@ function HomePage() {
             <Reveal delay={200}>
               <p className="mt-7 text-base leading-[1.95] text-white/75 max-w-xl">
                 Prefer end-to-end encrypted chat? So do we. Reach our team on WhatsApp, Signal or
-                Threema — if we take your data seriously, we take our own conversations seriously too.
+                Threema. If we take your data seriously, we take our own conversations seriously too.
               </p>
             </Reveal>
           </div>

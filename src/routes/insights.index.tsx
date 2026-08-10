@@ -8,7 +8,7 @@ import { useCms } from "@/lib/cms";
 export const Route = createFileRoute("/insights/")({
   head: () => ({
     meta: [
-      { title: "Insights — Analysis from the AACL practice" },
+      { title: "Insights. Analysis from the AACL practice" },
       { name: "description", content: "Analysis, guidance and practitioner perspectives on security, compliance, ISO management systems and enterprise risk." },
       { property: "og:title", content: "AACL Insights" },
       { property: "og:description", content: "Practitioner analysis from AACL consultants." },

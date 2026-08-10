@@ -15,7 +15,7 @@ export const Route = createFileRoute("/services/$slug")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Service not found — AACL" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Service not found | AACL" }, { name: "robots", content: "noindex" }] };
     }
     const s = loaderData.service;
     const jsonld = {
@@ -50,11 +50,11 @@ export const Route = createFileRoute("/services/$slug")({
     };
     return {
       meta: [
-        { title: `${s.title} — AACL` },
+        { title: `${s.title} | AACL` },
         { name: "description", content: s.summary },
-        { property: "og:title", content: `${s.title} — AACL` },
+        { property: "og:title", content: `${s.title} | AACL` },
         { property: "og:description", content: s.summary },
-        { name: "twitter:title", content: `${s.title} — AACL` },
+        { name: "twitter:title", content: `${s.title} | AACL` },
         { name: "twitter:description", content: s.summary },
         { property: "og:url", content: absUrl(`/services/${s.slug}`) },
         { property: "og:type", content: "article" },

@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About AACL — Executive Assurance Consultancy" },
+      { title: "About AACL. Executive Assurance Consultancy" },
       { name: "description", content: "AACL is a specialist East African consultancy in security, compliance, ISO management systems and enterprise risk." },
       { property: "og:title", content: "About AACL" },
       { property: "og:description", content: "Executive assurance consultancy for regulated organisations." },
@@ -41,7 +41,7 @@ function AboutPage() {
       <PageHero
         eyebrow="Who we are"
         title="Compliance Expertise Without Borders."
-        lead="AACL Global works with organizations across Europe, the US, Africa, Asia and beyond — and we're expanding into new markets. Wherever you're headquartered, you get the same highly qualified and certified lead consultants and auditors, the same rigorous standards, and superior results."
+        lead="AACL Global works with organizations across Europe, the US, Africa, Asia and beyond. And we're expanding into new markets. Wherever you're headquartered, you get the same highly qualified and certified lead consultants and auditors, the same rigorous standards, and superior results."
         image="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2000&q=80"
       />
 
@@ -65,7 +65,7 @@ function AboutPage() {
           <div className="lg:col-span-7 space-y-6 text-muted-foreground leading-relaxed">
             <Reveal delay={100}><p>AACL was founded to close the gap between global assurance standards and the operational realities of doing business in East Africa. Our consultants have led security, compliance and audit functions inside major banks, telecommunications operators, security printers and manufacturers before joining the practice.</p></Reveal>
             <Reveal delay={200}><p>We work with boards, executive teams and operational leaders on programmes that materially reduce enterprise risk, achieve internationally recognised certifications and satisfy demanding regulatory environments.</p></Reveal>
-            <Reveal delay={300}><p>Every engagement is delivered by named senior practitioners, evidence-based and structured for sustainment — not one-off deliverables.</p></Reveal>
+            <Reveal delay={300}><p>Every engagement is delivered by named senior practitioners, evidence-based and structured for sustainment. Not one-off deliverables.</p></Reveal>
           </div>
         </div>
       </section>
@@ -79,10 +79,10 @@ function AboutPage() {
           <div className="grid md:grid-cols-2 gap-px bg-border">
             {[
               { t: "Practical over theoretical", d: "We favour management systems that field teams actually use over documentation that satisfies auditors and no one else." },
-              { t: "Evidence-based decision making", d: "Recommendations are backed by measurement, benchmark and defensible analysis — not opinion." },
+              { t: "Evidence-based decision making", d: "Recommendations are backed by measurement, benchmark and defensible analysis. Not opinion." },
               { t: "Tailored engagement design", d: "No two organisations carry the same risk profile. We calibrate every programme to your context, sector and maturity." },
               { t: "Long-term partnership", d: "Certification is a milestone, not an outcome. We measure success in sustained compliance and improved resilience." },
-              { t: "Knowledge transfer", d: "Every engagement builds your internal capability — through training, mentoring and structured handover." },
+              { t: "Knowledge transfer", d: "Every engagement builds your internal capability. Through training, mentoring and structured handover." },
               { t: "Executive discretion", d: "We handle sensitive information with the confidentiality and professionalism our clients expect." },
             ].map((v, i) => (
               <Reveal key={v.t} delay={i * 70}>
@@ -101,8 +101,8 @@ function AboutPage() {
         <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
           <Reveal>
             <div className="eyebrow eyebrow-light mb-6">Global reach</div>
-            <h2 className="font-display text-4xl md:text-5xl leading-tight text-white">Headquartered in Nairobi. Delivering worldwide — onsite or remote.</h2>
-            <p className="mt-6 text-white/70 leading-relaxed">From our base at Vision Towers in Westlands we serve clients across Africa, Europe, the UK, the US and Asia — combining local presence with globally benchmarked expertise. Every engagement is available Onsite or Remote — Worldwide.</p>
+            <h2 className="font-display text-4xl md:text-5xl leading-tight text-white">Headquartered in Nairobi. Delivering worldwide. Onsite or remote.</h2>
+            <p className="mt-6 text-white/70 leading-relaxed">From our base at Vision Towers in Westlands we serve clients across Africa, Europe, the UK, the US and Asia, combining local presence with globally benchmarked expertise. Every engagement is available Onsite or Remote, Worldwide.</p>
             <Link to="/contact" className="btn-outline-gold mt-8 inline-flex">Talk to Us <ArrowRight size={14} /></Link>
 
           </Reveal>

@@ -13,7 +13,7 @@ export const DELIVERY_OPTIONS: DeliveryOption[] = [
     name: "Consultancy as a Service (Onsite)",
     tagline: "Senior consultants embedded with your team",
     body:
-      "A named AACL consultant works on your site through implementation, internal audit and certification — leading workshops, interviewing process owners and walking the floor with your teams.",
+      "A named AACL consultant works on your site through implementation, internal audit and certification. Leading workshops, interviewing process owners and walking the floor with your teams.",
     includes: [
       "Onsite gap assessment and process walkthroughs",
       "Facilitated workshops with process owners",
@@ -28,7 +28,7 @@ export const DELIVERY_OPTIONS: DeliveryOption[] = [
     name: "Compliance as a Service (Remote)",
     tagline: "A managed compliance function, delivered remotely",
     body:
-      "We run your management system as a subscription — remote audits, document control, corrective actions, risk register and calendar upkeep — with scheduled video sessions across your timezone.",
+      "We run your management system as a subscription, remote audits, document control, corrective actions, risk register and calendar upkeep, with scheduled video sessions across your timezone.",
     includes: [
       "Remote gap assessment and implementation plan",
       "Cloud document control with version history",
@@ -40,7 +40,7 @@ export const DELIVERY_OPTIONS: DeliveryOption[] = [
   },
 ];
 
-export const DELIVERY_STRAPLINE = "Available Onsite or Remote — Worldwide.";
+export const DELIVERY_STRAPLINE = "Available Onsite or Remote. Worldwide.";
 
 export const ECOMPLIANCE_MODULES = [
   {
@@ -128,11 +128,11 @@ export const ECOMPLIANCE_PLANS = [
 export const ECOMPLIANCE_FAQS = [
   {
     q: "What is the difference between Consultancy as a Service and Compliance as a Service?",
-    a: "Consultancy as a Service is onsite delivery — a senior AACL consultant works physically with your teams through implementation and certification. Compliance as a Service is a remote subscription in which AACL operates and maintains your management system on an ongoing basis. Both are available worldwide and can be combined.",
+    a: "Consultancy as a Service is onsite delivery. A senior AACL consultant works physically with your teams through implementation and certification. Compliance as a Service is a remote subscription in which AACL operates and maintains your management system on an ongoing basis. Both are available worldwide and can be combined.",
   },
   {
     q: "Can eCompliance support more than one ISO standard at once?",
-    a: "Yes. Integrated management systems are the norm at AACL — for example ISO 9001, ISO 14001 and ISO 45001 operated as a single system with shared documentation, one audit programme and one management review.",
+    a: "Yes. Integrated management systems are the norm at AACL. For example ISO 9001, ISO 14001 and ISO 45001 operated as a single system with shared documentation, one audit programme and one management review.",
   },
   {
     q: "Do you work outside Kenya and East Africa?",
@@ -140,7 +140,7 @@ export const ECOMPLIANCE_FAQS = [
   },
   {
     q: "Is eCompliance suitable for certification audits?",
-    a: "It is designed for them. Every record an auditor asks for — document control, internal audits, CAPA, risk, management review — is maintained continuously rather than assembled in the weeks before an audit.",
+    a: "It is designed for them. Every record an auditor asks for, document control, internal audits, CAPA, risk, management review, is maintained continuously rather than assembled in the weeks before an audit.",
   },
   {
     q: "How is pricing structured?",
