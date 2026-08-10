@@ -22,20 +22,20 @@ const PILLAR_ICONS = [GraduationCap, FileText, ShieldCheck, Briefcase] as const;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AACL. Security, Compliance & ISO Management Systems" },
+      { title: "ISO Certification & Compliance Consultants | AACL Kenya" },
       {
         name: "description",
         content:
           "Audits and Assurance Consult Ltd (AACL) is East Africa's specialist consultancy for security, compliance, governance, risk and ISO management systems.",
       },
-      { property: "og:title", content: "AACL. Security, Compliance & ISO Management Systems" },
+      { property: "og:title", content: "ISO Certification & Compliance Consultants | AACL Kenya" },
       {
         property: "og:description",
         content:
           "Executive consultancy for security, compliance, governance, risk and ISO management systems across East Africa.",
       },
       { property: "og:url", content: absUrl("/") },
-      { name: "twitter:title", content: "AACL. Security, Compliance & ISO Management Systems" },
+      { name: "twitter:title", content: "ISO Certification & Compliance Consultants | AACL Kenya" },
       {
         name: "twitter:description",
         content:
@@ -61,7 +61,7 @@ export const Route = createFileRoute("/")({
           "@type": "WebPage",
           "@id": absUrl("/"),
           url: absUrl("/"),
-          name: "AACL. Security, Compliance & ISO Management Systems",
+          name: "ISO Certification & Compliance Consultants | AACL Kenya",
           description:
             "Audits and Assurance Consult Ltd (AACL) delivers security, compliance, governance, risk and ISO management system consultancy.",
           isPartOf: { "@id": `${SITE_URL}/#website` },
