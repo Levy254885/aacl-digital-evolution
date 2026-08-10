@@ -55,11 +55,11 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
           to="/"
           className="flex items-center gap-3 shrink-0"
           onClick={() => setOpen(false)}
-          aria-label="AACL Global — home"
+          aria-label="AACL Global. Home"
         >
           <img
             src={aaclLogo}
-            alt="AACL — Audits and Assurance Consult Ltd"
+            alt="AACL | Audits and Assurance Consult Ltd"
             width={1920}
             height={382}
             className={`h-7 lg:h-9 w-auto object-contain transition-all duration-300 ${

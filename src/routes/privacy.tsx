@@ -24,11 +24,11 @@ function LegalPage({ title, sections }: { title: string; sections: { h: string; 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — AACL" },
+      { title: "Privacy Policy | AACL" },
       { name: "description", content: "How Audits and Assurance Consult Ltd collects, uses and protects personal information." },
-      { property: "og:title", content: "Privacy Policy — AACL" },
+      { property: "og:title", content: "Privacy Policy | AACL" },
       { property: "og:description", content: "AACL privacy policy." },
-      { name: "twitter:title", content: "Privacy Policy — AACL" },
+      { name: "twitter:title", content: "Privacy Policy | AACL" },
       { name: "twitter:description", content: "AACL privacy policy." },
       { property: "og:url", content: absUrl("/privacy") },
     ],

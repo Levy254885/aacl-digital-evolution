@@ -1,10 +1,10 @@
 /**
- * Firebase integration — AACL (project: aacl-ltd).
+ * Firebase integration | AACL (project: aacl-ltd).
  *
  * No credentials are hardcoded. The Web API key is supplied at build time via
  * the VITE_FIREBASE_API_KEY environment variable, and every privileged
  * operation (Admin SDK, service accounts, payment secrets) must live in a
- * server function reading process.env — never in this file.
+ * server function reading process.env, never in this file.
  *
  * Access control is enforced by Firestore/Storage Security Rules and App Check.
  */

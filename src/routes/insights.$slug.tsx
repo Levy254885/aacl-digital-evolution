@@ -10,11 +10,11 @@ export const Route = createFileRoute("/insights/$slug")({
     return { post };
   },
   head: ({ loaderData }) => {
-    if (!loaderData) return { meta: [{ title: "Article not found — AACL" }, { name: "robots", content: "noindex" }] };
+    if (!loaderData) return { meta: [{ title: "Article not found | AACL" }, { name: "robots", content: "noindex" }] };
     const p = loaderData.post;
     return {
       meta: [
-        { title: `${p.title} — AACL Insights` },
+        { title: `${p.title} | AACL Insights` },
         { name: "description", content: p.excerpt },
         { property: "og:title", content: p.title },
         { property: "og:description", content: p.excerpt },

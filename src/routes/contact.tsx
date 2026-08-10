@@ -8,7 +8,7 @@ import { SITE } from "@/lib/aacl-content";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact AACL — Nairobi, Kenya" },
+      { title: "Contact AACL in Nairobi, Kenya" },
       { name: "description", content: `Contact AACL at ${SITE.address.line1}, ${SITE.address.line2}, Nairobi. Phone ${SITE.phone}. Email ${SITE.email}.` },
       { property: "og:title", content: "Contact AACL" },
       { property: "og:description", content: "Speak with AACL about your assurance, certification or compliance programme." },
@@ -51,7 +51,7 @@ function ContactPage() {
               { l: "Office", v: `${SITE.address.line1}, ${SITE.address.line2}, ${SITE.address.city}, ${SITE.address.country}` },
               { l: "Telephone", v: SITE.phone, href: `tel:${SITE.phone.replace(/\s/g, "")}` },
               { l: "Email", v: SITE.email, href: `mailto:${SITE.email}` },
-              { l: "Office hours", v: "Monday – Friday · 08:30 – 17:30 EAT" },
+              { l: "Office hours", v: "Monday to Friday · 08:30 to 17:30 EAT" },
             ].map((row, i) => (
               <Reveal key={row.l} delay={i * 90}>
                 <div className="border-b border-border pb-6">

@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useMemo, useState, type ReactNode
 export type Currency = {
   code: string;
   symbol: string;
-  /** Indicative units per 1 USD — reference only, settlement happens in the payment rail's currency. */
+  /** Indicative units per 1 USD. Reference only, settlement happens in the payment rail's currency. */
   rate: number;
   label: string;
 };

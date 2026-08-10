@@ -74,7 +74,7 @@ function FieldInput({
     );
   }
 
-  // Nested object / array — edit as JSON.
+  // Nested object / array, edit as JSON.
   return (
     <label className="block text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
       {label} (JSON)
@@ -85,7 +85,7 @@ function FieldInput({
           try {
             onChange(JSON.parse(e.target.value));
           } catch {
-            toast.error(`${label}: invalid JSON — change discarded`);
+            toast.error(`${label}: invalid JSON. Change discarded`);
           }
         }}
         className="mt-1.5 w-full rounded-[10px] border border-border px-3 py-2 font-mono text-[12px] normal-case tracking-normal text-foreground"
@@ -161,7 +161,7 @@ function ContentEditor() {
       await queryClient.invalidateQueries({ queryKey: ["cms", key] });
       toast.success(`${def!.label} published`);
     } catch {
-      toast.error("Save failed — check your role permissions and try again.");
+      toast.error("Save failed. Check your role permissions and try again.");
     } finally {
       setSaving(false);
     }
@@ -211,7 +211,7 @@ function ContentEditor() {
                   setValue(parsed);
                   void save(parsed);
                 } catch {
-                  toast.error("Invalid JSON — fix it before publishing.");
+                  toast.error("Invalid JSON. Fix it before publishing.");
                 }
                 return;
               }

@@ -51,7 +51,7 @@ export const MENU: NavItem[] = [
 export const PILLARS = [
   {
     title: "Training Programs",
-    body: "Awareness, auditor and implementation training — live, virtual and recorded.",
+    body: "Awareness, auditor and implementation training. Live, virtual and recorded.",
   },
   {
     title: "Documentation",
@@ -76,7 +76,7 @@ export const STATS = [
 export const TESTIMONIALS = [
   {
     quote:
-      "AACL is a rare partner — deep consulting expertise combined with the ability to drive impactful certification and assurance outcomes. They redefined how we approach quality, trust and compliance.",
+      "AACL is a rare partner. Deep consulting expertise combined with the ability to drive impactful certification and assurance outcomes. They redefined how we approach quality, trust and compliance.",
     name: "Saket Vyas",
     role: "Group Head of Risk, Verger Group",
     featured: true,

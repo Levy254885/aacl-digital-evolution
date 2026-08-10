@@ -12,7 +12,7 @@ export const CHAT_CHANNELS = [
   {
     name: "WhatsApp",
     href: `https://wa.me/${DIGITS}?text=${MSG}`,
-    note: "Fastest reply — our primary channel",
+    note: "Fastest reply. Our primary channel",
     primary: true,
   },
   {
@@ -95,7 +95,7 @@ export function ChatChannels({
         >
           {CHAT_CHANNELS.map((c) => (
             <li key={c.name}>
-              <strong className="font-semibold">{c.name}</strong> — {c.note}
+              <strong className="font-semibold">{c.name}</strong>, {c.note}
             </li>
           ))}
         </ul>

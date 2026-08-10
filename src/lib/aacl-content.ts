@@ -43,11 +43,11 @@ export const SERVICES: ServiceMeta[] = [
     title: "Physical & Cybersecurity Risk & Vulnerability Assessments",
     short: "Enterprise-wide 360° risk assessments across physical, cyber and third-party domains.",
     summary:
-      "We evaluate the full risk surface of your organisation — from perimeter security and access control to network posture, application security and third-party exposure — and translate findings into board-ready decisions and prioritised remediation roadmaps.",
+      "We evaluate the full risk surface of your organisation, from perimeter security and access control to network posture, application security and third-party exposure, and translate findings into board-ready decisions and prioritised remediation roadmaps.",
     detail: [
       "AACL delivers integrated 360° assessments that combine physical security review, cybersecurity posture analysis and Vulnerability Assessment & Penetration Testing (VAPT). Our engagements are structured around ISO 31000 risk principles and calibrated to your regulatory environment, threat profile and business priorities.",
-      "Assessments are executed by a multi-disciplinary team of security engineers, ISO lead auditors and former corporate security leaders. Every finding is contextualised — we do not simply hand over a tool output; we quantify likelihood, business impact and mitigation cost so executives can make defensible investment decisions.",
-      "We work alongside your teams throughout the assessment lifecycle: scoping and asset discovery, controlled testing, evidence-based reporting, mitigation planning, and follow-up validation. The result is a durable improvement in resilience — not a one-off report.",
+      "Assessments are executed by a multi-disciplinary team of security engineers, ISO lead auditors and former corporate security leaders. Every finding is contextualised. We do not simply hand over a tool output; we quantify likelihood, business impact and mitigation cost so executives can make defensible investment decisions.",
+      "We work alongside your teams throughout the assessment lifecycle: scoping and asset discovery, controlled testing, evidence-based reporting, mitigation planning, and follow-up validation. The result is a durable improvement in resilience. Not a one-off report.",
     ],
     challenges: [
       "Fragmented visibility across physical premises, IT estate and third parties",
@@ -76,7 +76,7 @@ export const SERVICES: ServiceMeta[] = [
     industries: ["Banking & Financial Services", "Security Printing", "Telecommunications", "Manufacturing", "Aviation"],
     faqs: [
       { q: "How long does a typical assessment take?", a: "Between four and twelve weeks depending on scope, geographic footprint and asset complexity. We publish a detailed workplan at kick-off." },
-      { q: "Do you perform physical intrusion testing?", a: "Yes — under strictly authorised rules of engagement and with executive sign-off. Physical testing is central to our integrated methodology." },
+      { q: "Do you perform physical intrusion testing?", a: "Yes. Under strictly authorised rules of engagement and with executive sign-off. Physical testing is central to our integrated methodology." },
       { q: "Will the report be defensible to regulators and auditors?", a: "Every report is structured to satisfy ISO 27001 Annex A, PCI DSS and sector-specific regulatory expectations, and is signed off by a certified lead auditor." },
     ],
     image:
@@ -88,9 +88,9 @@ export const SERVICES: ServiceMeta[] = [
     title: "ISO Management Systems Consultancy",
     short: "Design, implement and certify management systems that endure beyond the audit.",
     summary:
-      "We build management systems that are audit-ready, operationally practical and genuinely used by your teams — from gap assessment and documentation through internal audit, certification support and continual improvement.",
+      "We build management systems that are audit-ready, operationally practical and genuinely used by your teams. From gap assessment and documentation through internal audit, certification support and continual improvement.",
     detail: [
-      "AACL has led ISO implementation programmes across banking, manufacturing, healthcare, aviation and technology sectors. Our consultants are trained lead auditors with hands-on operational backgrounds — we design management systems that work in the field, not only on paper.",
+      "AACL has led ISO implementation programmes across banking, manufacturing, healthcare, aviation and technology sectors. Our consultants are trained lead auditors with hands-on operational backgrounds. We design management systems that work in the field, not only on paper.",
       "Every engagement is calibrated to your maturity level. For first-time certification we deliver full documentation, awareness, internal audit and certification support. For established systems we focus on integration, efficiency and closing systemic non-conformities.",
       "We deliver single-standard programmes as well as integrated management systems (IMS) that consolidate quality, environment, health & safety, information security and business continuity into one coherent framework.",
     ],
@@ -104,7 +104,7 @@ export const SERVICES: ServiceMeta[] = [
     methodology: [
       { title: "Gap assessment", body: "Benchmark current state against the target standard, identify systemic gaps and quantify effort." },
       { title: "System design", body: "Policy framework, process maps, risk register, objectives and KPIs aligned to your operating model." },
-      { title: "Documentation", body: "Concise, usable procedures, work instructions and records — designed for adoption, not shelfware." },
+      { title: "Documentation", body: "Concise, usable procedures, work instructions and records. Designed for adoption, not shelfware." },
       { title: "Awareness & training", body: "Role-based training for leadership, process owners, internal auditors and general staff." },
       { title: "Internal audit & management review", body: "Full audit cycle, non-conformity management and management review facilitation." },
       { title: "Certification & continual improvement", body: "Certification body liaison, stage 1 and stage 2 audit support, and post-certification improvement." },
@@ -133,10 +133,10 @@ export const SERVICES: ServiceMeta[] = [
     title: "Security Standards Implementation & Audits",
     short: "Specialist implementation and auditing of GSMA SAS, SOC, UL 2050, ASTM F1233 and PCI DSS.",
     summary:
-      "AACL is one of the region's specialist consultancies for security certification schemes that combine physical and logical control requirements — critical for security printers, SIM manufacturers, payment ecosystems and monitored high-security facilities.",
+      "AACL is one of the region's specialist consultancies for security certification schemes that combine physical and logical control requirements. Critical for security printers, SIM manufacturers, payment ecosystems and monitored high-security facilities.",
     detail: [
       "Security certification schemes such as GSMA SAS, UL 2050 and PCI DSS impose demanding, prescriptive controls that span physical premises, personnel screening, information security, production processes and supply chain governance. AACL provides end-to-end implementation and audit readiness for these programmes.",
-      "Our consultants have supported certification programmes for security printers, SIM and eSIM manufacturers, payment processors and high-security storage facilities. We understand the operational realities of running certified facilities — from clean-room controls to CCTV retention and secure destruction.",
+      "Our consultants have supported certification programmes for security printers, SIM and eSIM manufacturers, payment processors and high-security storage facilities. We understand the operational realities of running certified facilities. From clean-room controls to CCTV retention and secure destruction.",
       "We provide both implementation (design, remediation, evidence packs) and independent second-party auditing to prepare organisations for scheme audits with confidence.",
     ],
     challenges: [
@@ -165,7 +165,7 @@ export const SERVICES: ServiceMeta[] = [
     standards: ["GSMA SAS-UP / SAS-SM", "SOC 1 / SOC 2", "UL 2050", "ASTM F1233", "PCI DSS", "LPS 1175"],
     industries: ["Security Printing", "Telecommunications", "Banking & Financial Services", "Private Security", "Manufacturing"],
     faqs: [
-      { q: "Do you support both SAS-UP and SAS-SM?", a: "Yes — we support UICC/eUICC production (SAS-UP) and subscription management (SAS-SM) certification programmes." },
+      { q: "Do you support both SAS-UP and SAS-SM?", a: "Yes. We support UICC/eUICC production (SAS-UP) and subscription management (SAS-SM) certification programmes." },
       { q: "Can you assist with LPS 1175 rated construction?", a: "We do not manufacture rated products, but we work with certified integrators to specify, procure and validate LPS 1175 physical protection." },
     ],
     image:
@@ -180,7 +180,7 @@ export const SERVICES: ServiceMeta[] = [
       "For organisations that need executive-grade security leadership without a full-time hire, SMaaS delivers strategy, governance, risk oversight and incident readiness through a dedicated AACL consultant supported by our wider practice.",
     detail: [
       "SMaaS is designed for mid-market and growth-stage organisations facing rising security expectations from customers, regulators and boards. You gain a named senior security leader, embedded in your governance rhythm, backed by AACL's technical and audit expertise.",
-      "Engagements are structured as monthly retainers with clearly defined governance deliverables — board reporting, policy stewardship, third-party assurance, incident response readiness and continuous improvement of your security programme.",
+      "Engagements are structured as monthly retainers with clearly defined governance deliverables. Board reporting, policy stewardship, third-party assurance, incident response readiness and continuous improvement of your security programme.",
       "SMaaS scales with your organisation: from fractional oversight for a Series A company to interim leadership during CISO transition for large enterprises.",
     ],
     challenges: [
@@ -221,10 +221,10 @@ export const SERVICES: ServiceMeta[] = [
     title: "Statutory Compliance Consultancy, Audits & Training",
     short: "Occupational health & safety, environment, sustainability and data protection compliance.",
     summary:
-      "AACL helps organisations meet Kenyan and international statutory obligations across occupational health & safety, environmental management, sustainability and data protection — through compliance audits, remediation programmes, capacity building and ongoing advisory.",
+      "AACL helps organisations meet Kenyan and international statutory obligations across occupational health & safety, environmental management, sustainability and data protection. Through compliance audits, remediation programmes, capacity building and ongoing advisory.",
     detail: [
       "Regulatory obligations across health & safety (DOSHS), environment (NEMA), data protection (ODPC) and sector-specific regulators have expanded significantly. Non-compliance carries reputational, financial and criminal exposure for directors and officers.",
-      "Our consultants combine regulatory expertise with practical operational knowledge across manufacturing, hospitality, financial services and technology. We do not just identify gaps — we design and deliver the remediation and capacity-building needed to close them.",
+      "Our consultants combine regulatory expertise with practical operational knowledge across manufacturing, hospitality, financial services and technology. We do not just identify gaps. We design and deliver the remediation and capacity-building needed to close them.",
       "Engagements include statutory compliance audits, policy and procedure development, employee training, regulator engagement support and ongoing compliance monitoring retainers.",
     ],
     challenges: [
@@ -288,7 +288,7 @@ export const INDUSTRIES: IndustryMeta[] = [
     approach:
       "AACL leads full certification programmes for security printers, from facility design review and personnel vetting frameworks through GSMA SAS and UL 2050 audit readiness.",
     outcomes: ["Successful scheme certification", "Reduced insider risk", "Board-visible security posture"],
-    image: "https://images.unsplash.com/photo-1580983230786-96ea6d5a3f5f?auto=format&fit=crop&w=1400&q=80",
+    image: "/industries/security-printing.jpg",
   },
   {
     slug: "banking-financial-services",
@@ -403,7 +403,7 @@ export const INDUSTRIES: IndustryMeta[] = [
 export const INSIGHTS = [
   {
     slug: "iso-27001-2022-transition",
-    title: "Transitioning to ISO/IEC 27001:2022 — a practitioner's roadmap",
+    title: "Transitioning to ISO/IEC 27001:2022. A practitioner's roadmap",
     excerpt: "The 2022 revision consolidates Annex A controls and introduces new attributes. Here is how to plan a defensible transition without disrupting your operations.",
     date: "2026-05-14",
     readTime: "8 min read",
@@ -421,7 +421,7 @@ export const INSIGHTS = [
   },
   {
     slug: "kenya-data-protection-act-lessons",
-    title: "Two years of Kenya's Data Protection Act — enforcement lessons",
+    title: "Two years of Kenya's Data Protection Act. Enforcement lessons",
     excerpt: "The ODPC has issued a growing number of enforcement decisions. Here is what compliance leaders should be prioritising in 2026.",
     date: "2026-02-19",
     readTime: "7 min read",

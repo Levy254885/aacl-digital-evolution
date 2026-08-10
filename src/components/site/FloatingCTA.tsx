@@ -44,7 +44,7 @@ export function FloatingCTA() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`Chat with AACL on ${c.name}`}
-          title={`${c.name} — ${c.note}`}
+          title={`${c.name}, ${c.note}`}
           className={`flex items-center justify-center rounded-full text-white transition-transform duration-300 hover:-translate-y-1 hover:scale-105 ${STYLES[c.name]}`}
         >
           <Icon name={c.name} />

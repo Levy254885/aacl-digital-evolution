@@ -64,7 +64,7 @@ function TeamPage() {
             setDraft({ uid: "", email: "", name: "", role: "editor" });
             await refresh();
           } catch {
-            toast.error("Save failed — Super Admin rights may be required.");
+            toast.error("Save failed. Super Admin rights may be required.");
           }
         }}
         className="mt-8 grid gap-4 rounded-[16px] border border-border p-6 sm:grid-cols-4"
@@ -140,7 +140,7 @@ function TeamPage() {
             {members.map((m) => (
               <tr key={m.uid} className="border-t border-border">
                 <td className="p-4">{m.email}</td>
-                <td className="p-4">{m.name || "—"}</td>
+                <td className="p-4">{m.name || "N/A"}</td>
                 <td className="p-4">
                   <select
                     value={m.role}

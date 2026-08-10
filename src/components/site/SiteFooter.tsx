@@ -42,7 +42,7 @@ export function SiteFooter() {
             <div className="mb-6">
               <img
                 src={aaclLogo}
-                alt="AACL — Audits and Assurance Consult Ltd"
+                alt="AACL | Audits and Assurance Consult Ltd"
                 className="h-7 w-auto object-contain brightness-0 invert"
               />
               <span className="mt-3 block text-[9px] uppercase tracking-[0.14em] text-white/40">

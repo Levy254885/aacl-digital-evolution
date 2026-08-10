@@ -87,9 +87,19 @@ export function PaymentMethods() {
     <div className="grid gap-6 md:grid-cols-3">
       {PAYMENT_METHODS.map((m, i) => (
         <Reveal key={m.method} delay={i * 80}>
-          <div className="h-full rounded-[18px] border border-border p-7">
-            <h3 className="font-display text-lg font-extrabold">{m.method}</h3>
-            <p className="mt-3 text-sm leading-[1.9] text-muted-foreground">
+          <div className="flex h-full flex-col rounded-[18px] border border-border bg-white p-7">
+            <div className="flex h-16 items-center">
+              <img
+                src={m.logo}
+                alt={m.logoAlt}
+                width={220}
+                height={64}
+                loading="lazy"
+                decoding="async"
+                className="h-12 w-auto max-w-[190px] object-contain object-left"
+              />
+            </div>
+            <p className="mt-5 text-sm leading-[1.9] text-muted-foreground">
               Best for: {m.best}
             </p>
             <p className="mt-3 text-[12px] uppercase tracking-[0.1em] text-muted-foreground">

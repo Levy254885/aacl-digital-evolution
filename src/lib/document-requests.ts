@@ -21,7 +21,7 @@ export type DocumentRequestInput = {
 
 /**
  * Uploads the company logo to Cloud Storage and returns its storage path.
- * The bucket is private (see storage.rules) — no public download URL is
+ * The bucket is private (see storage.rules), no public download URL is
  * created, so uploaded artwork is never exposed on the internet.
  */
 export async function uploadCompanyLogo(file: File, companyName: string): Promise<string> {

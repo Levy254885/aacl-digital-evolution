@@ -1,4 +1,4 @@
-/* AACL AI Document Generator — corporate document engine.
+/* AACL AI Document Generator. Corporate document engine.
  *
  * Each template carries bespoke, standard-specific content (clause maps,
  * procedures, matrices, KPIs, records schedules) and is rendered as a
@@ -54,13 +54,13 @@ const seeds: TemplateSeed[] = [
     complexity: "Complex",
     format: "DOCX + PDF",
     summary:
-      "Full QMS manual covering clauses 4–10 with context analysis, interested-party matrix, process interaction map, risk methodology and performance framework.",
+      "Full QMS manual covering clauses 4 to 10 with context analysis, interested-party matrix, process interaction map, risk methodology and performance framework.",
     purpose:
       "To define the quality management system (QMS) established to consistently deliver products and services that meet customer, statutory and regulatory requirements, and to demonstrate conformity with ISO 9001:2015.",
     scopeStatement:
       "This manual applies to all sites, functions, processes, products and services within the declared certification scope, including externally provided processes controlled by the organisation.",
     clauseMap: [
-      ["4", "Context of the organisation", "Sections 1–2"],
+      ["4", "Context of the organisation", "Sections 1 to 2"],
       ["5", "Leadership", "Section 3"],
       ["6", "Planning", "Section 4"],
       ["7", "Support", "Section 5"],
@@ -89,7 +89,7 @@ const seeds: TemplateSeed[] = [
       ["Supplier evaluation records", "Procurement", "3 years", "Procurement file"],
     ],
     definitions: [
-      ["QMS", "Quality management system — the set of interrelated processes used to direct and control quality."],
+      ["QMS", "Quality management system. The set of interrelated processes used to direct and control quality."],
       ["Interested party", "Person or organisation that can affect, be affected by, or perceive itself affected by a decision or activity."],
     ],
     body: [
@@ -99,13 +99,13 @@ const seeds: TemplateSeed[] = [
           { kind: "p", text: "Top management has determined the external and internal issues relevant to the organisation's purpose and strategic direction, and which affect the ability of the QMS to achieve its intended results. Issues are reviewed at least annually and whenever significant change occurs." },
           {
             kind: "table",
-            caption: "Context analysis (illustrative — confirm at first management review)",
+            caption: "Context analysis (illustrative. Confirm at first management review)",
             head: ["Category", "Issue", "Effect on the QMS", "Response"],
             rows: [
-              ["External — market", "Customer tendering increasingly requires certification", "Positive: strengthens commercial position", "Maintain certification and publicise scope"],
-              ["External — regulatory", "Changing statutory and contractual obligations", "Risk of non-compliance", "Legal register reviewed quarterly"],
-              ["Internal — resources", "Competence dependency on key personnel", "Continuity risk", "Cross-training and documented procedures"],
-              ["Internal — infrastructure", "Ageing equipment / systems", "Process capability risk", "Planned maintenance and capital plan"],
+              ["External. Market", "Customer tendering increasingly requires certification", "Positive: strengthens commercial position", "Maintain certification and publicise scope"],
+              ["External. Regulatory", "Changing statutory and contractual obligations", "Risk of non-compliance", "Legal register reviewed quarterly"],
+              ["Internal. Resources", "Competence dependency on key personnel", "Continuity risk", "Cross-training and documented procedures"],
+              ["Internal. Infrastructure", "Ageing equipment / systems", "Process capability risk", "Planned maintenance and capital plan"],
             ],
           },
           {
@@ -150,10 +150,10 @@ const seeds: TemplateSeed[] = [
             caption: "Risk scoring matrix (likelihood × consequence)",
             head: ["Score", "Band", "Treatment expectation", "Authority"],
             rows: [
-              ["1–4", "Low", "Monitor; no additional control required", "Process owner"],
-              ["5–9", "Medium", "Controls reviewed; action plan where cost-effective", "Process owner"],
-              ["10–16", "High", "Formal treatment plan with target date", "Quality Manager"],
-              ["17–25", "Extreme", "Immediate action; escalate to top management", "Top management"],
+              ["1 to 4", "Low", "Monitor; no additional control required", "Process owner"],
+              ["5 to 9", "Medium", "Controls reviewed; action plan where cost-effective", "Process owner"],
+              ["10 to 16", "High", "Formal treatment plan with target date", "Quality Manager"],
+              ["17 to 25", "Extreme", "Immediate action; escalate to top management", "Top management"],
             ],
           },
           { kind: "p", text: "Quality objectives are established at relevant functions and levels, are measurable, resourced, assigned, monitored and updated. Progress is reported at management review." },
@@ -215,14 +215,14 @@ const seeds: TemplateSeed[] = [
     scopeStatement:
       "This policy set applies to all information assets, personnel, contractors, systems, cloud services and facilities within the ISMS scope, and to all processing of information owned by or entrusted to the organisation.",
     clauseMap: [
-      ["4 / 5", "Context and leadership", "Sections 1–2"],
+      ["4 / 5", "Context and leadership", "Sections 1 to 2"],
       ["6", "Planning and risk treatment", "Section 3"],
-      ["7 / 8", "Support and operation", "Sections 4–6"],
-      ["9 / 10", "Evaluation and improvement", "Sections 7–8"],
-      ["Annex A 5", "Organisational controls", "Sections 2–5"],
+      ["7 / 8", "Support and operation", "Sections 4 to 6"],
+      ["9 / 10", "Evaluation and improvement", "Sections 7 to 8"],
+      ["Annex A 5", "Organisational controls", "Sections 2 to 5"],
       ["Annex A 6", "People controls", "Section 4"],
       ["Annex A 7", "Physical controls", "Section 5"],
-      ["Annex A 8", "Technological controls", "Sections 5–6"],
+      ["Annex A 8", "Technological controls", "Sections 5 to 6"],
     ],
     roles: [
       ["Top management", "Approves policy, accepts residual risk, allocates resources", "Risk acceptance authority"],
@@ -246,8 +246,8 @@ const seeds: TemplateSeed[] = [
     ],
     definitions: [
       ["Information asset", "Any data, system, service or media that has value to the organisation."],
-      ["CIA", "Confidentiality, integrity and availability — the three security properties protected by the ISMS."],
-      ["SoA", "Statement of Applicability — the controlled record of Annex A controls applied, justified or excluded."],
+      ["CIA", "Confidentiality, integrity and availability. The three security properties protected by the ISMS."],
+      ["SoA", "Statement of Applicability. The controlled record of Annex A controls applied, justified or excluded."],
     ],
     body: [
       {
@@ -260,7 +260,7 @@ const seeds: TemplateSeed[] = [
       {
         heading: "Scope, boundaries and interfaces",
         blocks: [
-          { kind: "p", text: "The ISMS scope is defined by organisational units, locations, information systems and cloud services listed on the cover page. Interfaces and dependencies on external providers — including hosting, SaaS, payroll and managed IT — are documented and covered by contractual security requirements." },
+          { kind: "p", text: "The ISMS scope is defined by organisational units, locations, information systems and cloud services listed on the cover page. Interfaces and dependencies on external providers, including hosting, SaaS, payroll and managed IT, are documented and covered by contractual security requirements." },
           { kind: "bullets", items: [
             "In scope: corporate information systems, client data processing, employee data, physical offices and remote working.",
             "Interfaces: cloud hosting, managed service providers, customer-supplied environments.",
@@ -334,12 +334,12 @@ const seeds: TemplateSeed[] = [
         heading: "Incident management and continuity",
         blocks: [
           { kind: "steps", items: [
-            "Report — any suspected event is reported to the Information Security Officer immediately.",
-            "Triage — severity assigned; containment actions authorised.",
-            "Contain and eradicate — isolate affected systems and remove the cause.",
-            "Recover — restore service, verify integrity and monitor for recurrence.",
-            "Notify — assess regulatory and contractual notification duties within statutory deadlines.",
-            "Review — root-cause analysis, lessons learned and control improvement recorded.",
+            "Report. Any suspected event is reported to the Information Security Officer immediately.",
+            "Triage. Severity assigned; containment actions authorised.",
+            "Contain and eradicate. Isolate affected systems and remove the cause.",
+            "Recover. Restore service, verify integrity and monitor for recurrence.",
+            "Notify. Assess regulatory and contractual notification duties within statutory deadlines.",
+            "Review. Root-cause analysis, lessons learned and control improvement recorded.",
           ] },
           { kind: "p", text: "Business continuity and ICT readiness arrangements define recovery time and recovery point objectives for in-scope services and are tested at planned intervals." },
         ],
@@ -347,7 +347,7 @@ const seeds: TemplateSeed[] = [
       {
         heading: "Compliance, evaluation and improvement",
         blocks: [
-          { kind: "p", text: "Legal, statutory, regulatory and contractual requirements — including data-protection obligations — are identified and maintained in the compliance register. Internal audits, technical compliance reviews and management review verify continued effectiveness, and nonconformities are addressed through corrective action." },
+          { kind: "p", text: "Legal, statutory, regulatory and contractual requirements, including data-protection obligations, are identified and maintained in the compliance register. Internal audits, technical compliance reviews and management review verify continued effectiveness, and nonconformities are addressed through corrective action." },
         ],
       },
     ],
@@ -366,7 +366,7 @@ const seeds: TemplateSeed[] = [
     scopeStatement:
       "This procedure applies to all internal audits of the management system, covering every process, function, site and clause of the applicable standard across each certification cycle.",
     clauseMap: [
-      ["9.2", "Internal audit", "Sections 1–6"],
+      ["9.2", "Internal audit", "Sections 1 to 6"],
       ["10.2", "Nonconformity and corrective action", "Section 6"],
       ["7.2", "Competence of auditors", "Section 2"],
       ["7.5", "Documented information / records", "Records schedule"],
@@ -392,7 +392,7 @@ const seeds: TemplateSeed[] = [
     ],
     definitions: [
       ["Audit criteria", "The set of requirements used as a reference against which objective evidence is compared."],
-      ["Objective evidence", "Data supporting the existence or verity of something — records, statements of fact, observations."],
+      ["Objective evidence", "Data supporting the existence or verity of something. Records, statements of fact, observations."],
       ["Major nonconformity", "Absence or total breakdown of a required arrangement, or a finding that raises significant doubt about capability."],
       ["Minor nonconformity", "A single lapse in an otherwise effective arrangement."],
     ],
@@ -406,11 +406,11 @@ const seeds: TemplateSeed[] = [
             caption: "Annual audit programme (template)",
             head: ["Process / area", "Criteria", "Frequency", "Quarter", "Lead auditor"],
             rows: [
-              ["Leadership and management review", "Clause 5, 9.3", "Annual", "Q4", "—"],
-              ["Operations / service delivery", "Clause 8", "Bi-annual", "Q1, Q3", "—"],
-              ["Procurement and external providers", "Clause 8.4", "Annual", "Q2", "—"],
-              ["HR and competence", "Clause 7.2", "Annual", "Q2", "—"],
-              ["Improvement, NC and CAPA", "Clause 10", "Annual", "Q4", "—"],
+              ["Leadership and management review", "Clause 5, 9.3", "Annual", "Q4", "N/A"],
+              ["Operations / service delivery", "Clause 8", "Bi-annual", "Q1, Q3", "N/A"],
+              ["Procurement and external providers", "Clause 8.4", "Annual", "Q2", "N/A"],
+              ["HR and competence", "Clause 7.2", "Annual", "Q2", "N/A"],
+              ["Improvement, NC and CAPA", "Clause 10", "Annual", "Q4", "N/A"],
             ],
           },
         ],
@@ -452,8 +452,8 @@ const seeds: TemplateSeed[] = [
             rows: [
               ["Major NC", "Systemic breakdown or absence of a required arrangement", "5 working days", "30 days"],
               ["Minor NC", "Isolated lapse against a requirement", "20 working days", "45 days"],
-              ["Observation", "Conformant but at risk of becoming a nonconformity", "—", "Considered at review"],
-              ["Opportunity for improvement", "Potential to improve efficiency or effectiveness", "—", "Optional"],
+              ["Observation", "Conformant but at risk of becoming a nonconformity", "N/A", "Considered at review"],
+              ["Opportunity for improvement", "Potential to improve efficiency or effectiveness", "N/A", "Optional"],
             ],
           },
           { kind: "p", text: "The report is issued within ten working days of the closing meeting and states audit objective, scope, criteria, team, evidence sampled, findings by category, positive observations and conclusion on system effectiveness." },
@@ -466,7 +466,7 @@ const seeds: TemplateSeed[] = [
             "Auditee proposes correction, root cause and corrective action with owner and target date.",
             "Lead auditor reviews the adequacy of root-cause analysis before acceptance.",
             "Evidence of implementation is submitted by the target date.",
-            "Effectiveness is verified — by desktop review for minor findings, by follow-up audit for major findings.",
+            "Effectiveness is verified. By desktop review for minor findings, by follow-up audit for major findings.",
             "The finding is closed in the CAPA register; overdue items are escalated to top management.",
           ] },
         ],
@@ -488,11 +488,11 @@ const seeds: TemplateSeed[] = [
       "This framework applies to strategic, operational, financial, compliance, information-security, health-and-safety and environmental risk across all functions, projects and sites.",
     clauseMap: [
       ["4", "Principles", "Section 1"],
-      ["5", "Framework — leadership and integration", "Sections 1–2"],
+      ["5", "Framework. Leadership and integration", "Sections 1 to 2"],
       ["6.3", "Scope, context and criteria", "Section 2"],
-      ["6.4", "Risk assessment", "Sections 3–4"],
+      ["6.4", "Risk assessment", "Sections 3 to 4"],
       ["6.5", "Risk treatment", "Section 5"],
-      ["6.6 / 6.7", "Monitoring, review and reporting", "Sections 6–7"],
+      ["6.6 / 6.7", "Monitoring, review and reporting", "Sections 6 to 7"],
     ],
     roles: [
       ["Board / top management", "Sets risk appetite, accepts extreme and high residual risk", "Quarterly review"],
@@ -513,7 +513,7 @@ const seeds: TemplateSeed[] = [
       ["Risk acceptance approvals", "Top management", "5 years", "Board pack"],
     ],
     definitions: [
-      ["Risk", "The effect of uncertainty on objectives — a deviation from the expected, positive or negative."],
+      ["Risk", "The effect of uncertainty on objectives. A deviation from the expected, positive or negative."],
       ["Inherent risk", "The level of risk before treatment or controls are considered."],
       ["Residual risk", "The level of risk remaining after treatment and existing controls."],
       ["Risk appetite", "The amount and type of risk the organisation is willing to pursue or retain."],
@@ -536,8 +536,8 @@ const seeds: TemplateSeed[] = [
             head: ["Level", "Descriptor", "Indicative frequency"],
             rows: [
               ["1", "Rare", "May occur in exceptional circumstances (< once in 10 years)"],
-              ["2", "Unlikely", "Could occur at some time (once in 5–10 years)"],
-              ["3", "Possible", "Might occur at some time (once in 2–5 years)"],
+              ["2", "Unlikely", "Could occur at some time (once in 5 to 10 years)"],
+              ["3", "Possible", "Might occur at some time (once in 2 to 5 years)"],
               ["4", "Likely", "Will probably occur (annually)"],
               ["5", "Almost certain", "Expected to occur (multiple times per year)"],
             ],
@@ -548,9 +548,9 @@ const seeds: TemplateSeed[] = [
             head: ["Level", "Financial", "Operational", "Compliance / reputation"],
             rows: [
               ["1 Insignificant", "< 0.5% of revenue", "No disruption", "Internal note only"],
-              ["2 Minor", "0.5–2%", "Short, contained disruption", "Customer complaint"],
-              ["3 Moderate", "2–5%", "Multi-day disruption", "Regulator informed"],
-              ["4 Major", "5–10%", "Key service unavailable", "Enforcement action; media interest"],
+              ["2 Minor", "0.5 to 2%", "Short, contained disruption", "Customer complaint"],
+              ["3 Moderate", "2 to 5%", "Multi-day disruption", "Regulator informed"],
+              ["4 Major", "5 to 10%", "Key service unavailable", "Enforcement action; media interest"],
               ["5 Severe", "> 10%", "Business-critical failure", "Loss of licence or certification"],
             ],
           },
@@ -564,7 +564,7 @@ const seeds: TemplateSeed[] = [
             "Process-level review during internal audit and management review.",
             "Incident, complaint, near-miss and nonconformity analysis.",
             "Horizon scanning: regulatory change, market change, technology change.",
-            "Project and change initiation — every material change requires a risk assessment.",
+            "Project and change initiation. Every material change requires a risk assessment.",
           ] },
         ],
       },
@@ -576,10 +576,10 @@ const seeds: TemplateSeed[] = [
             caption: "Evaluation bands and escalation",
             head: ["Score (L × C)", "Band", "Escalation", "Review frequency"],
             rows: [
-              ["1–4", "Low", "Process owner", "Annual"],
-              ["5–9", "Medium", "Function head", "Bi-annual"],
-              ["10–16", "High", "Top management", "Quarterly"],
-              ["17–25", "Extreme", "Board — immediate", "Monthly"],
+              ["1 to 4", "Low", "Process owner", "Annual"],
+              ["5 to 9", "Medium", "Function head", "Bi-annual"],
+              ["10 to 16", "High", "Top management", "Quarterly"],
+              ["17 to 25", "Extreme", "Board. Immediate", "Monthly"],
             ],
           },
         ],
@@ -588,11 +588,11 @@ const seeds: TemplateSeed[] = [
         heading: "Risk treatment planning",
         blocks: [
           { kind: "bullets", items: [
-            "Avoid — do not start or discontinue the activity generating the risk.",
-            "Reduce — modify likelihood or consequence through additional controls.",
-            "Share — transfer through insurance, contract or partnership.",
-            "Accept — retain by informed decision, recorded with rationale and approver.",
-            "Pursue — take the risk to seize an opportunity, with defined limits.",
+            "Avoid. Do not start or discontinue the activity generating the risk.",
+            "Reduce. Modify likelihood or consequence through additional controls.",
+            "Share. Transfer through insurance, contract or partnership.",
+            "Accept. Retain by informed decision, recorded with rationale and approver.",
+            "Pursue. Take the risk to seize an opportunity, with defined limits.",
           ] },
           {
             kind: "table",
@@ -633,7 +633,7 @@ const seeds: TemplateSeed[] = [
     purpose:
       "To provide safe and healthy workplaces, prevent work-related injury and ill health, and continually improve OH&S performance in conformity with ISO 45001:2018 and applicable legal requirements.",
     scopeStatement:
-      "This manual applies to all workers — including employees, contractors, agency staff and visitors — and to all activities, workplaces and equipment under the organisation's control.",
+      "This manual applies to all workers, including employees, contractors, agency staff and visitors, and to all activities, workplaces and equipment under the organisation's control.",
     clauseMap: [
       ["4", "Context and scope", "Section 1"],
       ["5.4", "Consultation and participation of workers", "Section 2"],
@@ -682,7 +682,7 @@ const seeds: TemplateSeed[] = [
           { kind: "bullets", items: [
             "Non-managerial workers are consulted on hazard identification, control selection, incident investigation and training needs.",
             "A safety committee meets quarterly with documented minutes and actions.",
-            "Barriers to participation — language, literacy, fear of reprisal, shift patterns — are actively identified and removed.",
+            "Barriers to participation, language, literacy, fear of reprisal, shift patterns, are actively identified and removed.",
             "A no-blame reporting culture is enforced; no worker is penalised for reporting a hazard, incident or unsafe condition.",
           ] },
         ],
@@ -690,7 +690,7 @@ const seeds: TemplateSeed[] = [
       {
         heading: "Hazard identification, risk assessment and control",
         blocks: [
-          { kind: "p", text: "Hazards are identified proactively across routine and non-routine activities, emergency situations, human factors, changes and previous incidents. Risk is assessed and controls selected strictly in accordance with the hierarchy below — personal protective equipment is the last resort, never the first answer." },
+          { kind: "p", text: "Hazards are identified proactively across routine and non-routine activities, emergency situations, human factors, changes and previous incidents. Risk is assessed and controls selected strictly in accordance with the hierarchy below. Personal protective equipment is the last resort, never the first answer." },
           {
             kind: "table",
             caption: "Hierarchy of controls",
@@ -726,7 +726,7 @@ const seeds: TemplateSeed[] = [
         heading: "Emergency preparedness and response",
         blocks: [
           { kind: "steps", items: [
-            "Identify credible emergency scenarios per site — fire, medical, chemical release, security threat, natural hazard.",
+            "Identify credible emergency scenarios per site. Fire, medical, chemical release, security threat, natural hazard.",
             "Document response plans with roles, muster points, escalation and external services contacts.",
             "Provide equipment, first-aiders, marshals and communication arrangements.",
             "Train workers and brief visitors and contractors on arrival.",
@@ -819,7 +819,7 @@ const seeds: TemplateSeed[] = [
       {
         heading: "Compliance obligations",
         blocks: [
-          { kind: "p", text: "Legal and other requirements — permits, consents, discharge limits, waste duty of care, producer responsibility and customer requirements — are recorded with their applicability, owner and evaluation method. Compliance is evaluated at planned intervals and the status is reported at management review." },
+          { kind: "p", text: "Legal and other requirements, permits, consents, discharge limits, waste duty of care, producer responsibility and customer requirements, are recorded with their applicability, owner and evaluation method. Compliance is evaluated at planned intervals and the status is reported at management review." },
         ],
       },
       {
@@ -852,7 +852,7 @@ const seeds: TemplateSeed[] = [
         heading: "Emergency preparedness and response",
         blocks: [
           { kind: "steps", items: [
-            "Identify potential environmental emergencies — spill, fire, uncontrolled discharge, containment failure.",
+            "Identify potential environmental emergencies. Spill, fire, uncontrolled discharge, containment failure.",
             "Define response actions, containment equipment locations and notification duties to regulators.",
             "Train responders and test the plan through drills at planned intervals.",
             "Review and revise plans after any incident or drill.",
@@ -911,8 +911,8 @@ const seeds: TemplateSeed[] = [
       ["Traceability and mock recall records", "QA", "3 years", "FSMS repository"],
     ],
     definitions: [
-      ["CCP", "Critical control point — a step at which control is essential to prevent or reduce a hazard to an acceptable level."],
-      ["OPRP", "Operational prerequisite programme — a control measure applied to prevent or reduce a significant hazard, not managed as a CCP."],
+      ["CCP", "Critical control point. A step at which control is essential to prevent or reduce a hazard to an acceptable level."],
+      ["OPRP", "Operational prerequisite programme. A control measure applied to prevent or reduce a significant hazard, not managed as a CCP."],
       ["Critical limit", "A measurable value separating acceptability from unacceptability at a CCP."],
     ],
     body: [
@@ -967,16 +967,16 @@ const seeds: TemplateSeed[] = [
         ],
       },
       {
-        heading: "Hazard control plan — CCPs and critical limits",
+        heading: "Hazard control plan. CCPs and critical limits",
         blocks: [
           {
             kind: "table",
             caption: "HACCP control plan",
             head: ["CCP", "Critical limit", "Monitoring (what/how/when/who)", "Correction", "Verification", "Record"],
             rows: [
-              ["CCP 1 — Metal detection", "Detect and reject Fe 2.0 mm / non-Fe 2.5 mm / SS 3.0 mm", "Test pieces at start, every 2 h and at end — operator", "Quarantine product back to last good check; re-test", "Daily QA review; annual validation", "Metal detection log"],
-              ["CCP 2 — Thermal process", "≥ 72 °C for ≥ 2 minutes core", "Continuous probe with datalogger — operator verifies each batch", "Reprocess or reject batch; investigate", "Weekly probe calibration; chart review", "Cook record"],
-              ["CCP 3 — Label verification", "Correct label, allergen declaration and date code", "Line-start and changeover check — supervisor", "Hold and re-label; check stock already packed", "Daily QA audit", "Label check sheet"],
+              ["CCP 1, Metal detection", "Detect and reject Fe 2.0 mm / non-Fe 2.5 mm / SS 3.0 mm", "Test pieces at start, every 2 h and at end, operator", "Quarantine product back to last good check; re-test", "Daily QA review; annual validation", "Metal detection log"],
+              ["CCP 2, Thermal process", "≥ 72 °C for ≥ 2 minutes core", "Continuous probe with datalogger, operator verifies each batch", "Reprocess or reject batch; investigate", "Weekly probe calibration; chart review", "Cook record"],
+              ["CCP 3, Label verification", "Correct label, allergen declaration and date code", "Line-start and changeover check, supervisor", "Hold and re-label; check stock already packed", "Daily QA audit", "Label check sheet"],
             ],
           },
         ],
@@ -997,7 +997,7 @@ const seeds: TemplateSeed[] = [
       {
         heading: "Verification, validation and improvement",
         blocks: [
-          { kind: "p", text: "Control measures are validated before implementation to confirm capability. Verification activities — record review, product testing, environmental monitoring, internal audits and mock recalls — confirm ongoing effectiveness. Results are analysed and fed into FSMS updating and management review." },
+          { kind: "p", text: "Control measures are validated before implementation to confirm capability. Verification activities, record review, product testing, environmental monitoring, internal audits and mock recalls, confirm ongoing effectiveness. Results are analysed and fed into FSMS updating and management review." },
         ],
       },
     ],
@@ -1012,12 +1012,12 @@ const seeds: TemplateSeed[] = [
     summary:
       "Agenda, structured input pack, decision log and minutes template that satisfy clause 9.3 inputs and outputs for any ISO management system.",
     purpose:
-      "To provide a complete, audit-proof structure for management review so that all clause 9.3 inputs are considered and all required outputs — decisions on improvement, change and resources — are recorded.",
+      "To provide a complete, audit-proof structure for management review so that all clause 9.3 inputs are considered and all required outputs, decisions on improvement, change and resources, are recorded.",
     scopeStatement:
       "This pack applies to the periodic management review of the organisation's management system(s), held at least annually and chaired by top management.",
     clauseMap: [
-      ["9.3.1", "General — planned intervals", "Section 1"],
-      ["9.3.2", "Management review inputs", "Sections 2–6"],
+      ["9.3.1", "General. Planned intervals", "Section 1"],
+      ["9.3.2", "Management review inputs", "Sections 2 to 6"],
       ["9.3.3", "Management review outputs", "Section 7"],
       ["10.3", "Continual improvement", "Section 7"],
     ],
@@ -1044,7 +1044,7 @@ const seeds: TemplateSeed[] = [
       {
         heading: "Purpose, frequency and attendance",
         blocks: [
-          { kind: "p", text: "Management review is held at least annually — quarterly is recommended where the system is new or performance is unstable. It is chaired by top management, and attendance by all process owners is expected. Apologies do not remove accountability for the input contribution." },
+          { kind: "p", text: "Management review is held at least annually. Quarterly is recommended where the system is new or performance is unstable. It is chaired by top management, and attendance by all process owners is expected. Apologies do not remove accountability for the input contribution." },
         ],
       },
       {
@@ -1060,9 +1060,9 @@ const seeds: TemplateSeed[] = [
               ["3", "Interested-party needs and compliance obligations", "9.3.2 b", "Compliance", "10 min"],
               ["4", "Performance and KPI trends", "9.3.2 c", "Process owners", "25 min"],
               ["5", "Nonconformities and corrective actions", "9.3.2 c", "System Manager", "15 min"],
-              ["6", "Audit results — internal and external", "9.3.2 c", "System Manager", "15 min"],
+              ["6", "Audit results. Internal and external", "9.3.2 c", "System Manager", "15 min"],
               ["7", "Customer / interested-party feedback", "9.3.2 c", "Commercial", "10 min"],
-              ["8", "Risks and opportunities — effectiveness of actions", "9.3.2 e", "Risk coordinator", "15 min"],
+              ["8", "Risks and opportunities. Effectiveness of actions", "9.3.2 e", "Risk coordinator", "15 min"],
               ["9", "Adequacy of resources", "9.3.2 d", "Chair", "10 min"],
               ["10", "Opportunities for improvement", "9.3.2 f", "All", "15 min"],
               ["11", "Decisions, actions and owners", "9.3.3", "Chair", "15 min"],
@@ -1071,7 +1071,7 @@ const seeds: TemplateSeed[] = [
         ],
       },
       {
-        heading: "Input pack — performance data",
+        heading: "Input pack. Performance data",
         blocks: [
           {
             kind: "table",
@@ -1088,7 +1088,7 @@ const seeds: TemplateSeed[] = [
         ],
       },
       {
-        heading: "Input pack — audits, nonconformities and risk",
+        heading: "Input pack. Audits, nonconformities and risk",
         blocks: [
           { kind: "bullets", items: [
             "Internal audit programme completion and summary of findings by process.",
@@ -1100,7 +1100,7 @@ const seeds: TemplateSeed[] = [
         ],
       },
       {
-        heading: "Input pack — resources, change and obligations",
+        heading: "Input pack. Resources, change and obligations",
         blocks: [
           { kind: "p", text: "The review considers whether people, competence, infrastructure, technology and budget remain adequate; any planned organisational, product, process or regulatory change; and the status of compliance obligations, including any enforcement contact." },
         ],
@@ -1109,7 +1109,7 @@ const seeds: TemplateSeed[] = [
         heading: "Minutes template",
         blocks: [
           { kind: "p", text: "Minutes record date, attendees, apologies, each agenda item discussed, evidence considered, conclusions reached and every decision made. A conclusion on the continuing suitability, adequacy and effectiveness of the management system is mandatory and must be stated explicitly." },
-          { kind: "callout", title: "Mandatory closing statement", text: "\"The management team concludes that the management system remains suitable, adequate and effective, subject to the actions recorded below.\" — or a qualified statement where it does not, with the corrective programme attached." },
+          { kind: "callout", title: "Mandatory closing statement", text: "\"The management team concludes that the management system remains suitable, adequate and effective, subject to the actions recorded below.\". Or a qualified statement where it does not, with the corrective programme attached." },
         ],
       },
       {
@@ -1288,7 +1288,7 @@ export function buildDocumentHtml(
 
   return `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8" />
-<title>${esc(company)} — ${esc(template.name)} (${esc(template.standard)})</title>
+<title>${esc(company)}, ${esc(template.name)} (${esc(template.standard)})</title>
 <style>
   @page { size: A4; margin: 20mm 16mm 18mm; }
   * { box-sizing: border-box; }
@@ -1358,8 +1358,8 @@ export function buildDocumentHtml(
         <tr><td>Issue date</td><td>${today}</td></tr>
         <tr><td>Next review date</td><td>${nextReview}</td></tr>
         <tr><td>Document owner</td><td>${esc(owner)}</td></tr>
-        <tr><td>Country of operation</td><td>${esc(details.country || "—")}</td></tr>
-        <tr><td>Classification</td><td>Confidential — internal use</td></tr>
+        <tr><td>Country of operation</td><td>${esc(details.country || "N/A")}</td></tr>
+        <tr><td>Classification</td><td>Confidential. Internal use</td></tr>
         <tr><td>Prepared using</td><td>AACL AI Document Generator</td></tr>
       </table></div>
       <div class="conf">Confidential. This document is the property of ${esc(company)}. It contains management system information and must not be reproduced or distributed outside the organisation without written authorisation.</div>
@@ -1412,7 +1412,7 @@ export function buildDocumentHtml(
     </div>
     <footer class="doc">
       ${docRef} · Revision 01 · Issued ${today} · ${esc(company)} · Confidential.<br />
-      Prepared with the AACL AI Document Generator — Audits and Assurance Consult Ltd: ISO consultancy, training, documentation and audit support, onsite or remote, worldwide.
+      Prepared with the AACL AI Document Generator. Audits and Assurance Consult Ltd: ISO consultancy, training, documentation and audit support, onsite or remote, worldwide.
       Uncontrolled when printed. This template is a professionally structured starting point and should be adapted to your organisation's actual processes before audit.
     </footer>
   </section>

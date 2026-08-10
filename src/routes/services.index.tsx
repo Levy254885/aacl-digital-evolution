@@ -14,7 +14,7 @@ import { useCms } from "@/lib/cms";
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Services — Security, Compliance & ISO Consultancy | AACL" },
+      { title: "Security, Compliance & ISO Consultancy Services | AACL" },
       { name: "description", content: "AACL delivers risk assessments, ISO management systems, security standards implementation, SMaaS and statutory compliance consultancy." },
       { property: "og:title", content: "AACL Services" },
       { property: "og:description", content: "Executive-grade security, compliance and ISO consultancy across five practice areas." },
@@ -51,7 +51,7 @@ function ServicesPage() {
       <PageHero
         eyebrow="ISO management systems"
         title="Certification, Without the Guesswork."
-        lead="Whichever standard you need — ISO 9001, 27001, 45001, 22000 or any other — we walk you from gap assessment to certificate. Available Onsite or Remote — Worldwide."
+        lead="Whichever standard you need, ISO 9001, 27001, 45001, 22000 or any other, we walk you from gap assessment to certificate. Available Onsite or Remote, Worldwide."
         image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2000&q=80"
       />
 
