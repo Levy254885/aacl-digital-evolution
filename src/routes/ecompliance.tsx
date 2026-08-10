@@ -31,7 +31,7 @@ import {
   DELIVERY_STRAPLINE,
 } from "@/lib/ecompliance-content";
 
-const TITLE = "eCompliance. Compliance as a Service, Onsite or Remote | AACL";
+const TITLE = "eCompliance | Compliance as a Service, Onsite or Remote | AACL";
 const DESCRIPTION =
   "AACL eCompliance is a managed compliance platform: dashboards, CAPA, risk registers, audit tracking, compliance calendars and document workflows. Delivered onsite or remotely, worldwide.";
 

@@ -26,7 +26,7 @@ import {
 } from "@/lib/doc-generator";
 import { saveDocumentRequest, uploadCompanyLogo } from "@/lib/document-requests";
 
-const TITLE = "AI ISO Document Generator. Branded Templates | AACL";
+const TITLE = "AI ISO Document Generator & Branded Templates | AACL";
 const DESCRIPTION =
   "Generate branded, audit-ready ISO manuals, policies and procedures in minutes. Choose a document, add your logo and company details, preview, pay securely and download as PDF or DOCX.";
 
