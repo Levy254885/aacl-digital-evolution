@@ -11,7 +11,7 @@ export const Route = createFileRoute("/admin/audit")({
 });
 
 function formatWhen(at: Date | null) {
-  if (!at) return "—";
+  if (!at) return "N/A";
   return at.toLocaleString(undefined, {
     year: "numeric",
     month: "short",

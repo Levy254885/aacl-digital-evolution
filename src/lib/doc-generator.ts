@@ -406,11 +406,11 @@ const seeds: TemplateSeed[] = [
             caption: "Annual audit programme (template)",
             head: ["Process / area", "Criteria", "Frequency", "Quarter", "Lead auditor"],
             rows: [
-              ["Leadership and management review", "Clause 5, 9.3", "Annual", "Q4", "—"],
-              ["Operations / service delivery", "Clause 8", "Bi-annual", "Q1, Q3", "—"],
-              ["Procurement and external providers", "Clause 8.4", "Annual", "Q2", "—"],
-              ["HR and competence", "Clause 7.2", "Annual", "Q2", "—"],
-              ["Improvement, NC and CAPA", "Clause 10", "Annual", "Q4", "—"],
+              ["Leadership and management review", "Clause 5, 9.3", "Annual", "Q4", "N/A"],
+              ["Operations / service delivery", "Clause 8", "Bi-annual", "Q1, Q3", "N/A"],
+              ["Procurement and external providers", "Clause 8.4", "Annual", "Q2", "N/A"],
+              ["HR and competence", "Clause 7.2", "Annual", "Q2", "N/A"],
+              ["Improvement, NC and CAPA", "Clause 10", "Annual", "Q4", "N/A"],
             ],
           },
         ],
@@ -452,8 +452,8 @@ const seeds: TemplateSeed[] = [
             rows: [
               ["Major NC", "Systemic breakdown or absence of a required arrangement", "5 working days", "30 days"],
               ["Minor NC", "Isolated lapse against a requirement", "20 working days", "45 days"],
-              ["Observation", "Conformant but at risk of becoming a nonconformity", "—", "Considered at review"],
-              ["Opportunity for improvement", "Potential to improve efficiency or effectiveness", "—", "Optional"],
+              ["Observation", "Conformant but at risk of becoming a nonconformity", "N/A", "Considered at review"],
+              ["Opportunity for improvement", "Potential to improve efficiency or effectiveness", "N/A", "Optional"],
             ],
           },
           { kind: "p", text: "The report is issued within ten working days of the closing meeting and states audit objective, scope, criteria, team, evidence sampled, findings by category, positive observations and conclusion on system effectiveness." },
@@ -1358,7 +1358,7 @@ export function buildDocumentHtml(
         <tr><td>Issue date</td><td>${today}</td></tr>
         <tr><td>Next review date</td><td>${nextReview}</td></tr>
         <tr><td>Document owner</td><td>${esc(owner)}</td></tr>
-        <tr><td>Country of operation</td><td>${esc(details.country || "—")}</td></tr>
+        <tr><td>Country of operation</td><td>${esc(details.country || "N/A")}</td></tr>
         <tr><td>Classification</td><td>Confidential. Internal use</td></tr>
         <tr><td>Prepared using</td><td>AACL AI Document Generator</td></tr>
       </table></div>

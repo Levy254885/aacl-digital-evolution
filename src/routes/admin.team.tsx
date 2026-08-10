@@ -140,7 +140,7 @@ function TeamPage() {
             {members.map((m) => (
               <tr key={m.uid} className="border-t border-border">
                 <td className="p-4">{m.email}</td>
-                <td className="p-4">{m.name || "—"}</td>
+                <td className="p-4">{m.name || "N/A"}</td>
                 <td className="p-4">
                   <select
                     value={m.role}
