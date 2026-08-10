@@ -288,7 +288,7 @@ export const INDUSTRIES: IndustryMeta[] = [
     approach:
       "AACL leads full certification programmes for security printers, from facility design review and personnel vetting frameworks through GSMA SAS and UL 2050 audit readiness.",
     outcomes: ["Successful scheme certification", "Reduced insider risk", "Board-visible security posture"],
-    image: "https://images.unsplash.com/photo-1580983230786-96ea6d5a3f5f?auto=format&fit=crop&w=1400&q=80",
+    image: "/industries/security-printing.jpg",
   },
   {
     slug: "banking-financial-services",

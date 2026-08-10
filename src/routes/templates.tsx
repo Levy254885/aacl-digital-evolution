@@ -91,9 +91,9 @@ const EMPTY_DETAILS: CompanyDetails = {
 };
 
 const PAYMENT_METHODS = [
-  { id: "mpesa", label: "M-Pesa", hint: "Paybill prompt to your phone" },
-  { id: "card", label: "Card (Stripe)", hint: "Visa, Mastercard, Amex" },
-  { id: "invoice", label: "Request invoice", hint: "Bank transfer, 7-day terms" },
+  { id: "mpesa", label: "M-Pesa", hint: "Paybill prompt to your phone", logo: "/payments/mpesa.png" },
+  { id: "card", label: "Visa / Mastercard", hint: "Secure card checkout", logo: "/payments/visa-mastercard.png" },
+  { id: "paypal", label: "PayPal", hint: "Pay with your PayPal wallet", logo: "/payments/paypal.png" },
 ];
 
 function TemplatesPage() {
@@ -375,7 +375,16 @@ function TemplatesPage() {
                       paymentMethod === m.id ? "border-[var(--gold)] bg-[var(--bone)]" : "border-border hover:border-[var(--gold)]/60"
                     }`}
                   >
-                    <div className="font-display">{m.label}</div>
+                    <img
+                      src={m.logo}
+                      alt={m.label}
+                      width={180}
+                      height={48}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-9 w-auto max-w-[140px] object-contain object-left"
+                    />
+                    <div className="font-display mt-4">{m.label}</div>
                     <div className="text-xs text-muted-foreground mt-1">{m.hint}</div>
                   </button>
                 ))}
