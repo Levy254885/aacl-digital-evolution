@@ -46,6 +46,13 @@ function SignInScreen() {
           Sign in with your AACL account to manage website content.
         </p>
 
+        <p className="mt-5 rounded-[12px] border border-[var(--red)]/30 bg-[var(--red)]/5 p-4 text-[13px] leading-relaxed text-foreground">
+          <strong className="font-semibold">Multi-factor authentication is required.</strong> Every
+          AACL staff account must have MFA enrolled before it is granted Editor access or higher.
+          Never share credentials, and sign out on shared devices.
+        </p>
+
+
         <label className="mt-7 block text-[12px] uppercase tracking-[0.12em] text-muted-foreground">
           Email
           <input
