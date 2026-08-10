@@ -51,7 +51,7 @@ function IndustryDetail() {
             <h2 className="font-display text-3xl mb-8 leading-tight">The exposures we help you manage.</h2>
             <ul className="space-y-4">
               {i.risks.map((r) => (
-                <li key={r} className="flex gap-3 border-t border-border pt-4"><span className="text-[var(--gold)]">—</span><span>{r}</span></li>
+                <li key={r} className="flex gap-3 border-t border-border pt-4"><span className="text-[var(--gold)]">•</span><span>{r}</span></li>
               ))}
             </ul>
           </Reveal>
