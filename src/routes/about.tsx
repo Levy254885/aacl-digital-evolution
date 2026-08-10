@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About AACL. Executive Assurance Consultancy" },
+      { title: "About AACL | Executive Assurance Consultancy" },
       { name: "description", content: "AACL is a specialist East African consultancy in security, compliance, ISO management systems and enterprise risk." },
       { property: "og:title", content: "About AACL" },
       { property: "og:description", content: "Executive assurance consultancy for regulated organisations." },

@@ -8,7 +8,7 @@ import { SITE } from "@/lib/aacl-content";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact AACL. Nairobi, Kenya" },
+      { title: "Contact AACL in Nairobi, Kenya" },
       { name: "description", content: `Contact AACL at ${SITE.address.line1}, ${SITE.address.line2}, Nairobi. Phone ${SITE.phone}. Email ${SITE.email}.` },
       { property: "og:title", content: "Contact AACL" },
       { property: "og:description", content: "Speak with AACL about your assurance, certification or compliance programme." },

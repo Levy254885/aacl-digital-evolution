@@ -9,7 +9,7 @@ export const Route = createFileRoute("/admin")({
   ssr: false,
   head: () => ({
     meta: [
-      { title: "AACL Admin. Content & Team Management" },
+      { title: "AACL Admin | Content & Team Management" },
       { name: "robots", content: "noindex, nofollow" },
       { name: "description", content: "Private AACL administration dashboard." },
     ],

@@ -16,7 +16,7 @@ export const Route = createFileRoute("/industries/$slug")({
     const i = loaderData.industry;
     return {
       meta: [
-        { title: `${i.name}. Industry Expertise | AACL` },
+        { title: `${i.name} Industry Expertise | AACL` },
         { name: "description", content: i.short },
         { property: "og:title", content: `${i.name} | AACL` },
         { property: "og:description", content: i.short },

@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Careers at AACL. Join our practice" },
+      { title: "Careers at AACL | Join Our Practice" },
       { name: "description", content: "Explore career opportunities at Audits and Assurance Consult Ltd. A specialist consultancy for security, compliance and ISO management systems." },
       { property: "og:title", content: "Careers at AACL" },
       { property: "og:description", content: "Careers at AACL." },

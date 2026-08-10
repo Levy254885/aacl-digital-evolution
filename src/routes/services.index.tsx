@@ -14,7 +14,7 @@ import { useCms } from "@/lib/cms";
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Services. Security, Compliance & ISO Consultancy | AACL" },
+      { title: "Security, Compliance & ISO Consultancy Services | AACL" },
       { name: "description", content: "AACL delivers risk assessments, ISO management systems, security standards implementation, SMaaS and statutory compliance consultancy." },
       { property: "og:title", content: "AACL Services" },
       { property: "og:description", content: "Executive-grade security, compliance and ISO consultancy across five practice areas." },
