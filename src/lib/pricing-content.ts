@@ -110,16 +110,22 @@ export const PAYMENT_METHODS = [
     method: "Card (Visa / Mastercard)",
     best: "International and enterprise clients",
     rail: "Stripe (global) or Flutterwave / Paystack for African card acquiring",
+    logo: "/payments/visa-mastercard.png",
+    logoAlt: "Visa and Mastercard accepted",
   },
   {
     method: "M-Pesa",
     best: "Kenyan SMEs and individual buyers, especially for Templates",
     rail: "Flutterwave, Pesapal or direct Safaricom Daraja API",
+    logo: "/payments/mpesa.png",
+    logoAlt: "M-Pesa accepted",
   },
   {
     method: "PayPal",
     best: "International clients who prefer a wallet over card details",
     rail: "PayPal Business Checkout",
+    logo: "/payments/paypal.png",
+    logoAlt: "PayPal accepted",
   },
 ];
 
