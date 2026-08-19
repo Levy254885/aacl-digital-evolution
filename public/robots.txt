@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+
 Disallow: /admin
 Disallow: /admin/
 
@@ -7,14 +8,17 @@ Disallow: /admin/
 User-agent: GPTBot
 Allow: /
 Disallow: /admin/
+
 User-agent: PerplexityBot
 Allow: /
 Disallow: /admin/
+
 User-agent: Google-Extended
 Allow: /
 Disallow: /admin/
+
 User-agent: ClaudeBot
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://aacl-assurance.vercel.app/sitemap.xml
+Sitemap: https://aaclglobal.com/sitemap.xml
