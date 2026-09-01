@@ -82,6 +82,15 @@ function ServiceDetail() {
     <PageShell>
       <PageHero eyebrow={`Service ${s.number}`} title={s.title} lead={s.short} image={s.image} />
 
+      <section className="pt-10">
+        <div className="container-x">
+          <Reveal>
+            <p className="eyebrow">Available onsite or remote. Worldwide.</p>
+          </Reveal>
+        </div>
+      </section>
+
+
       {/* Overview */}
       <section className="py-24 bg-background">
         <div className="container-x grid lg:grid-cols-12 gap-14">
