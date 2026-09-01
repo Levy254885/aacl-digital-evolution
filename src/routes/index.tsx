@@ -22,24 +22,30 @@ const PILLAR_ICONS = [GraduationCap, FileText, ShieldCheck, Briefcase] as const;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ISO Certification & Compliance Consultants | AACL Kenya" },
+      { title: "Global ISO Certification & Security Compliance Consultants | AACL Global" },
       {
         name: "description",
         content:
-          "Audits and Assurance Consult Ltd (AACL) is East Africa's specialist consultancy for security, compliance, governance, risk and ISO management systems.",
+          "AACL Global delivers ISO 9001, 27001, 45001, GSMA SAS, PCI DSS and security certification worldwide. Expert consultants available onsite or remote. Get certified faster.",
       },
-      { property: "og:title", content: "ISO Certification & Compliance Consultants | AACL Kenya" },
+      {
+        property: "og:title",
+        content: "Global ISO Certification & Security Compliance Consultants | AACL Global",
+      },
       {
         property: "og:description",
         content:
-          "Executive consultancy for security, compliance, governance, risk and ISO management systems across East Africa.",
+          "AACL Global delivers ISO 9001, 27001, 45001, GSMA SAS, PCI DSS and security certification worldwide. Expert consultants available onsite or remote. Get certified faster.",
       },
       { property: "og:url", content: absUrl("/") },
-      { name: "twitter:title", content: "ISO Certification & Compliance Consultants | AACL Kenya" },
+      {
+        name: "twitter:title",
+        content: "Global ISO Certification & Security Compliance Consultants | AACL Global",
+      },
       {
         name: "twitter:description",
         content:
-          "Executive consultancy for security, compliance, governance, risk and ISO management systems.",
+          "AACL Global delivers ISO 9001, 27001, 45001, GSMA SAS, PCI DSS and security certification worldwide. Expert consultants available onsite or remote. Get certified faster.",
       },
       {
         property: "og:image",
@@ -61,9 +67,9 @@ export const Route = createFileRoute("/")({
           "@type": "WebPage",
           "@id": absUrl("/"),
           url: absUrl("/"),
-          name: "ISO Certification & Compliance Consultants | AACL Kenya",
+          name: "Global ISO Certification & Security Compliance Consultants | AACL Global",
           description:
-            "Audits and Assurance Consult Ltd (AACL) delivers security, compliance, governance, risk and ISO management system consultancy.",
+            "AACL Global delivers ISO 9001, 27001, 45001, GSMA SAS, PCI DSS and security certification worldwide, onsite or remote.",
           isPartOf: { "@id": `${SITE_URL}/#website` },
           about: { "@id": `${SITE_URL}/#organization` },
           inLanguage: "en",

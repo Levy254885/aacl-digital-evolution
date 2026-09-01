@@ -68,9 +68,9 @@ export const PILLARS = [
 ];
 
 export const STATS = [
-  { label: "Satisfied Clients", value: "150+" },
+  { label: "Satisfied Clients Worldwide", value: "120+" },
   { label: "Service Categories", value: "50+" },
-  { label: "Professionals Trained", value: "1000+" },
+  { label: "Professionals Trained", value: "850+" },
 ];
 
 export const TESTIMONIALS = [

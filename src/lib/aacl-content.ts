@@ -120,7 +120,7 @@ export const SERVICES: ServiceMeta[] = [
     standards: ["ISO 27001", "ISO 9001", "ISO 13485", "ISO 14001", "ISO 45001", "ISO 22301", "ISO 50001", "FSSC 22000", "IFC Performance Standards"],
     industries: ["Manufacturing", "Pharmaceuticals", "Banking & Financial Services", "Technology", "Food & Beverage", "Hospitality"],
     faqs: [
-      { q: "Which certification bodies do you work with?", a: "We are certification-body agnostic and support engagements with all major internationally accredited registrars operating in East Africa and beyond." },
+      { q: "Which certification bodies do you work with?", a: "We are certification-body agnostic and support engagements with all major internationally accredited registrars, wherever you operate." },
       { q: "Can you integrate multiple standards?", a: "Yes. Our preferred approach for organisations with more than two standards is an Integrated Management System that eliminates duplication." },
       { q: "How quickly can we achieve certification?", a: "Typical first-time certification programmes run four to nine months depending on scope, sites and existing maturity." },
     ],
@@ -131,13 +131,14 @@ export const SERVICES: ServiceMeta[] = [
     slug: "security-standards-implementation",
     number: "03",
     title: "Security Standards Implementation & Audits",
-    short: "Specialist implementation and auditing of GSMA SAS, SOC, UL 2050, ASTM F1233 and PCI DSS.",
+    short: "Specialist implementation and auditing of GSMA SAS (SAS-UP and SAS-SM), SOC, UL 2050, ASTM F1233, PCI DSS and LPS 1175. Available onsite or remote, worldwide.",
     summary:
-      "AACL is one of the region's specialist consultancies for security certification schemes that combine physical and logical control requirements. Critical for security printers, SIM manufacturers, payment ecosystems and monitored high-security facilities.",
+      "AACL Global is a specialist consultancy for demanding security certification schemes including GSMA SAS, trusted by security printers, SIM and eSIM manufacturers, payment ecosystems and high-security facilities worldwide. Available onsite or remote.",
     detail: [
-      "Security certification schemes such as GSMA SAS, UL 2050 and PCI DSS impose demanding, prescriptive controls that span physical premises, personnel screening, information security, production processes and supply chain governance. AACL provides end-to-end implementation and audit readiness for these programmes.",
-      "Our consultants have supported certification programmes for security printers, SIM and eSIM manufacturers, payment processors and high-security storage facilities. We understand the operational realities of running certified facilities. From clean-room controls to CCTV retention and secure destruction.",
-      "We provide both implementation (design, remediation, evidence packs) and independent second-party auditing to prepare organisations for scheme audits with confidence.",
+      "GSMA SAS is our lead specialism. SAS-UP covers SIM, eSIM and UICC production sites, while SAS-SM covers subscription management and remote provisioning platforms. Both demand prescriptive controls spanning physical premises, personnel screening, information security, production processes and supply chain governance, and both are audited by GSMA-appointed auditors against a published checklist.",
+      "Alongside GSMA SAS we implement and audit SOC 1 and SOC 2, UL 2050, ASTM F1233, PCI DSS and LPS 1175. AACL Global provides end-to-end implementation and audit readiness for each scheme, available onsite or remote, worldwide.",
+      "Our consultants have supported certification programmes for security printers, SIM and eSIM manufacturers, payment processors and high-security storage facilities across Africa, Europe, the UK, the US and Asia. We understand the operational realities of running certified facilities. From clean-room controls to CCTV retention and secure destruction.",
+      "We provide both implementation (design, remediation, evidence packs) and independent second-party auditing to prepare organisations for scheme audits with confidence, for first-time applications and renewal cycles alike.",
     ],
     challenges: [
       "Onerous physical control requirements (LPS 1175, UL 2050) with long lead times",
@@ -221,7 +222,7 @@ export const SERVICES: ServiceMeta[] = [
     title: "Statutory Compliance Consultancy, Audits & Training",
     short: "Occupational health & safety, environment, sustainability and data protection compliance.",
     summary:
-      "AACL helps organisations meet Kenyan and international statutory obligations across occupational health & safety, environmental management, sustainability and data protection. Through compliance audits, remediation programmes, capacity building and ongoing advisory.",
+      "AACL Global helps organisations meet local and international statutory obligations across occupational health & safety, environmental management, sustainability and data protection. Through compliance audits, remediation programmes, capacity building and ongoing advisory.",
     detail: [
       "Regulatory obligations across health & safety (DOSHS), environment (NEMA), data protection (ODPC) and sector-specific regulators have expanded significantly. Non-compliance carries reputational, financial and criminal exposure for directors and officers.",
       "Our consultants combine regulatory expertise with practical operational knowledge across manufacturing, hospitality, financial services and technology. We do not just identify gaps. We design and deliver the remediation and capacity-building needed to close them.",
@@ -421,7 +422,7 @@ export const INSIGHTS = [
   },
   {
     slug: "kenya-data-protection-act-lessons",
-    title: "Two years of Kenya's Data Protection Act. Enforcement lessons",
+    title: "Two years of Kenya's Data Protection Act. Enforcement lessons for global operators",
     excerpt: "The ODPC has issued a growing number of enforcement decisions. Here is what compliance leaders should be prioritising in 2026.",
     date: "2026-02-19",
     readTime: "7 min read",
@@ -430,12 +431,20 @@ export const INSIGHTS = [
   },
   {
     slug: "gsma-sas-preparing-for-your-first-audit",
-    title: "GSMA SAS: preparing for your first scheme audit",
-    excerpt: "First-time SAS-UP applicants underestimate the physical and personnel control requirements. Our field guide walks through what to expect.",
+    title: "GSMA SAS: Preparing for Your First Scheme Audit",
+    excerpt: "First-time SAS-UP and SAS-SM applicants consistently underestimate the physical and personnel control requirements. This practical guide walks through the scheme, the timeline, the evidence and the findings we see most often.",
     date: "2026-01-08",
-    readTime: "9 min read",
+    readTime: "12 min read",
     category: "Security Standards",
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=80",
+    body: [
+      { h: "What GSMA SAS actually certifies", p: ["The GSMA Security Accreditation Scheme exists so mobile operators can trust the suppliers that hold their cryptographic keys and subscriber credentials. It has two arms. SAS-UP accredits UICC, SIM and eSIM production sites, covering personalisation, key generation, data handling, transport and destruction. SAS-SM accredits subscription management platforms, both SM-DP+ and SM-SR/SM-DS operations, covering the data centres, the platform and the people who run it.", "Accreditation is site-specific and platform-specific, not company-wide. Each production location or hosting environment is audited and listed separately, and adding a site, a data centre or a materially new process means an extension audit rather than an update to your existing certificate.", "Audits are carried out by GSMA-appointed auditors against a published set of requirements and a consolidated security controls checklist. There is no scoring curve. Either a control is implemented and evidenced or it is a finding."] },
+      { h: "The timeline that works", p: ["Organisations that succeed first time typically start twelve to eighteen months before they need the certificate. That sounds long until you cost out the physical works. A compliant high-security area usually needs construction, intrusion-resistant walls, a certified vault or safe, access control with anti-passback, CCTV with retention that satisfies the checklist, and an alarm system with monitored response. Those lead times, not documentation, drive the plan.", "A realistic sequence is: gap assessment and scope definition (weeks 1 to 6), control design and procurement (weeks 6 to 16), physical works and system commissioning (weeks 12 to 36), documentation, training and process embedding in parallel, then a mock audit at least eight weeks before the real one so there is time to close what it finds.", "Book the GSMA audit slot early. Auditor availability, not your readiness, is often the binding constraint on the date."] },
+      { h: "Where first-time applicants lose points", p: ["Physical security assumptions. Teams assume an existing factory perimeter counts as the secure area. The scheme expects layered zones with defined entry controls between each, and evidence that the layering works in practice, including out of hours.", "Personnel controls. Screening must be documented, repeatable and applied to contractors and cleaners as well as employees, with defined re-screening intervals and a documented process for role changes and terminations. Verbal assurance that people are trusted is not evidence.", "Key management. Dual control and split knowledge have to be visible in ceremony records, not just written in a procedure. Auditors will ask to see completed ceremony logs, HSM configuration, key component custody records and destruction certificates.", "Logistics and transport. Secure courier arrangements, tamper-evident packaging, chain-of-custody records and reconciliation between what was produced, shipped and received are examined closely, including reject and scrap flows.", "Destruction and reconciliation. Scrap, rejected cards, test data and returned material must be accounted for numerically. Unexplained quantity variances are one of the fastest routes to a serious finding.", "Logging and monitoring. Access control and CCTV logs are frequently retained but never reviewed. The scheme expects evidence of review, with names, dates and outcomes."] },
+      { h: "Building an evidence pack the auditor can follow", p: ["Structure your evidence one-to-one against the GSMA consolidated controls list rather than against your internal document tree. For each control, hold the policy or procedure, the record that proves it operates, and the name of the owner who can speak to it in the interview.", "Keep the records recent. A procedure signed off two years ago with no operational records since reads as shelfware. Three to six months of live records, logs, reviews, training completions and ceremony documents demonstrate a working system.", "Prepare your people, not just your paperwork. Auditors interview operators, security staff and process owners. The most common failure mode we see is a well-documented control that the person performing it describes differently."] },
+      { h: "Renewal audits are not a formality", p: ["Accreditation is maintained through periodic re-audit, and renewal audits examine change. New products, eSIM introduction, cloud migration of a supporting service, a new subcontractor, revised shift patterns or a change of security integrator all attract scrutiny. Maintain a change register that records the security assessment of each change and you turn the renewal into a review rather than a re-run.", "Between audits, keep the annual rhythm going: internal audit against the SAS checklist, management review, screening refresh, key ceremony practice, CCTV and access log reviews, and a physical control test."] },
+      { h: "How AACL Global supports SAS programmes", p: ["We support both first-time applications and renewal cycles for SAS-UP and SAS-SM, working with SIM and eSIM manufacturers, security printers, subscription management providers and their hosting partners. Engagements typically combine a gap assessment against the current GSMA requirements, control and facility design support with your architects and security integrators, evidence engineering, personnel and key management process design, staff readiness coaching, an independent mock audit, and onsite or remote support during the scheme audit and finding closure.", "Delivery is available onsite or remote, wherever you operate. If you are scoping a first SAS audit or preparing for renewal, talk to us early. The cheapest time to fix a physical control is on a drawing."] },
+    ],
   },
   {
     slug: "integrated-management-systems",

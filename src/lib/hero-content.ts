@@ -15,7 +15,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     alt: "AACL consultants in a client working session",
     eyebrow: "Certified. Compliant. Trusted.",
     headline: "Certified. Compliant. Trusted. Anywhere in the World.",
-    sub: "AACL Global turns ISO certification and everyday compliance into one done-for-you system. Expert consultants, wherever you operate.",
+    sub: "AACL Global turns ISO certification and everyday compliance into one done-for-you system. Expert consultants, available onsite or remote, wherever you operate.",
     primary: { label: "Get Certified, Faster", to: "/services" },
     secondary: { label: "Talk Budget First", to: "/contact" },
   },

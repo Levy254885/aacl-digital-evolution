@@ -26,8 +26,8 @@ export const Route = createFileRoute("/services/$slug")({
           name: s.title,
           serviceType: s.title,
           description: s.summary,
-          provider: { "@type": "Organization", name: "Audits and Assurance Consult Ltd", url: "/" },
-          areaServed: ["Kenya", "East Africa"],
+          provider: { "@type": "Organization", name: "Audits and Assurance Consult Ltd", alternateName: "AACL Global", url: "/" },
+          areaServed: "Worldwide",
           url: `/services/${s.slug}`,
         },
         {
@@ -81,6 +81,15 @@ function ServiceDetail() {
   return (
     <PageShell>
       <PageHero eyebrow={`Service ${s.number}`} title={s.title} lead={s.short} image={s.image} />
+
+      <section className="pt-10">
+        <div className="container-x">
+          <Reveal>
+            <p className="eyebrow">Available onsite or remote. Worldwide.</p>
+          </Reveal>
+        </div>
+      </section>
+
 
       {/* Overview */}
       <section className="py-24 bg-background">

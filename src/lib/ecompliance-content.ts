@@ -135,7 +135,7 @@ export const ECOMPLIANCE_FAQS = [
     a: "Yes. Integrated management systems are the norm at AACL. For example ISO 9001, ISO 14001 and ISO 45001 operated as a single system with shared documentation, one audit programme and one management review.",
   },
   {
-    q: "Do you work outside Kenya and East Africa?",
+    q: "Do you work with clients outside Kenya?",
     a: "Yes. Remote delivery is worldwide across all timezones, and onsite consultancy is arranged globally on request.",
   },
   {
