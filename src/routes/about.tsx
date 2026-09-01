@@ -7,12 +7,12 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About AACL | Executive Assurance Consultancy" },
-      { name: "description", content: "AACL is a specialist East African consultancy in security, compliance, ISO management systems and enterprise risk." },
-      { property: "og:title", content: "About AACL" },
-      { property: "og:description", content: "Executive assurance consultancy for regulated organisations." },
-      { name: "twitter:title", content: "About AACL" },
-      { name: "twitter:description", content: "Executive assurance consultancy for regulated organisations." },
+      { title: "About AACL Global | Worldwide ISO & Security Compliance Consultancy" },
+      { name: "description", content: "AACL Global is a worldwide consultancy in security certification, compliance, ISO management systems and enterprise risk. Headquartered in Nairobi, delivering onsite or remote." },
+      { property: "og:title", content: "About AACL Global" },
+      { property: "og:description", content: "Worldwide assurance consultancy for regulated organisations. Onsite or remote, wherever you operate." },
+      { name: "twitter:title", content: "About AACL Global" },
+      { name: "twitter:description", content: "Worldwide assurance consultancy for regulated organisations. Onsite or remote, wherever you operate." },
       { property: "og:url", content: absUrl("/about") },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
