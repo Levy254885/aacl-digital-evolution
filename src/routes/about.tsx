@@ -63,7 +63,7 @@ function AboutPage() {
             </Reveal>
           </div>
           <div className="lg:col-span-7 space-y-6 text-muted-foreground leading-relaxed">
-            <Reveal delay={100}><p>AACL was founded to close the gap between global assurance standards and the operational realities of doing business in East Africa. Our consultants have led security, compliance and audit functions inside major banks, telecommunications operators, security printers and manufacturers before joining the practice.</p></Reveal>
+            <Reveal delay={100}><p>AACL was founded to close the gap between global assurance standards and the operational realities of complex regulated industries. Our consultants have led security, compliance and audit functions inside major banks, telecommunications operators, security printers and manufacturers before joining the practice.</p></Reveal>
             <Reveal delay={200}><p>We work with boards, executive teams and operational leaders on programmes that materially reduce enterprise risk, achieve internationally recognised certifications and satisfy demanding regulatory environments.</p></Reveal>
             <Reveal delay={300}><p>Every engagement is delivered by named senior practitioners, evidence-based and structured for sustainment. Not one-off deliverables.</p></Reveal>
           </div>
