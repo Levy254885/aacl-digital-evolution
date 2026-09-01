@@ -26,8 +26,8 @@ export const Route = createFileRoute("/services/$slug")({
           name: s.title,
           serviceType: s.title,
           description: s.summary,
-          provider: { "@type": "Organization", name: "Audits and Assurance Consult Ltd", url: "/" },
-          areaServed: ["Kenya", "East Africa"],
+          provider: { "@type": "Organization", name: "Audits and Assurance Consult Ltd", alternateName: "AACL Global", url: "/" },
+          areaServed: "Worldwide",
           url: `/services/${s.slug}`,
         },
         {

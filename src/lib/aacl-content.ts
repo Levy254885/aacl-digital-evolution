@@ -120,7 +120,7 @@ export const SERVICES: ServiceMeta[] = [
     standards: ["ISO 27001", "ISO 9001", "ISO 13485", "ISO 14001", "ISO 45001", "ISO 22301", "ISO 50001", "FSSC 22000", "IFC Performance Standards"],
     industries: ["Manufacturing", "Pharmaceuticals", "Banking & Financial Services", "Technology", "Food & Beverage", "Hospitality"],
     faqs: [
-      { q: "Which certification bodies do you work with?", a: "We are certification-body agnostic and support engagements with all major internationally accredited registrars operating in East Africa and beyond." },
+      { q: "Which certification bodies do you work with?", a: "We are certification-body agnostic and support engagements with all major internationally accredited registrars, wherever you operate." },
       { q: "Can you integrate multiple standards?", a: "Yes. Our preferred approach for organisations with more than two standards is an Integrated Management System that eliminates duplication." },
       { q: "How quickly can we achieve certification?", a: "Typical first-time certification programmes run four to nine months depending on scope, sites and existing maturity." },
     ],
@@ -131,11 +131,11 @@ export const SERVICES: ServiceMeta[] = [
     slug: "security-standards-implementation",
     number: "03",
     title: "Security Standards Implementation & Audits",
-    short: "Specialist implementation and auditing of GSMA SAS, SOC, UL 2050, ASTM F1233 and PCI DSS.",
+    short: "Specialist implementation and auditing of GSMA SAS (SAS-UP and SAS-SM), SOC, UL 2050, ASTM F1233, PCI DSS and LPS 1175. Available onsite or remote, worldwide.",
     summary:
-      "AACL is one of the region's specialist consultancies for security certification schemes that combine physical and logical control requirements. Critical for security printers, SIM manufacturers, payment ecosystems and monitored high-security facilities.",
+      "AACL Global is a specialist consultancy for demanding security certification schemes including GSMA SAS, trusted by security printers, SIM/eSIM manufacturers and high-security facilities worldwide. We support schemes that combine physical and logical control requirements. Critical for security printers, SIM manufacturers, payment ecosystems and monitored high-security facilities.",
     detail: [
-      "Security certification schemes such as GSMA SAS, UL 2050 and PCI DSS impose demanding, prescriptive controls that span physical premises, personnel screening, information security, production processes and supply chain governance. AACL provides end-to-end implementation and audit readiness for these programmes.",
+      "GSMA SAS (SAS-UP for SIM and eSIM production, SAS-SM for subscription management) is the most demanding scheme we support, and other schemes such as UL 2050, ASTM F1233, PCI DSS and LPS 1175 impose similarly prescriptive controls that span physical premises, personnel screening, information security, production processes and supply chain governance. AACL provides end-to-end implementation and audit readiness for these programmes.",
       "Our consultants have supported certification programmes for security printers, SIM and eSIM manufacturers, payment processors and high-security storage facilities. We understand the operational realities of running certified facilities. From clean-room controls to CCTV retention and secure destruction.",
       "We provide both implementation (design, remediation, evidence packs) and independent second-party auditing to prepare organisations for scheme audits with confidence.",
     ],
@@ -221,7 +221,7 @@ export const SERVICES: ServiceMeta[] = [
     title: "Statutory Compliance Consultancy, Audits & Training",
     short: "Occupational health & safety, environment, sustainability and data protection compliance.",
     summary:
-      "AACL helps organisations meet Kenyan and international statutory obligations across occupational health & safety, environmental management, sustainability and data protection. Through compliance audits, remediation programmes, capacity building and ongoing advisory.",
+      "AACL Global helps organisations meet local and international statutory obligations across occupational health & safety, environmental management, sustainability and data protection. Through compliance audits, remediation programmes, capacity building and ongoing advisory.",
     detail: [
       "Regulatory obligations across health & safety (DOSHS), environment (NEMA), data protection (ODPC) and sector-specific regulators have expanded significantly. Non-compliance carries reputational, financial and criminal exposure for directors and officers.",
       "Our consultants combine regulatory expertise with practical operational knowledge across manufacturing, hospitality, financial services and technology. We do not just identify gaps. We design and deliver the remediation and capacity-building needed to close them.",
@@ -421,7 +421,7 @@ export const INSIGHTS = [
   },
   {
     slug: "kenya-data-protection-act-lessons",
-    title: "Two years of Kenya's Data Protection Act. Enforcement lessons",
+    title: "Two years of Kenya's Data Protection Act. Enforcement lessons for global operators",
     excerpt: "The ODPC has issued a growing number of enforcement decisions. Here is what compliance leaders should be prioritising in 2026.",
     date: "2026-02-19",
     readTime: "7 min read",
@@ -430,7 +430,7 @@ export const INSIGHTS = [
   },
   {
     slug: "gsma-sas-preparing-for-your-first-audit",
-    title: "GSMA SAS: preparing for your first scheme audit",
+    title: "GSMA SAS: Preparing for Your First Scheme Audit",
     excerpt: "First-time SAS-UP applicants underestimate the physical and personnel control requirements. Our field guide walks through what to expect.",
     date: "2026-01-08",
     readTime: "9 min read",

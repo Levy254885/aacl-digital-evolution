@@ -50,7 +50,7 @@ function InsightDetail() {
           <div className="prose prose-lg max-w-none text-foreground space-y-6 leading-relaxed">
             <p>This is a summary preview of the article. Full editorial content will be published progressively as our practitioners release new analysis. Please contact the AACL practice for early access to the working paper or to arrange a briefing on the subject.</p>
             <p>{post.excerpt}</p>
-            <p>Our consultants regularly publish on the intersection of governance, technology and regulation across East Africa's most demanding sectors. To be notified when new analysis is released, please write to <a href="mailto:info@aacl.co.ke" className="text-[var(--gold)] underline">info@aacl.co.ke</a>.</p>
+            <p>Our consultants regularly publish on the intersection of governance, technology and regulation across the world's most demanding regulated sectors. To be notified when new analysis is released, please write to <a href="mailto:info@aacl.co.ke" className="text-[var(--gold)] underline">info@aacl.co.ke</a>.</p>
           </div>
           <div className="mt-16 pt-8 border-t border-border">
             <Link to="/insights" className="text-sm uppercase tracking-[0.18em] text-[var(--gold)]">← All insights</Link>

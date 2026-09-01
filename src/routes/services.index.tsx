@@ -14,12 +14,12 @@ import { useCms } from "@/lib/cms";
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Security, Compliance & ISO Consultancy Services | AACL" },
-      { name: "description", content: "AACL delivers risk assessments, ISO management systems, security standards implementation, SMaaS and statutory compliance consultancy." },
-      { property: "og:title", content: "AACL Services" },
-      { property: "og:description", content: "Executive-grade security, compliance and ISO consultancy across five practice areas." },
-      { name: "twitter:title", content: "AACL Services" },
-      { name: "twitter:description", content: "Executive-grade security, compliance and ISO consultancy across five practice areas." },
+      { title: "ISO & Security Compliance Consultancy Services | AACL Global" },
+      { name: "description", content: "AACL Global delivers risk assessments, ISO management systems, GSMA SAS and security standards implementation, SMaaS and statutory compliance consultancy. Available onsite or remote, worldwide." },
+      { property: "og:title", content: "AACL Global Services" },
+      { property: "og:description", content: "Executive-grade security, compliance and ISO consultancy across five practice areas. Available onsite or remote, worldwide." },
+      { name: "twitter:title", content: "AACL Global Services" },
+      { name: "twitter:description", content: "Executive-grade security, compliance and ISO consultancy across five practice areas. Available onsite or remote, worldwide." },
       { property: "og:url", content: absUrl("/services") },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

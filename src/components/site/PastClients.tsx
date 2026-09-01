@@ -20,13 +20,13 @@ export function PastClients() {
               className="font-display text-[2rem] md:text-[3rem] font-extrabold leading-[1.05]"
             />
             <span id="past-clients-heading" className="sr-only">
-              Past clients of AACL
+              Past clients of AACL Global
             </span>
           </div>
           <Reveal delay={120}>
             <p className="text-muted-foreground max-w-md leading-relaxed">
               A selection of organisations we have supported with ISO certification, compliance and
-              assurance engagements across East Africa and beyond.
+              assurance engagements worldwide, onsite and remote.
             </p>
           </Reveal>
         </div>

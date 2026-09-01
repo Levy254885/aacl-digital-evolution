@@ -8,12 +8,12 @@ import { SITE } from "@/lib/aacl-content";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact AACL in Nairobi, Kenya" },
-      { name: "description", content: `Contact AACL at ${SITE.address.line1}, ${SITE.address.line2}, Nairobi. Phone ${SITE.phone}. Email ${SITE.email}.` },
-      { property: "og:title", content: "Contact AACL" },
-      { property: "og:description", content: "Speak with AACL about your assurance, certification or compliance programme." },
-      { name: "twitter:title", content: "Contact AACL" },
-      { name: "twitter:description", content: "Speak with AACL about your assurance, certification or compliance programme." },
+      { title: "Contact AACL Global | Nairobi HQ, Serving Clients Worldwide" },
+      { name: "description", content: `Contact AACL Global at our Nairobi HQ, ${SITE.address.line1}, ${SITE.address.line2}. Phone ${SITE.phone}. Email ${SITE.email}. Consultants available onsite or remote, wherever you operate.` },
+      { property: "og:title", content: "Contact AACL Global" },
+      { property: "og:description", content: "Speak with AACL Global about your assurance, certification or compliance programme. Onsite or remote, worldwide." },
+      { name: "twitter:title", content: "Contact AACL Global" },
+      { name: "twitter:description", content: "Speak with AACL Global about your assurance, certification or compliance programme. Onsite or remote, worldwide." },
       { property: "og:url", content: absUrl("/contact") },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
