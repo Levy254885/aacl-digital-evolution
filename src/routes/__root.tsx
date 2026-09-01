@@ -122,11 +122,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "keywords",
         content:
-          "ISO certification Kenya, ISO 27001, ISO 9001, ISO 45001, ISO 22301, ISO 14001, PCI DSS, GSMA SAS, compliance consultancy, audit firm Nairobi, risk assessment Kenya, cybersecurity Kenya, data protection Kenya",
+          "global ISO certification, ISO 27001, ISO 9001, ISO 45001, ISO 22301, ISO 14001, PCI DSS, GSMA SAS, SAS-UP, SAS-SM, security compliance consultancy, remote ISO consultants, international standards, ISO certification worldwide",
       },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "AACL | Audits and Assurance Consult Ltd" },
-      { property: "og:locale", content: "en_KE" },
+      { property: "og:site_name", content: "AACL Global | Audits and Assurance Consult Ltd" },
+      { property: "og:locale", content: "en" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@aacl" },
     ],
