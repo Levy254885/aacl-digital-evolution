@@ -67,9 +67,9 @@ export const Route = createFileRoute("/")({
           "@type": "WebPage",
           "@id": absUrl("/"),
           url: absUrl("/"),
-          name: "ISO Certification & Compliance Consultants | AACL Kenya",
+          name: "Global ISO Certification & Security Compliance Consultants | AACL Global",
           description:
-            "Audits and Assurance Consult Ltd (AACL) delivers security, compliance, governance, risk and ISO management system consultancy.",
+            "AACL Global delivers ISO 9001, 27001, 45001, GSMA SAS, PCI DSS and security certification worldwide, onsite or remote.",
           isPartOf: { "@id": `${SITE_URL}/#website` },
           about: { "@id": `${SITE_URL}/#organization` },
           inLanguage: "en",
