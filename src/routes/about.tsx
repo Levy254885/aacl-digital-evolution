@@ -41,7 +41,7 @@ function AboutPage() {
       <PageHero
         eyebrow="Who we are"
         title="Compliance Expertise Without Borders."
-        lead="AACL Global works with organizations across Europe, the US, Africa, Asia and beyond. And we're expanding into new markets. Wherever you're headquartered, you get the same highly qualified and certified lead consultants and auditors, the same rigorous standards, and superior results."
+        lead="AACL Global works with organizations across Europe, the US, Africa, Asia and beyond. Wherever you're headquartered, you get the same highly qualified and certified lead consultants and auditors, the same rigorous standards, and superior results."
         image="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2000&q=80"
       />
 
