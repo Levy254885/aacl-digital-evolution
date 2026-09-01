@@ -133,11 +133,12 @@ export const SERVICES: ServiceMeta[] = [
     title: "Security Standards Implementation & Audits",
     short: "Specialist implementation and auditing of GSMA SAS (SAS-UP and SAS-SM), SOC, UL 2050, ASTM F1233, PCI DSS and LPS 1175. Available onsite or remote, worldwide.",
     summary:
-      "AACL Global is a specialist consultancy for demanding security certification schemes including GSMA SAS, trusted by security printers, SIM/eSIM manufacturers and high-security facilities worldwide. We support schemes that combine physical and logical control requirements. Critical for security printers, SIM manufacturers, payment ecosystems and monitored high-security facilities.",
+      "AACL Global is a specialist consultancy for demanding security certification schemes including GSMA SAS, trusted by security printers, SIM and eSIM manufacturers, payment ecosystems and high-security facilities worldwide. Available onsite or remote.",
     detail: [
-      "GSMA SAS (SAS-UP for SIM and eSIM production, SAS-SM for subscription management) is the most demanding scheme we support, and other schemes such as UL 2050, ASTM F1233, PCI DSS and LPS 1175 impose similarly prescriptive controls that span physical premises, personnel screening, information security, production processes and supply chain governance. AACL provides end-to-end implementation and audit readiness for these programmes.",
-      "Our consultants have supported certification programmes for security printers, SIM and eSIM manufacturers, payment processors and high-security storage facilities. We understand the operational realities of running certified facilities. From clean-room controls to CCTV retention and secure destruction.",
-      "We provide both implementation (design, remediation, evidence packs) and independent second-party auditing to prepare organisations for scheme audits with confidence.",
+      "GSMA SAS is our lead specialism. SAS-UP covers SIM, eSIM and UICC production sites, while SAS-SM covers subscription management and remote provisioning platforms. Both demand prescriptive controls spanning physical premises, personnel screening, information security, production processes and supply chain governance, and both are audited by GSMA-appointed auditors against a published checklist.",
+      "Alongside GSMA SAS we implement and audit SOC 1 and SOC 2, UL 2050, ASTM F1233, PCI DSS and LPS 1175. AACL Global provides end-to-end implementation and audit readiness for each scheme, available onsite or remote, worldwide.",
+      "Our consultants have supported certification programmes for security printers, SIM and eSIM manufacturers, payment processors and high-security storage facilities across Africa, Europe, the UK, the US and Asia. We understand the operational realities of running certified facilities. From clean-room controls to CCTV retention and secure destruction.",
+      "We provide both implementation (design, remediation, evidence packs) and independent second-party auditing to prepare organisations for scheme audits with confidence, for first-time applications and renewal cycles alike.",
     ],
     challenges: [
       "Onerous physical control requirements (LPS 1175, UL 2050) with long lead times",
