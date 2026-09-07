@@ -401,7 +401,23 @@ export const INDUSTRIES: IndustryMeta[] = [
   },
 ];
 
-export const INSIGHTS = [
+export interface InsightSection {
+  h: string;
+  p: string[];
+}
+
+export interface Insight {
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  category: string;
+  image: string;
+  body?: InsightSection[];
+}
+
+export const INSIGHTS: Insight[] = [
   {
     slug: "iso-27001-2022-transition",
     title: "Transitioning to ISO/IEC 27001:2022. A practitioner's roadmap",
