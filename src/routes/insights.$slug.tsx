@@ -38,7 +38,8 @@ export const Route = createFileRoute("/insights/$slug")({
 });
 
 function InsightDetail() {
-  const { post } = Route.useLoaderData() as { post: typeof INSIGHTS[number] };
+  const { post } = Route.useLoaderData() as { post: (typeof INSIGHTS)[number] };
+  const sections = post.body ?? [];
   return (
     <PageShell>
       <PageHero eyebrow={post.category} title={post.title} lead={post.excerpt} image={post.image} />
@@ -47,11 +48,32 @@ function InsightDetail() {
           <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-10">
             {new Date(post.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })} · {post.readTime}
           </div>
-          <div className="prose prose-lg max-w-none text-foreground space-y-6 leading-relaxed">
-            <p>This is a summary preview of the article. Full editorial content will be published progressively as our practitioners release new analysis. Please contact the AACL practice for early access to the working paper or to arrange a briefing on the subject.</p>
-            <p>{post.excerpt}</p>
-            <p>Our consultants regularly publish on the intersection of governance, technology and regulation across the world's most demanding regulated sectors. To be notified when new analysis is released, please write to <a href="mailto:info@aacl.co.ke" className="text-[var(--gold)] underline">info@aacl.co.ke</a>.</p>
-          </div>
+          {sections.length > 0 ? (
+            <div className="max-w-none text-foreground leading-relaxed">
+              {sections.map((s) => (
+                <section key={s.h} className="mb-12">
+                  <h2 className="font-display text-2xl md:text-3xl mb-5 leading-tight">{s.h}</h2>
+                  <div className="space-y-5">
+                    {s.p.map((para, i) => (
+                      <p key={i} className="text-muted-foreground">{para}</p>
+                    ))}
+                  </div>
+                </section>
+              ))}
+              <p className="text-muted-foreground">
+                To discuss this subject with our practitioners, write to{" "}
+                <a href="mailto:info@aacl.co.ke" className="text-[var(--gold)] underline">info@aacl.co.ke</a>.
+              </p>
+            </div>
+          ) : (
+            <div className="max-w-none text-foreground space-y-6 leading-relaxed">
+              <p className="text-muted-foreground">{post.excerpt}</p>
+              <p className="text-muted-foreground">
+                Our consultants publish regularly on governance, technology and regulation across the world's most demanding regulated sectors. To request the working paper behind this analysis or arrange a briefing, write to{" "}
+                <a href="mailto:info@aacl.co.ke" className="text-[var(--gold)] underline">info@aacl.co.ke</a>.
+              </p>
+            </div>
+          )}
           <div className="mt-16 pt-8 border-t border-border">
             <Link to="/insights" className="text-sm uppercase tracking-[0.18em] text-[var(--gold)]">← All insights</Link>
           </div>

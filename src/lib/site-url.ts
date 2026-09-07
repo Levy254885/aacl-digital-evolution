@@ -1,11 +1,16 @@
 /**
  * Single source of truth for the canonical production origin.
  *
+ * The live site serves 200 on the www hostname; the apex
+ * (https://aaclglobal.com) issues a 308 redirect to it. Canonical URLs,
+ * og:url and the sitemap must therefore use the www hostname so they never
+ * point at a redirecting URL.
+ *
  * AACL production domain:
- * https://aaclglobal.com
+ * https://www.aaclglobal.com
  */
 
-const FALLBACK_SITE_URL = "https://aaclglobal.com";
+const FALLBACK_SITE_URL = "https://www.aaclglobal.com";
 
 function readEnvSiteUrl(): string | undefined {
   try {
