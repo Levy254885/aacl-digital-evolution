@@ -38,7 +38,8 @@ export const Route = createFileRoute("/insights/$slug")({
 });
 
 function InsightDetail() {
-  const { post } = Route.useLoaderData() as { post: typeof INSIGHTS[number] };
+  const { post } = Route.useLoaderData() as { post: (typeof INSIGHTS)[number] };
+  const sections = post.body ?? [];
   return (
     <PageShell>
       <PageHero eyebrow={post.category} title={post.title} lead={post.excerpt} image={post.image} />
