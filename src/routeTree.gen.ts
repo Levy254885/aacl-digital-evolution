@@ -22,10 +22,12 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as IsoCertificationIndexRouteImport } from './routes/iso-certification.index'
 import { Route as InsightsIndexRouteImport } from './routes/insights.index'
 import { Route as IndustriesIndexRouteImport } from './routes/industries.index'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
+import { Route as IsoCertificationRegionRouteImport } from './routes/iso-certification.$region'
 import { Route as InsightsSlugRouteImport } from './routes/insights.$slug'
 import { Route as IndustriesSlugRouteImport } from './routes/industries.$slug'
 import { Route as AdminTeamRouteImport } from './routes/admin.team'
@@ -97,6 +99,11 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   path: '/services/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IsoCertificationIndexRoute = IsoCertificationIndexRouteImport.update({
+  id: '/iso-certification/',
+  path: '/iso-certification/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InsightsIndexRoute = InsightsIndexRouteImport.update({
   id: '/insights/',
   path: '/insights/',
@@ -115,6 +122,11 @@ const AdminIndexRoute = AdminIndexRouteImport.update({
 const ServicesSlugRoute = ServicesSlugRouteImport.update({
   id: '/services/$slug',
   path: '/services/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IsoCertificationRegionRoute = IsoCertificationRegionRouteImport.update({
+  id: '/iso-certification/$region',
+  path: '/iso-certification/$region',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InsightsSlugRoute = InsightsSlugRouteImport.update({
@@ -160,10 +172,12 @@ export interface FileRoutesByFullPath {
   '/admin/team': typeof AdminTeamRoute
   '/industries/$slug': typeof IndustriesSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
+  '/iso-certification/$region': typeof IsoCertificationRegionRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/admin/': typeof AdminIndexRoute
   '/industries/': typeof IndustriesIndexRoute
   '/insights/': typeof InsightsIndexRoute
+  '/iso-certification/': typeof IsoCertificationIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/admin/content/$key': typeof AdminContentKeyRoute
 }
@@ -183,10 +197,12 @@ export interface FileRoutesByTo {
   '/admin/team': typeof AdminTeamRoute
   '/industries/$slug': typeof IndustriesSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
+  '/iso-certification/$region': typeof IsoCertificationRegionRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/admin': typeof AdminIndexRoute
   '/industries': typeof IndustriesIndexRoute
   '/insights': typeof InsightsIndexRoute
+  '/iso-certification': typeof IsoCertificationIndexRoute
   '/services': typeof ServicesIndexRoute
   '/admin/content/$key': typeof AdminContentKeyRoute
 }
@@ -208,10 +224,12 @@ export interface FileRoutesById {
   '/admin/team': typeof AdminTeamRoute
   '/industries/$slug': typeof IndustriesSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
+  '/iso-certification/$region': typeof IsoCertificationRegionRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/admin/': typeof AdminIndexRoute
   '/industries/': typeof IndustriesIndexRoute
   '/insights/': typeof InsightsIndexRoute
+  '/iso-certification/': typeof IsoCertificationIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/admin/content/$key': typeof AdminContentKeyRoute
 }
@@ -234,10 +252,12 @@ export interface FileRouteTypes {
     | '/admin/team'
     | '/industries/$slug'
     | '/insights/$slug'
+    | '/iso-certification/$region'
     | '/services/$slug'
     | '/admin/'
     | '/industries/'
     | '/insights/'
+    | '/iso-certification/'
     | '/services/'
     | '/admin/content/$key'
   fileRoutesByTo: FileRoutesByTo
@@ -257,10 +277,12 @@ export interface FileRouteTypes {
     | '/admin/team'
     | '/industries/$slug'
     | '/insights/$slug'
+    | '/iso-certification/$region'
     | '/services/$slug'
     | '/admin'
     | '/industries'
     | '/insights'
+    | '/iso-certification'
     | '/services'
     | '/admin/content/$key'
   id:
@@ -281,10 +303,12 @@ export interface FileRouteTypes {
     | '/admin/team'
     | '/industries/$slug'
     | '/insights/$slug'
+    | '/iso-certification/$region'
     | '/services/$slug'
     | '/admin/'
     | '/industries/'
     | '/insights/'
+    | '/iso-certification/'
     | '/services/'
     | '/admin/content/$key'
   fileRoutesById: FileRoutesById
@@ -304,9 +328,11 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   IndustriesSlugRoute: typeof IndustriesSlugRoute
   InsightsSlugRoute: typeof InsightsSlugRoute
+  IsoCertificationRegionRoute: typeof IsoCertificationRegionRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   IndustriesIndexRoute: typeof IndustriesIndexRoute
   InsightsIndexRoute: typeof InsightsIndexRoute
+  IsoCertificationIndexRoute: typeof IsoCertificationIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
@@ -403,6 +429,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/iso-certification/': {
+      id: '/iso-certification/'
+      path: '/iso-certification'
+      fullPath: '/iso-certification/'
+      preLoaderRoute: typeof IsoCertificationIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/insights/': {
       id: '/insights/'
       path: '/insights'
@@ -429,6 +462,13 @@ declare module '@tanstack/react-router' {
       path: '/services/$slug'
       fullPath: '/services/$slug'
       preLoaderRoute: typeof ServicesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/iso-certification/$region': {
+      id: '/iso-certification/$region'
+      path: '/iso-certification/$region'
+      fullPath: '/iso-certification/$region'
+      preLoaderRoute: typeof IsoCertificationRegionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/insights/$slug': {
@@ -500,9 +540,11 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   IndustriesSlugRoute: IndustriesSlugRoute,
   InsightsSlugRoute: InsightsSlugRoute,
+  IsoCertificationRegionRoute: IsoCertificationRegionRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   IndustriesIndexRoute: IndustriesIndexRoute,
   InsightsIndexRoute: InsightsIndexRoute,
+  IsoCertificationIndexRoute: IsoCertificationIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
