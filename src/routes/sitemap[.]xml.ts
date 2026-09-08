@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { SERVICES, INDUSTRIES, INSIGHTS } from "@/lib/aacl-content";
+import { REGIONS } from "@/lib/regions-content";
 
 import { SITE_URL } from "@/lib/site-url";
 
@@ -19,6 +20,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/ecompliance", changefreq: "monthly", priority: "0.9" },
           { path: "/templates", changefreq: "monthly", priority: "0.9" },
           { path: "/industries", changefreq: "monthly", priority: "0.8" },
+          { path: "/iso-certification", changefreq: "monthly", priority: "0.9" },
+          ...REGIONS.map((r) => ({ path: `/iso-certification/${r.slug}`, changefreq: "monthly", priority: "0.8" })),
           { path: "/insights", changefreq: "weekly", priority: "0.7" },
           { path: "/contact", changefreq: "yearly", priority: "0.6" },
           { path: "/book", changefreq: "yearly", priority: "0.6" },
