@@ -180,7 +180,7 @@ function RegionPage() {
             ))}
           </div>
           <div className="mt-14 flex flex-wrap gap-4">
-            <Link to="/contact" className="btn-solid-navy">
+            <Link to="/contact" className="btn-gold">
               Talk to a consultant
             </Link>
             <Link to="/services" className="btn-outline-navy">

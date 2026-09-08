@@ -47,16 +47,10 @@ export const Route = createFileRoute("/")({
         content:
           "AACL Global delivers ISO 9001, 27001, 45001, GSMA SAS, PCI DSS and security certification worldwide. Expert consultants available onsite or remote. Get certified faster.",
       },
-      {
-        property: "og:image",
-        content:
-          "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=80",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=80",
-      },
+      { property: "og:image", content: absUrl("/og-share.jpg") },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:image", content: absUrl("/og-share.jpg") },
     ],
     links: [{ rel: "canonical", href: absUrl("/") }],
     scripts: [
