@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { absUrl, OG_IMAGE, SITE_URL } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { SiteBreadcrumbs } from "@/components/site/SiteBreadcrumbs";
-import { INSIGHTS } from "@/lib/aacl-content";
+import { INSIGHTS, SERVICES } from "@/lib/aacl-content";
 
 export const Route = createFileRoute("/insights/$slug")({
   loader: ({ params }) => {
@@ -121,8 +121,43 @@ function InsightDetail() {
               </p>
             </div>
           )}
-          <div className="mt-16 pt-8 border-t border-border">
-            <Link to="/insights" className="text-sm uppercase tracking-[0.18em] text-[var(--gold)]">← All insights</Link>
+          <div className="mt-16 pt-8 border-t border-border space-y-10">
+            <div>
+              <h2 className="font-display text-xl mb-4">Related services</h2>
+              <ul className="space-y-2">
+                {SERVICES.slice(0, 4).map((s) => (
+                  <li key={s.slug}>
+                    <Link
+                      to="/services/$slug"
+                      params={{ slug: s.slug }}
+                      className="text-sm text-muted-foreground hover:text-[var(--navy)]"
+                    >
+                      {s.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h2 className="font-display text-xl mb-4">More from the Knowledge Hub</h2>
+              <ul className="space-y-2">
+                {INSIGHTS.filter((x) => x.slug !== post.slug).slice(0, 4).map((x) => (
+                  <li key={x.slug}>
+                    <Link
+                      to="/insights/$slug"
+                      params={{ slug: x.slug }}
+                      className="text-sm text-muted-foreground hover:text-[var(--navy)]"
+                    >
+                      {x.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/insights" className="text-sm uppercase tracking-[0.18em] text-[var(--gold)]">← All insights</Link>
+              <Link to="/contact" className="text-sm uppercase tracking-[0.18em] text-[var(--navy)]">Contact AACL</Link>
+            </div>
           </div>
         </div>
       </article>
