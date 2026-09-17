@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { absUrl } from "@/lib/site-url";
+import { absUrl, OG_IMAGE } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
+import { SiteBreadcrumbs } from "@/components/site/SiteBreadcrumbs";
 import { Reveal } from "@/components/site/Reveal";
 import { SERVICES, type ServiceMeta } from "@/lib/aacl-content";
 import { ArrowRight, Check, ChevronDown } from "lucide-react";
@@ -26,9 +27,14 @@ export const Route = createFileRoute("/services/$slug")({
           name: s.title,
           serviceType: s.title,
           description: s.summary,
-          provider: { "@type": "Organization", name: "Audits and Assurance Consult Ltd", alternateName: "AACL Global", url: "/" },
+          provider: {
+            "@type": "Organization",
+            name: "Audits and Assurance Consult Ltd",
+            alternateName: "AACL Global",
+            url: absUrl("/"),
+          },
           areaServed: "Worldwide",
-          url: `/services/${s.slug}`,
+          url: absUrl(`/services/${s.slug}`),
         },
         {
           "@type": "FAQPage",
@@ -50,16 +56,17 @@ export const Route = createFileRoute("/services/$slug")({
     };
     return {
       meta: [
-        { title: `${s.title} | AACL` },
+        { title: `${s.title} | AACL Global` },
         { name: "description", content: s.summary },
-        { property: "og:title", content: `${s.title} | AACL` },
+        { property: "og:title", content: `${s.title} | AACL Global` },
         { property: "og:description", content: s.summary },
-        { name: "twitter:title", content: `${s.title} | AACL` },
+        { name: "twitter:title", content: `${s.title} | AACL Global` },
         { name: "twitter:description", content: s.summary },
         { property: "og:url", content: absUrl(`/services/${s.slug}`) },
         { property: "og:type", content: "article" },
-        { property: "og:image", content: s.image },
-        { name: "twitter:image", content: s.image },
+        { property: "og:image", content: s.image?.startsWith("http") ? OG_IMAGE : (s.image || OG_IMAGE) },
+        { name: "twitter:image", content: s.image?.startsWith("http") ? OG_IMAGE : (s.image || OG_IMAGE) },
+        { name: "twitter:card", content: "summary_large_image" },
       ],
       links: [{ rel: "canonical", href: absUrl(`/services/${s.slug}`) }],
       scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonld) }],
@@ -80,6 +87,13 @@ function ServiceDetail() {
 
   return (
     <PageShell>
+      <SiteBreadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services" },
+          { label: s.title },
+        ]}
+      />
       <PageHero eyebrow={`Service ${s.number}`} title={s.title} lead={s.short} image={s.image} />
 
       <section className="pt-10">
@@ -89,7 +103,6 @@ function ServiceDetail() {
           </Reveal>
         </div>
       </section>
-
 
       {/* Overview */}
       <section className="py-24 bg-background">
