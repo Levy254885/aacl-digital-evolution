@@ -3,7 +3,7 @@ import { absUrl, OG_IMAGE } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { SiteBreadcrumbs } from "@/components/site/SiteBreadcrumbs";
 import { Reveal } from "@/components/site/Reveal";
-import { SERVICES, type ServiceMeta } from "@/lib/aacl-content";
+import { SERVICES, INSIGHTS, type ServiceMeta } from "@/lib/aacl-content";
 import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
@@ -96,15 +96,20 @@ function ServiceDetail() {
       />
       <PageHero eyebrow={`Service ${s.number}`} title={s.title} lead={s.short} image={s.image} />
 
-      <section className="pt-10">
-        <div className="container-x">
+      <section className="py-12 border-b border-border bg-background">
+        <div className="container-x max-w-3xl">
           <Reveal>
-            <p className="eyebrow">Available onsite or remote. Worldwide.</p>
+            <p className="text-base md:text-lg leading-relaxed text-foreground">
+              {s.summary}
+            </p>
+            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+              Delivered onsite or remotely worldwide by AACL Global (Audits and Assurance Consult Ltd),
+              headquartered in Nairobi, Kenya, for organisations across Africa and international markets.
+            </p>
           </Reveal>
         </div>
       </section>
 
-      {/* Overview */}
       <section className="py-24 bg-background">
         <div className="container-x grid lg:grid-cols-12 gap-14">
           <div className="lg:col-span-4">
@@ -121,7 +126,6 @@ function ServiceDetail() {
         </div>
       </section>
 
-      {/* Challenges */}
       <section className="py-24 bg-[var(--bone)]">
         <div className="container-x grid lg:grid-cols-12 gap-14">
           <div className="lg:col-span-5">
@@ -145,7 +149,6 @@ function ServiceDetail() {
         </div>
       </section>
 
-      {/* Methodology */}
       <section className="py-24 bg-[var(--navy-deep)] text-[var(--bone)]">
         <div className="container-x">
           <Reveal>
@@ -166,7 +169,6 @@ function ServiceDetail() {
         </div>
       </section>
 
-      {/* Deliverables + Standards */}
       <section className="py-24 bg-background">
         <div className="container-x grid lg:grid-cols-2 gap-14">
           <Reveal>
@@ -201,7 +203,6 @@ function ServiceDetail() {
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="py-24 bg-[var(--bone)]">
         <div className="container-x grid lg:grid-cols-12 gap-14">
           <div className="lg:col-span-4">
@@ -228,7 +229,56 @@ function ServiceDetail() {
         </div>
       </section>
 
-      {/* CTA */}
+      <section className="py-20 bg-background">
+        <div className="container-x">
+          <Reveal>
+            <div className="eyebrow mb-4">Related resources</div>
+            <h2 className="font-display text-3xl leading-tight mb-8">Continue exploring this topic.</h2>
+          </Reveal>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="font-display text-lg mb-4">Knowledge Hub</h3>
+              <ul className="space-y-3">
+                {INSIGHTS.slice(0, 4).map((post) => (
+                  <li key={post.slug}>
+                    <Link
+                      to="/insights/$slug"
+                      params={{ slug: post.slug }}
+                      className="text-sm text-muted-foreground hover:text-[var(--navy)] transition-colors"
+                    >
+                      {post.title}
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  <Link to="/insights" className="text-sm text-[var(--gold)]">All insights →</Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-display text-lg mb-4">Next steps</h3>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li>
+                  <Link to="/industries" className="hover:text-[var(--navy)]">Browse industries we support</Link>
+                </li>
+                <li>
+                  <Link to="/ecompliance" className="hover:text-[var(--navy)]">eCompliance continuous compliance</Link>
+                </li>
+                <li>
+                  <Link to="/iso-certification" className="hover:text-[var(--navy)]">ISO certification by region</Link>
+                </li>
+                <li>
+                  <Link to="/templates" className="hover:text-[var(--navy)]">Templates and document tools</Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="hover:text-[var(--navy)]">Contact AACL</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 bg-[var(--navy-deep)] text-[var(--bone)]">
         <div className="container-x text-center max-w-3xl mx-auto">
           <Reveal>
