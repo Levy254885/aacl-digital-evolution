@@ -58,9 +58,11 @@ export function PageHero({
           <Reveal delay={160} className="lg:col-span-5">
             <img
               src={image}
-              alt=""
+              alt={title}
               className="w-full h-[300px] md:h-[380px] object-cover rounded-[22px]"
               loading="lazy"
+              width={800}
+              height={380}
             />
           </Reveal>
         )}
