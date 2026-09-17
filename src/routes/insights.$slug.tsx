@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { absUrl } from "@/lib/site-url";
+import { absUrl, OG_IMAGE, SITE_URL } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
+import { SiteBreadcrumbs } from "@/components/site/SiteBreadcrumbs";
 import { INSIGHTS } from "@/lib/aacl-content";
 
 export const Route = createFileRoute("/insights/$slug")({
@@ -11,21 +12,60 @@ export const Route = createFileRoute("/insights/$slug")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Article not found | AACL" }, { name: "robots", content: "noindex" }] };
-    const p = loaderData.post;
+    const post = loaderData.post;
+    const pageUrl = absUrl(`/insights/${post.slug}`);
+    const ogImg = post.image?.startsWith("http") ? OG_IMAGE : (post.image || OG_IMAGE);
+    const jsonld = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": pageUrl,
+          headline: post.title,
+          description: post.excerpt,
+          datePublished: post.date,
+          image: post.image,
+          author: {
+            "@type": "Organization",
+            name: "AACL Global",
+            url: absUrl("/"),
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Audits and Assurance Consult Ltd",
+            logo: { "@type": "ImageObject", url: absUrl("/favicon.png") },
+          },
+          mainEntityOfPage: pageUrl,
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+          inLanguage: "en",
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: absUrl("/") },
+            { "@type": "ListItem", position: 2, name: "Insights", item: absUrl("/insights") },
+            { "@type": "ListItem", position: 3, name: post.title, item: pageUrl },
+          ],
+        },
+      ],
+    };
     return {
       meta: [
-        { title: `${p.title} | AACL Insights` },
-        { name: "description", content: p.excerpt },
-        { property: "og:title", content: p.title },
-        { property: "og:description", content: p.excerpt },
-        { name: "twitter:title", content: p.title },
-        { name: "twitter:description", content: p.excerpt },
+        { title: `${post.title} | AACL Insights` },
+        { name: "description", content: post.excerpt },
+        { property: "og:title", content: post.title },
+        { property: "og:description", content: post.excerpt },
+        { name: "twitter:title", content: post.title },
+        { name: "twitter:description", content: post.excerpt },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: absUrl(`/insights/${p.slug}`) },
-        { property: "og:image", content: p.image },
-        { name: "twitter:image", content: p.image },
+        { property: "og:url", content: pageUrl },
+        { property: "og:image", content: ogImg },
+        { name: "twitter:image", content: ogImg },
+        { name: "twitter:card", content: "summary_large_image" },
+        { property: "article:published_time", content: post.date },
       ],
-      links: [{ rel: "canonical", href: absUrl(`/insights/${p.slug}`) }],
+      links: [{ rel: "canonical", href: pageUrl }],
+      scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonld) }],
     };
   },
   component: InsightDetail,
@@ -42,6 +82,13 @@ function InsightDetail() {
   const sections = post.body ?? [];
   return (
     <PageShell>
+      <SiteBreadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Insights", href: "/insights" },
+          { label: post.title },
+        ]}
+      />
       <PageHero eyebrow={post.category} title={post.title} lead={post.excerpt} image={post.image} />
       <article className="py-24 bg-background">
         <div className="container-x max-w-3xl">
