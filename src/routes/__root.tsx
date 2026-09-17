@@ -87,7 +87,7 @@ const ORG_JSONLD = {
       alternateName: ["AACL", "AACL Global"],
       url: absUrl("/"),
       logo: absUrl("/favicon.png"),
-      image: absUrl("/favicon.png"),
+      image: absUrl("/og-share.jpg"),
       description:
         "AACL Global is a worldwide ISO certification and security compliance consultancy. Headquartered in Nairobi, delivering onsite or remote anywhere in the world.",
       telephone: "+254 719 876 524",
@@ -184,4 +184,3 @@ function RootComponent() {
 
   );
 }
-
