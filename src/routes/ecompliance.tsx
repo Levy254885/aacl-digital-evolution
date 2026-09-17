@@ -18,6 +18,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { PageShell, PageHero } from "@/components/site/PageShell";
+import { SiteBreadcrumbs } from "@/components/site/SiteBreadcrumbs";
 import { PricingTable, PaymentMethods } from "@/components/site/PricingTable";
 import { CostBanner, CostFaq } from "@/components/site/CostObjection";
 import { ECOMPLIANCE_PRICING } from "@/lib/pricing-content";
@@ -57,9 +58,14 @@ export const Route = createFileRoute("/ecompliance")({
           name: "eCompliance. Compliance as a Service",
           serviceType: "Managed ISO compliance platform and consultancy",
           description: DESCRIPTION,
-          provider: { "@type": "Organization", name: "Audits and Assurance Consult Ltd", url: "/" },
+          provider: {
+            "@type": "Organization",
+            name: "Audits and Assurance Consult Ltd",
+            alternateName: "AACL Global",
+            url: absUrl("/"),
+          },
           areaServed: "Worldwide",
-          url: "/ecompliance",
+          url: absUrl("/ecompliance"),
           offers: ECOMPLIANCE_PLANS.map((p) => ({
             "@type": "Offer",
             name: p.name,
@@ -109,14 +115,39 @@ function ECompliancePage() {
 
   return (
     <PageShell>
+      <SiteBreadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "eCompliance" },
+        ]}
+      />
       <PageHero
         eyebrow="eCompliance"
         title="World Class Compliance to Drive Your Business Forward."
         lead="Cybersecurity audits, health & safety, physical and logical security and ongoing ISO maintenance. Handled continuously for one predictable monthly fee, onsite or remote, anywhere in the world."
       />
 
+      <section className="py-12 border-b border-border bg-background">
+        <div className="container-x max-w-3xl">
+          <Reveal>
+            <h2 className="font-display text-2xl leading-tight text-foreground mb-4">What is eCompliance?</h2>
+            <p className="text-base md:text-lg leading-relaxed text-foreground">
+              eCompliance is AACL Global&apos;s compliance-as-a-service model: continuous management of ISO
+              and related compliance obligations so your organisation stays audit-ready without building a
+              full in-house compliance team. It combines document control, CAPA, risk registers, audit
+              tracking and management reporting under one operating system, delivered onsite or remotely.
+            </p>
+            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+              It is designed for organisations that need sustained conformity across one or more management
+              system standards, not only a one-off certification project. Related services include{" "}
+              <Link to="/services" className="text-[var(--gold)] underline">ISO management systems consultancy</Link>
+              {" "}and{" "}
+              <Link to="/contact" className="text-[var(--gold)] underline">direct engagement with AACL</Link>.
+            </p>
+          </Reveal>
+        </div>
+      </section>
 
-      {/* Value strip */}
       <section className="py-16 bg-[var(--navy-deep)] text-[var(--bone)]">
         <div className="container-x grid md:grid-cols-3 gap-px bg-white/10">
           {[
@@ -134,7 +165,6 @@ function ECompliancePage() {
         </div>
       </section>
 
-      {/* Modules */}
       <section className="py-24 bg-background">
         <div className="container-x">
           <Reveal>
@@ -162,10 +192,8 @@ function ECompliancePage() {
         </div>
       </section>
 
-      {/* Two service options */}
       <ServiceOptions />
 
-      {/* Plans */}
       <section className="py-24 bg-background">
         <div className="container-x">
           <Reveal>
@@ -225,9 +253,6 @@ function ECompliancePage() {
         </div>
       </section>
 
-
-
-      {/* FAQ */}
       <section className="py-24 bg-[var(--bone)]">
         <div className="container-x grid lg:grid-cols-12 gap-14">
           <div className="lg:col-span-4">
@@ -256,7 +281,6 @@ function ECompliancePage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-24 bg-[var(--navy-deep)] text-[var(--bone)]">
         <div className="container-x text-center max-w-3xl mx-auto">
           <Reveal>
