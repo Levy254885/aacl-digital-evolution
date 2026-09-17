@@ -9,7 +9,9 @@ function parse(value: string) {
 /**
  * Displays a numeric value with an optional count-up animation.
  * Initial render uses the final value so crawlers and no-JS users
- * never see a misleading "0+".
+ * never see a misleading "0+". Animation still runs after the
+ * element scrolls into view. Verified site figures (e.g. 120+,
+ * 50+, 850+) must remain accurate on first paint.
  */
 export function Counter({ value, className = "" }: { value: string; className?: string }) {
   const { num, suffix } = parse(value);
@@ -58,7 +60,12 @@ export function Counter({ value, className = "" }: { value: string; className?: 
   }, [num, animated]);
 
   return (
-    <span ref={ref} className={`tabular-nums ${className}`}>
+    <span
+      ref={ref}
+      className={`tabular-nums ${className}`}
+      data-value={`${num}${suffix}`}
+      aria-label={`${num.toLocaleString("en-US")}${suffix}`}
+    >
       {shown.toLocaleString("en-US")}
       {suffix}
     </span>
