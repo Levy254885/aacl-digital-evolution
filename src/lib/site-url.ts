@@ -43,4 +43,4 @@ export function absUrl(path = "/"): string {
   return `${SITE_URL}${clean.replace(/\/$/, "")}`;
 }
 
-export const OG_IMAGE = absUrl("/favicon.png");
+export const OG_IMAGE = absUrl("/og-share.jpg");
