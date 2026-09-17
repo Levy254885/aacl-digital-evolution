@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { absUrl } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
+import { SiteBreadcrumbs } from "@/components/site/SiteBreadcrumbs";
 import { Reveal } from "@/components/site/Reveal";
 import { findRegion, type Region } from "@/lib/regions-content";
 import { Check, Globe2 } from "lucide-react";
@@ -102,6 +103,13 @@ function RegionPage() {
 
   return (
     <PageShell>
+      <SiteBreadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "ISO Certification", href: "/iso-certification" },
+          { label: r.name },
+        ]}
+      />
       <PageHero eyebrow={`ISO certification in ${r.name}`} title={r.heading} lead={r.lead} image={r.image} />
 
       <section className="py-24 bg-background">
