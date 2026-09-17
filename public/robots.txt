@@ -22,3 +22,6 @@ Allow: /
 Disallow: /admin/
 
 Sitemap: https://www.aaclglobal.com/sitemap.xml
+
+# Optional machine-readable site summary
+# https://www.aaclglobal.com/llms.txt

@@ -6,48 +6,56 @@ function parse(value: string) {
   return { num, suffix };
 }
 
-/** Counts up to a numeric value (e.g. "150+") once it scrolls into view. */
+/**
+ * Displays a numeric value with an optional count-up animation.
+ * Initial render uses the final value so crawlers and no-JS users
+ * never see a misleading "0+".
+ */
 export function Counter({ value, className = "" }: { value: string; className?: string }) {
   const { num, suffix } = parse(value);
   const ref = useRef<HTMLSpanElement | null>(null);
-  const [shown, setShown] = useState(0);
+  // Start at final value for correct first paint / SSR / crawlers
+  const [shown, setShown] = useState(num);
+  const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || animated) return;
 
     const reduce =
       typeof window !== "undefined" &&
       window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
+    if (reduce) {
+      setShown(num);
+      setAnimated(true);
+      return;
+    }
+
     const io = new IntersectionObserver(
       ([entry]) => {
         if (!entry?.isIntersecting) return;
         io.disconnect();
+        setAnimated(true);
 
-        if (reduce) {
-          setShown(num);
-          return;
-        }
-
+        // Brief reset then animate up for visual interest
+        setShown(0);
         const duration = 1800;
         const start = performance.now();
-        let frame = 0;
         const tick = (now: number) => {
           const t = Math.min(1, (now - start) / duration);
           const eased = 1 - Math.pow(1 - t, 3);
           setShown(Math.round(num * eased));
-          if (t < 1) frame = requestAnimationFrame(tick);
+          if (t < 1) requestAnimationFrame(tick);
         };
-        frame = requestAnimationFrame(tick);
-        return () => cancelAnimationFrame(frame);
+        requestAnimationFrame(tick);
       },
       { threshold: 0.4 },
     );
 
     io.observe(el);
     return () => io.disconnect();
-  }, [num]);
+  }, [num, animated]);
 
   return (
     <span ref={ref} className={`tabular-nums ${className}`}>
