@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { absUrl } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
+import { SiteBreadcrumbs } from "@/components/site/SiteBreadcrumbs";
+import { SITE } from "@/lib/aacl-content";
 import { Reveal } from "@/components/site/Reveal";
 import { ArrowRight } from "lucide-react";
 
@@ -38,6 +40,12 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <PageShell>
+      <SiteBreadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "About" },
+        ]}
+      />
       <PageHero
         eyebrow="Who we are"
         title="Compliance Expertise Without Borders."
@@ -45,14 +53,53 @@ function AboutPage() {
         image="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2000&q=80"
       />
 
-      <section className="pt-10">
-        <div className="container-x">
-          <Reveal>
-            <Link to="/contact" className="btn-gold">Talk to Us</Link>
-          </Reveal>
+      <section className="py-16 bg-background border-b border-border">
+        <div className="container-x grid lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-4">
+            <Reveal>
+              <div className="eyebrow mb-4">Company profile</div>
+              <h2 className="font-display text-3xl leading-tight">Who is AACL Global?</h2>
+            </Reveal>
+          </div>
+          <div className="lg:col-span-8 space-y-5 text-muted-foreground leading-relaxed">
+            <Reveal>
+              <p>
+                <strong className="text-foreground">AACL Global</strong> is the trading name of{" "}
+                <strong className="text-foreground">{SITE.name}</strong>, a professional consultancy
+                focused on security, compliance and ISO management systems. The firm is headquartered at{" "}
+                {SITE.address.line1}, {SITE.address.line2}, {SITE.address.city}, {SITE.address.country},
+                and delivers engagements onsite or remotely for organisations in Africa and international markets.
+              </p>
+            </Reveal>
+            <Reveal delay={80}>
+              <p>
+                Core work includes physical and cybersecurity risk assessments, ISO management systems
+                consultancy (including ISO 9001, ISO/IEC 27001, ISO 45001 and related standards), security
+                standards implementation and audits, Security Manager as a Service, statutory compliance
+                support, and continuous compliance through eCompliance.
+              </p>
+            </Reveal>
+            <Reveal delay={120}>
+              <p>
+                Sectors supported include security printing, banking and financial services, manufacturing,
+                hospitality, pharmaceuticals, food and beverage, technology, telecommunications, aviation
+                and private security. Contact:{" "}
+                <a href={`mailto:${SITE.email}`} className="text-[var(--gold)] underline">{SITE.email}</a>
+                {" "}·{" "}
+                <a href={`tel:${SITE.phone.replace(/\s/g, "")}`} className="text-[var(--gold)] underline">{SITE.phone}</a>.
+              </p>
+            </Reveal>
+            <Reveal delay={160}>
+              <div className="flex flex-wrap gap-3 pt-2">
+                <Link to="/services" className="btn-outline-navy">Services</Link>
+                <Link to="/industries" className="btn-outline-navy">Industries</Link>
+                <Link to="/ecompliance" className="btn-outline-navy">eCompliance</Link>
+                <Link to="/contact" className="btn-gold">Contact AACL</Link>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
-
 
       <section className="py-24 bg-background">
         <div className="container-x grid lg:grid-cols-12 gap-14">
@@ -104,7 +151,6 @@ function AboutPage() {
             <h2 className="font-display text-4xl md:text-5xl leading-tight text-white">Headquartered in Nairobi. Delivering worldwide. Onsite or remote.</h2>
             <p className="mt-6 text-white/70 leading-relaxed">From our base at Vision Towers in Westlands we serve clients across Africa, Europe, the UK, the US and Asia, combining local presence with globally benchmarked expertise. Every engagement is available Onsite or Remote, Worldwide.</p>
             <Link to="/contact" className="btn-outline-gold mt-8 inline-flex">Talk to Us <ArrowRight size={14} /></Link>
-
           </Reveal>
           <Reveal delay={120}>
             <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80" alt="Consultants collaborating" className="w-full h-[500px] object-cover" />
