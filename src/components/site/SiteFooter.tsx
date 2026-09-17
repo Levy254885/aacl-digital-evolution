@@ -6,7 +6,6 @@ export function SiteFooter() {
   return (
     <footer className="bg-[var(--navy)] text-white/65">
       <div className="container-x pt-20 pb-16">
-        {/* Big statement + rotating badge */}
         <div className="grid gap-10 lg:grid-cols-12 items-center">
           <h2 className="lg:col-span-8 font-display text-3xl md:text-5xl font-extrabold leading-[1.1] text-white">
             Expert Guidance For Long Term Business Success.
@@ -30,7 +29,6 @@ export function SiteFooter() {
                   className="w-[86%] object-contain brightness-0 invert"
                 />
               </div>
-
             </div>
           </div>
         </div>
@@ -53,18 +51,7 @@ export function SiteFooter() {
             <p className="text-sm leading-[1.9] max-w-sm">
               At AACL, we believe in clarity, credibility and systems that turn compliance into lasting trust.
             </p>
-            <div className="mt-7 flex gap-3">
-              {["in", "X", "f", "yt"].map((s) => (
-                <a
-                  key={s}
-                  href="#"
-                  aria-label={s}
-                  className="h-11 w-11 rounded-full bg-white text-[var(--navy)] text-xs font-bold flex items-center justify-center transition-transform duration-300 hover:-translate-y-1"
-                >
-                  {s}
-                </a>
-              ))}
-            </div>
+            {/* Social profiles: add official URLs only when verified. No placeholder links. */}
           </div>
 
           <div className="lg:col-span-5 lg:border-l lg:border-white/12 lg:pl-14">
