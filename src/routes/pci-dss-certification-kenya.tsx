@@ -79,6 +79,29 @@ function PciDssKenyaPage() {
           </Reveal>
         </div>
       </section>
+
+      <section className="py-12 bg-muted/40">
+        <div className="container-x max-w-3xl">
+          <h2 className="font-display text-xl mb-4">Related reading</h2>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            <li>
+              <Link to="/insights/$slug" params={{ slug: "pci-dss-certification-kenya-guide" }} className="hover:text-[var(--navy)]">
+                PCI DSS certification in Kenya: scope, cost drivers and a practical path
+              </Link>
+            </li>
+            <li>
+              <Link to="/insights/$slug" params={{ slug: "iso-27001-2022-transition" }} className="hover:text-[var(--navy)]">
+                Transitioning to ISO/IEC 27001:2022
+              </Link>
+            </li>
+            <li>
+              <Link to="/iso-27001-certification-kenya" className="hover:text-[var(--navy)]">
+                ISO 27001 Certification Kenya
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </section>
     </PageShell>
   );
 }

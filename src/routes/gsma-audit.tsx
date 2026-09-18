@@ -84,6 +84,29 @@ function GsmaAuditPage() {
           </Reveal>
         </div>
       </section>
+
+      <section className="py-12 bg-muted/40">
+        <div className="container-x max-w-3xl">
+          <h2 className="font-display text-xl mb-4">Related reading</h2>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            <li>
+              <Link to="/insights/$slug" params={{ slug: "gsma-audit-what-to-expect" }} className="hover:text-[var(--navy)]">
+                GSMA audit: what to expect on the day and how to prepare
+              </Link>
+            </li>
+            <li>
+              <Link to="/insights/$slug" params={{ slug: "gsma-sas-preparing-for-your-first-audit" }} className="hover:text-[var(--navy)]">
+                GSMA SAS: Preparing for Your First Scheme Audit
+              </Link>
+            </li>
+            <li>
+              <Link to="/gsma-sas-kenya" className="hover:text-[var(--navy)]">
+                GSMA SAS Kenya service page
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </section>
     </PageShell>
   );
 }
