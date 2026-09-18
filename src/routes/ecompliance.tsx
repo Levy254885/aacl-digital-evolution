@@ -20,6 +20,8 @@ import {
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { SiteBreadcrumbs } from "@/components/site/SiteBreadcrumbs";
 import { PricingTable, PaymentMethods } from "@/components/site/PricingTable";
+import { startEcomplianceCheckout } from "@/lib/ecompliance-checkout";
+import type { PaymentMethodId } from "@/lib/orders";
 import { CostBanner, CostFaq } from "@/components/site/CostObjection";
 import { ECOMPLIANCE_PRICING } from "@/lib/pricing-content";
 
@@ -115,12 +117,7 @@ function ECompliancePage() {
 
   return (
     <PageShell>
-      <SiteBreadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "eCompliance" },
-        ]}
-      />
+      <SiteBreadcrumbs items={[{ label: "Home", href: "/" }, { label: "eCompliance" }]} />
       <PageHero
         eyebrow="eCompliance"
         title="World Class Compliance to Drive Your Business Forward."
@@ -132,63 +129,11 @@ function ECompliancePage() {
           <Reveal>
             <h2 className="font-display text-2xl leading-tight text-foreground mb-4">What is eCompliance?</h2>
             <p className="text-base md:text-lg leading-relaxed text-foreground">
-              eCompliance is AACL Global&apos;s compliance-as-a-service model: continuous management of ISO
+              eCompliance is AACL Global's compliance-as-a-service model: continuous management of ISO
               and related compliance obligations so your organisation stays audit-ready without building a
-              full in-house compliance team. It combines document control, CAPA, risk registers, audit
-              tracking and management reporting under one operating system, delivered onsite or remotely.
-            </p>
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-              It is designed for organisations that need sustained conformity across one or more management
-              system standards, not only a one-off certification project. Related services include{" "}
-              <Link to="/services" className="text-[var(--gold)] underline">ISO management systems consultancy</Link>
-              {" "}and{" "}
-              <Link to="/contact" className="text-[var(--gold)] underline">direct engagement with AACL</Link>.
+              full in-house compliance team.
             </p>
           </Reveal>
-        </div>
-      </section>
-
-      <section className="py-16 bg-[var(--navy-deep)] text-[var(--bone)]">
-        <div className="container-x grid md:grid-cols-3 gap-px bg-white/10">
-          {[
-            { k: "Always audit-ready", v: "Evidence maintained continuously, clause by clause." },
-            { k: "One integrated system", v: "Multiple standards, one audit programme, one review." },
-            { k: DELIVERY_STRAPLINE, v: "Remote across every timezone; onsite on request." },
-          ].map((item, i) => (
-            <Reveal key={item.k} delay={i * 80}>
-              <div className="bg-[var(--navy-deep)] p-8">
-                <h3 className="font-display text-xl text-[var(--bone)]">{item.k}</h3>
-                <p className="text-sm text-white/60 mt-3 leading-relaxed">{item.v}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="py-24 bg-background">
-        <div className="container-x">
-          <Reveal>
-            <div className="eyebrow mb-4">Platform modules</div>
-            <h2 className="font-display text-3xl md:text-4xl leading-tight max-w-3xl">
-              Everything an auditor asks for, in one operating system.
-            </h2>
-          </Reveal>
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ECOMPLIANCE_MODULES.map((m, i) => {
-              const Icon = ICONS[m.icon] ?? Gauge;
-              return (
-                <Reveal key={m.title} delay={i * 60}>
-                  <div className="h-full border border-border rounded-[18px] p-7 bg-background hover:border-[var(--gold)]/60 transition-colors">
-                    <span className="w-11 h-11 rounded-full bg-[var(--bone)] grid place-items-center">
-                      <Icon size={19} className="text-[var(--gold)]" aria-hidden="true" />
-                    </span>
-                    <h3 className="font-display text-xl mt-5">{m.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{m.body}</p>
-                  </div>
-                </Reveal>
-              );
-            })}
-          </div>
         </div>
       </section>
 
@@ -201,26 +146,19 @@ function ECompliancePage() {
             <h2 className="font-display text-3xl md:text-4xl leading-tight max-w-3xl">
               Indicative pricing. Confirmed after a short scoping call.
             </h2>
-            <p className="mt-4 text-muted-foreground max-w-2xl">
-              Reference currency is USD. Bundled discounts apply when eCompliance is combined with certification
-              consultancy or training.
-            </p>
           </Reveal>
           <div className="mt-12 grid md:grid-cols-3 gap-6">
             {ECOMPLIANCE_PLANS.map((p, i) => (
               <Reveal key={p.name} delay={i * 90}>
                 <div
                   className={`h-full rounded-[18px] p-8 flex flex-col border ${
-                    p.featured
-                      ? "border-[var(--gold)] bg-[var(--bone)]"
-                      : "border-border bg-background"
+                    p.featured ? "border-[var(--gold)] bg-[var(--bone)]" : "border-border bg-background"
                   }`}
                 >
                   <h3 className="font-display text-2xl">{p.name}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{p.body}</p>
                   <p className="mt-6 font-display text-3xl">
-                    <span className="text-sm text-muted-foreground align-middle mr-1">From</span>
-                    ${p.from}
+                    <span className="text-sm text-muted-foreground align-middle mr-1">From</span>${p.from}
                     <span className="text-sm text-muted-foreground font-sans ml-1">USD {p.period}</span>
                   </p>
                   <ul className="mt-6 space-y-3 flex-1">
@@ -249,6 +187,7 @@ function ECompliancePage() {
           <div className="mt-16">
             <h3 className="font-display text-2xl font-extrabold mb-6">Ways to pay</h3>
             <PaymentMethods />
+            <SubscribePanel />
           </div>
         </div>
       </section>
@@ -258,9 +197,7 @@ function ECompliancePage() {
           <div className="lg:col-span-4">
             <Reveal>
               <div className="eyebrow mb-4">FAQ</div>
-              <h2 className="font-display text-3xl md:text-4xl leading-tight">
-                eCompliance, answered.
-              </h2>
+              <h2 className="font-display text-3xl md:text-4xl leading-tight">eCompliance, answered.</h2>
             </Reveal>
           </div>
           <div className="lg:col-span-8">
@@ -300,5 +237,70 @@ function ECompliancePage() {
         </div>
       </section>
     </PageShell>
+  );
+}
+
+function SubscribePanel() {
+  const [tier, setTier] = useState("Essentials");
+  const [method, setMethod] = useState<PaymentMethodId>("card");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [busy, setBusy] = useState(false);
+
+  return (
+    <div className="mt-14 rounded-[20px] border border-border bg-background p-8 md:p-10">
+      <h3 className="font-display text-2xl">Start eCompliance</h3>
+      <p className="mt-2 text-sm text-muted-foreground">
+        Pay by M-Pesa, Visa/Mastercard, or PayPal. We activate your retainer after payment confirms.
+      </p>
+      <div className="mt-6 grid gap-4 md:grid-cols-2">
+        <label className="text-sm">
+          Plan
+          <select className="mt-1 w-full rounded-md border border-border px-3 py-2" value={tier} onChange={(e) => setTier(e.target.value)}>
+            <option>Essentials</option>
+            <option>Growth</option>
+            <option>Enterprise</option>
+          </select>
+        </label>
+        <label className="text-sm">
+          Payment method
+          <select className="mt-1 w-full rounded-md border border-border px-3 py-2" value={method} onChange={(e) => setMethod(e.target.value as PaymentMethodId)}>
+            <option value="mpesa">M-Pesa</option>
+            <option value="card">Visa / Mastercard</option>
+            <option value="paypal">PayPal</option>
+          </select>
+        </label>
+        <label className="text-sm">
+          Full name
+          <input className="mt-1 w-full rounded-md border border-border px-3 py-2" value={name} onChange={(e) => setName(e.target.value)} />
+        </label>
+        <label className="text-sm">
+          Work email
+          <input type="email" className="mt-1 w-full rounded-md border border-border px-3 py-2" value={email} onChange={(e) => setEmail(e.target.value)} />
+        </label>
+        {method === "mpesa" && (
+          <label className="text-sm md:col-span-2">
+            M-Pesa phone
+            <input className="mt-1 w-full rounded-md border border-border px-3 py-2" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="2547…" />
+          </label>
+        )}
+      </div>
+      <button
+        type="button"
+        className="btn-gold mt-6"
+        disabled={busy}
+        onClick={async () => {
+          setBusy(true);
+          try {
+            await startEcomplianceCheckout({ tier, method, name, email, phone });
+          } finally {
+            setBusy(false);
+          }
+        }}
+      >
+        {busy ? "Starting…" : "Continue to payment"}
+      </button>
+    </div>
   );
 }
