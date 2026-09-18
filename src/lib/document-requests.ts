@@ -1,6 +1,7 @@
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { ref, uploadBytes } from "firebase/storage";
 import { getFirebaseDb, getFirebaseStorageBucket } from "@/lib/firebase";
+import { createOrder, type PaymentMethodId } from "@/lib/orders";
 
 export type DocumentRequestInput = {
   templateSlug: string;
@@ -33,8 +34,7 @@ export async function uploadCompanyLogo(file: File, companyName: string): Promis
   return path;
 }
 
-
-/** Stores document-request metadata in Firestore. */
+/** Stores document-request metadata and a matching commerce order (pending until paid). */
 export async function saveDocumentRequest(input: DocumentRequestInput) {
   await addDoc(collection(getFirebaseDb(), "documentRequests"), {
     templateSlug: input.templateSlug,
@@ -51,8 +51,32 @@ export async function saveDocumentRequest(input: DocumentRequestInput) {
     paymentMethod: input.paymentMethod,
     paymentReference: input.paymentReference,
     logoUrl: input.logoUrl,
-    status: "paid",
+    status: "pending",
     timestamp: serverTimestamp(),
     source: "aacl-website",
   });
+
+  const method = (["mpesa", "card", "paypal"].includes(input.paymentMethod)
+    ? input.paymentMethod
+    : "card") as PaymentMethodId;
+
+  try {
+    await createOrder({
+      kind: "template",
+      amount: input.amount,
+      currency: input.currency,
+      paymentMethod: method,
+      reference: input.paymentReference,
+      email: input.email.trim().toLowerCase(),
+      customerName: input.contactName.trim(),
+      companyName: input.companyName.trim(),
+      templateSlug: input.templateSlug,
+      templateName: input.templateName,
+      standard: input.standard,
+      status: "pending",
+      metadata: input.logoUrl ? { logoUrl: input.logoUrl } : undefined,
+    });
+  } catch {
+    // Order collection may fail if rules not yet deployed; document request still saved.
+  }
 }

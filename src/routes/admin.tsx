@@ -3,7 +3,7 @@ import { useState } from "react";
 import { AuthProvider, useAuth, roleAtLeast, ROLE_LABELS } from "@/lib/auth";
 import { CMS_COLLECTIONS } from "@/lib/cms";
 import { isFirebaseConfigured } from "@/lib/firebase";
-import { LayoutDashboard, Users, FileStack, LogOut, ShieldAlert, ScrollText } from "lucide-react";
+import { LayoutDashboard, Users, FileStack, LogOut, ShieldAlert, ScrollText, CreditCard } from "lucide-react";
 
 export const Route = createFileRoute("/admin")({
   ssr: false,
@@ -51,7 +51,6 @@ function SignInScreen() {
           AACL staff account must have MFA enrolled before it is granted Editor access or higher.
           Never share credentials, and sign out on shared devices.
         </p>
-
 
         <label className="mt-7 block text-[12px] uppercase tracking-[0.12em] text-muted-foreground">
           Email
@@ -136,6 +135,7 @@ function Shell() {
     { to: "/admin", label: "Overview", icon: LayoutDashboard, exact: true },
     ...(roleAtLeast(role, "admin")
       ? [
+          { to: "/admin/orders", label: "Orders & payments", icon: CreditCard, exact: false },
           { to: "/admin/team", label: "Team & roles", icon: Users, exact: false },
           { to: "/admin/audit", label: "Audit log", icon: ScrollText, exact: false },
         ]

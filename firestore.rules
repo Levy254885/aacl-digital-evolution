@@ -77,13 +77,11 @@ service cloud.firestore {
       allow read, update, delete: if false;
     }
 
-    // Website content, editable from /admin. Public read, role-gated write.
     match /cms/{docId} {
       allow read: if true;
       allow write: if isEditor();
     }
 
-    // Append-only audit trail of content publishes and role changes.
     match /auditLog/{entryId} {
       allow read, list: if isAdmin();
       allow create: if isEditor()
@@ -104,7 +102,37 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
-    // Role assignments. Readable by the owner and admins; only Super Admins write.
+    // Commerce orders (templates + eCompliance). Public create; admin read/update.
+    match /orders/{orderId} {
+      allow create: if request.resource.data.keys().hasAll([
+          'kind', 'status', 'amount', 'currency', 'paymentMethod', 'reference',
+          'email', 'customerName', 'source'
+        ])
+        && request.resource.data.kind in ['template', 'ecompliance']
+        && request.resource.data.status in ['pending', 'awaiting_payment']
+        && request.resource.data.amount is number
+        && request.resource.data.amount >= 0
+        && request.resource.data.amount <= 1000000
+        && request.resource.data.currency is string
+        && request.resource.data.currency.size() <= 8
+        && request.resource.data.paymentMethod in ['mpesa', 'card', 'paypal']
+        && request.resource.data.reference is string
+        && request.resource.data.reference.size() >= 6
+        && request.resource.data.reference.size() <= 48
+        && request.resource.data.email is string
+        && request.resource.data.email.matches('^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$')
+        && request.resource.data.customerName is string
+        && request.resource.data.customerName.size() >= 2
+        && request.resource.data.customerName.size() <= 160
+        && request.resource.data.source == 'aacl-website';
+
+      allow read, list: if isAdmin();
+      allow update: if isAdmin()
+        && request.resource.data.reference == resource.data.reference
+        && request.resource.data.amount == resource.data.amount;
+      allow delete: if isSuperAdmin();
+    }
+
     match /roles/{uid} {
       allow read: if request.auth != null && (request.auth.uid == uid || isAdmin());
       allow list: if isAdmin();
