@@ -3,11 +3,16 @@ import { absUrl, OG_IMAGE, SITE_URL } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { SiteBreadcrumbs } from "@/components/site/SiteBreadcrumbs";
 import { INSIGHTS, SERVICES } from "@/lib/aacl-content";
+import { EXTRA_BODIES } from "@/lib/insight-extra-bodies";
 
 export const Route = createFileRoute("/insights/$slug")({
   loader: ({ params }) => {
-    const post = INSIGHTS.find((p) => p.slug === params.slug);
-    if (!post) throw notFound();
+    const found = INSIGHTS.find((p) => p.slug === params.slug);
+    if (!found) throw notFound();
+    const post = {
+      ...found,
+      body: found.body ?? EXTRA_BODIES[found.slug],
+    };
     return { post };
   },
   head: ({ loaderData }) => {
@@ -78,7 +83,7 @@ export const Route = createFileRoute("/insights/$slug")({
 });
 
 function InsightDetail() {
-  const { post } = Route.useLoaderData() as { post: (typeof INSIGHTS)[number] };
+  const { post } = Route.useLoaderData() as { post: (typeof INSIGHTS)[number] & { body?: { h: string; p: string[] }[] } };
   const sections = post.body ?? [];
   return (
     <PageShell>
