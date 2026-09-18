@@ -3,15 +3,17 @@ import { absUrl, OG_IMAGE, SITE_URL } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { SiteBreadcrumbs } from "@/components/site/SiteBreadcrumbs";
 import { INSIGHTS, SERVICES } from "@/lib/aacl-content";
+import { NEW_INSIGHTS } from "@/lib/insight-new-posts";
 import { EXTRA_BODIES } from "@/lib/insight-extra-bodies";
 
 export const Route = createFileRoute("/insights/$slug")({
   loader: ({ params }) => {
-    const found = INSIGHTS.find((p) => p.slug === params.slug);
+    const allInsights = [...NEW_INSIGHTS, ...INSIGHTS];
+    const found = allInsights.find((p) => p.slug === params.slug);
     if (!found) throw notFound();
     const post = {
       ...found,
-      body: found.body ?? EXTRA_BODIES[found.slug],
+      body: (found as { body?: { h: string; p: string[] }[] }).body ?? EXTRA_BODIES[found.slug],
     };
     return { post };
   },
@@ -83,7 +85,18 @@ export const Route = createFileRoute("/insights/$slug")({
 });
 
 function InsightDetail() {
-  const { post } = Route.useLoaderData() as { post: (typeof INSIGHTS)[number] & { body?: { h: string; p: string[] }[] } };
+  const { post } = Route.useLoaderData() as {
+    post: {
+      slug: string;
+      title: string;
+      excerpt: string;
+      date: string;
+      readTime: string;
+      category: string;
+      image: string;
+      body?: { h: string; p: string[] }[];
+    };
+  };
   const sections = post.body ?? [];
   return (
     <PageShell>
@@ -146,7 +159,7 @@ function InsightDetail() {
             <div>
               <h2 className="font-display text-xl mb-4">More from the Knowledge Hub</h2>
               <ul className="space-y-2">
-                {INSIGHTS.filter((x) => x.slug !== post.slug).slice(0, 4).map((x) => (
+                {[...NEW_INSIGHTS, ...INSIGHTS].filter((x) => x.slug !== post.slug).slice(0, 4).map((x) => (
                   <li key={x.slug}>
                     <Link
                       to="/insights/$slug"
