@@ -155,4 +155,63 @@ export const EXTRA_BODIES: Record<string, { h: string; p: string[] }[]> = {
       ],
     },
   ],
+  "gsma-audit-what-to-expect": [
+    {
+      h: "What a GSMA audit is really testing",
+      p: [
+        "A GSMA SAS audit is not a generic ISO-style management system review. Auditors work from a published consolidated controls list and expect evidence that physical, personnel, production and logical controls operate as written — on the day and in the records.",
+        "Whether the engagement is SAS-UP (UICC / SIM / eSIM production) or SAS-SM (subscription management), the pattern is the same: walk the secure zones, interview operators and security staff, sample ceremony and logistics records, and test whether the layering of controls holds under real conditions.",
+      ],
+    },
+    {
+      h: "What happens on audit day",
+      p: [
+        "Expect an opening meeting, a site and system orientation, then a mix of physical inspection, document sampling and interviews. Auditors often start where findings are historically common: zone boundaries, access control and anti-passback, CCTV coverage and retention, key or cryptographic ceremonies, and scrap or reject reconciliation.",
+        "You should have a named escort, a prepared evidence pack mapped to the checklist, and process owners who can demonstrate the control — not only point at a procedure. Closing meetings summarise findings; non-conformities need a clear corrective action path.",
+      ],
+    },
+    {
+      h: "Evidence gaps that most often become findings",
+      p: [
+        "Procedures that do not match how operators actually work. Logs that are retained but never reviewed. Screening that covers employees but not contractors. Quantity variances in card or component flows without a documented investigation. Key ceremonies described in policy but thin in completed records.",
+        "Change is another trap: a new product line, courier, hosting environment or shift pattern that was never assessed against the SAS checklist. Maintain a change register with security impact assessments and renewals become reviews rather than rediscovery exercises.",
+      ],
+    },
+    {
+      h: "How to prepare in the final eight weeks",
+      p: [
+        "Run an independent mock audit against the current GSMA requirements. Close critical gaps. Rehearse interviews with operators and security staff. Confirm CCTV retention, access reviews and ceremony logs are complete for the recent period auditors will sample.",
+        "AACL Global supports pre-audit readiness, mock audits and onsite or remote support during the formal GSMA audit for SAS-UP and SAS-SM programmes. If your audit date is fixed, start the final preparation window as early as you can.",
+      ],
+    },
+  ],
+  "pci-dss-certification-kenya-guide": [
+    {
+      h: "Scoping is where cost is won or lost",
+      p: [
+        "PCI DSS applies to systems that store, process or transmit cardholder data, and to connected systems that can affect the security of the cardholder data environment (CDE). In Kenya, many organisations over-scope by treating the entire corporate network as in-scope, or under-scope by ignoring connected systems and third parties.",
+        "A clear network and data-flow diagram, segmentation where justified, and a documented applicability decision are the foundation of a manageable programme. Scope mistakes show up later as assessment delays or findings.",
+      ],
+    },
+    {
+      h: "What drives PCI DSS cost in Kenya",
+      p: [
+        "Cost is driven by scope size, number of locations, whether you are a merchant or service provider, the assessment type (SAQ vs QSA assessment), and how much remediation is required before assessment. Tooling, penetration testing and compensating controls also add to the total.",
+        "Combining PCI DSS with an existing or planned ISO 27001 programme reduces duplication: risk assessment, access control, logging, vendor management and security awareness can serve both if designed deliberately.",
+      ],
+    },
+    {
+      h: "A practical path for Kenyan organisations",
+      p: [
+        "Map card data flows and define the CDE. Close obvious gaps (default passwords, missing MFA on admin access, unencrypted transmission). Align policies and evidence with the current PCI DSS version. Engage a QSA or complete the correct SAQ path for your channel type.",
+        "Do not treat the ROC or SAQ as a one-off project. Maintaining evidence and change control between assessments is what keeps certification sustainable.",
+      ],
+    },
+    {
+      h: "How AACL supports PCI DSS in Kenya",
+      p: [
+        "We help organisations scope the CDE, run gap assessments, remediate controls, and prepare for QSA assessment or SAQ completion. Programmes can stand alone or integrate with ISO 27001 and broader security retainers. Onsite in Nairobi and Kenya, or remote worldwide.",
+      ],
+    },
+  ],
 };
