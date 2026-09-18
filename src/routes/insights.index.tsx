@@ -3,6 +3,7 @@ import { absUrl } from "@/lib/site-url";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { INSIGHTS } from "@/lib/aacl-content";
+import { NEW_INSIGHTS } from "@/lib/insight-new-posts";
 import { useCms } from "@/lib/cms";
 
 export const Route = createFileRoute("/insights/")({
@@ -37,7 +38,7 @@ export const Route = createFileRoute("/insights/")({
 });
 
 function InsightsPage() {
-  const posts = useCms<typeof INSIGHTS>("blog", INSIGHTS);
+  const posts = useCms("blog", [...NEW_INSIGHTS, ...INSIGHTS]);
 
   return (
     <PageShell>
