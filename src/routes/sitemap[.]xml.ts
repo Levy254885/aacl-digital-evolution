@@ -24,6 +24,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/iso-27001-certification-kenya", changefreq: "weekly", priority: "0.95" },
           { path: "/iso-9001-kenya-cost", changefreq: "weekly", priority: "0.95" },
           { path: "/gsma-sas-kenya", changefreq: "weekly", priority: "0.95" },
+          { path: "/gsma-audit", changefreq: "weekly", priority: "0.95" },
+          { path: "/pci-dss-certification-kenya", changefreq: "weekly", priority: "0.9" },
           { path: "/smaas-kenya", changefreq: "weekly", priority: "0.9" },
           { path: "/iso-certification-cost-kenya", changefreq: "weekly", priority: "0.9" },
           { path: "/best-iso-consultants-kenya", changefreq: "weekly", priority: "0.9" },
