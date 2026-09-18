@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { absUrl } from "@/lib/site-url";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { toast } from "sonner";
 import {
   ArrowLeft,
@@ -24,7 +24,7 @@ import {
   type CompanyDetails,
   type DocTemplate,
 } from "@/lib/doc-generator";
-import { saveDocumentRequest, uploadCompanyLogo } from "@/lib/document-requests";
+import { runTemplateCheckout, resumeTemplatePaymentFromUrl } from "@/lib/template-checkout";
 
 const TITLE = "AI ISO Document Generator & Branded Templates | AACL";
 const DESCRIPTION =
@@ -113,6 +113,10 @@ function TemplatesPage() {
     [template, details, logoDataUrl],
   );
 
+  useEffect(() => {
+    resumeTemplatePaymentFromUrl(setReference, setStep);
+  }, []);
+
   const set =
     (k: keyof CompanyDetails) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
@@ -146,35 +150,18 @@ function TemplatesPage() {
 
   async function pay() {
     if (!template) return;
-    if (paymentMethod === "mpesa" && !/^[0-9+\s-]{9,15}$/.test(phone)) {
-      toast.error("Enter the mobile number to receive the M-Pesa prompt.");
-      return;
-    }
     setBusy(true);
     try {
-      let logoUrl: string | null = null;
-      if (logoFile) {
-        try {
-          logoUrl = await uploadCompanyLogo(logoFile, details.companyName);
-        } catch {
-          logoUrl = null;
-        }
-      }
-      const ref = `AACL-${Date.now().toString(36).toUpperCase()}`;
-      await saveDocumentRequest({
-        templateSlug: template.slug,
-        templateName: template.name,
-        standard: template.standard,
-        ...details,
-        amount: template.price,
-        currency: "USD",
+      const result = await runTemplateCheckout({
+        template,
+        details,
+        logoFile,
         paymentMethod,
-        paymentReference: ref,
-        logoUrl,
+        phone,
       });
-      setReference(ref);
-      setStep(5);
-      toast.success("Payment confirmed", { description: "Your branded document is ready to download." });
+      if (!result) return;
+      setReference(result.reference);
+      if (!result.redirected) setStep(5);
     } catch {
       toast.error("We could not complete that", {
         description: "Please try again or contact us and we will issue the document manually.",
@@ -192,8 +179,6 @@ function TemplatesPage() {
         lead="Enter your company details, upload your logo, describe what you need. And download a fully branded, audit-ready ISO manual, policy or procedure in minutes. Preview before you pay, then export as PDF or DOCX."
       />
 
-
-      {/* Stepper */}
       <section className="py-10 bg-background border-b border-border">
         <div className="container-x">
           <ol className="flex flex-wrap gap-x-8 gap-y-3">
@@ -219,7 +204,6 @@ function TemplatesPage() {
 
       <section className="py-16 md:py-20 bg-background">
         <div className="container-x">
-          {/* Step 0, choose document */}
           {step === 0 && (
             <div>
               <h2 className="font-display text-3xl mb-8">Choose a document type</h2>
@@ -256,7 +240,6 @@ function TemplatesPage() {
             </div>
           )}
 
-          {/* Step 1, branding */}
           {step === 1 && (
             <div className="max-w-2xl">
               <h2 className="font-display text-3xl mb-4">Upload your company logo</h2>
@@ -299,7 +282,6 @@ function TemplatesPage() {
             </div>
           )}
 
-          {/* Step 2, details */}
           {step === 2 && (
             <div className="max-w-3xl">
               <h2 className="font-display text-3xl mb-8">Company details and requirements</h2>
@@ -331,7 +313,6 @@ function TemplatesPage() {
             </div>
           )}
 
-          {/* Step 3, preview */}
           {step === 3 && template && (
             <div>
               <div className="flex items-end justify-between flex-wrap gap-4 mb-6">
@@ -346,17 +327,11 @@ function TemplatesPage() {
                 </p>
               </div>
               <div className="rounded-[18px] border border-border overflow-hidden bg-[var(--bone)]">
-                <iframe
-                  title="Document preview"
-                  srcDoc={html}
-                  className="w-full h-[620px] bg-white"
-                  sandbox=""
-                />
+                <iframe title="Document preview" srcDoc={html} className="w-full h-[620px] bg-white" sandbox="" />
               </div>
             </div>
           )}
 
-          {/* Step 4, payment */}
           {step === 4 && template && (
             <div className="max-w-2xl">
               <h2 className="font-display text-3xl mb-2">Payment</h2>
@@ -375,15 +350,7 @@ function TemplatesPage() {
                       paymentMethod === m.id ? "border-[var(--gold)] bg-[var(--bone)]" : "border-border hover:border-[var(--gold)]/60"
                     }`}
                   >
-                    <img
-                      src={m.logo}
-                      alt={m.label}
-                      width={180}
-                      height={48}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-9 w-auto max-w-[140px] object-contain object-left"
-                    />
+                    <img src={m.logo} alt={m.label} width={180} height={48} loading="lazy" decoding="async" className="h-9 w-auto max-w-[140px] object-contain object-left" />
                     <div className="font-display mt-4">{m.label}</div>
                     <div className="text-xs text-muted-foreground mt-1">{m.hint}</div>
                   </button>
@@ -409,7 +376,6 @@ function TemplatesPage() {
             </div>
           )}
 
-          {/* Step 5, download */}
           {step === 5 && template && (
             <div className="max-w-2xl">
               <div className="w-12 h-12 rounded-full bg-[var(--gold)] text-[var(--navy-deep)] grid place-items-center">
@@ -457,7 +423,6 @@ function TemplatesPage() {
             </div>
           )}
 
-          {/* Nav */}
           {step < 5 && (
             <div className="mt-12 flex items-center justify-between gap-4 border-t border-border pt-8">
               <button
