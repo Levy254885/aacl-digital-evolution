@@ -65,4 +65,94 @@ export const EXTRA_BODIES: Record<string, { h: string; p: string[] }[]> = {
       ],
     },
   ],
+  "kenya-data-protection-act-lessons": [
+    {
+      h: "What the ODPC has actually enforced",
+      p: [
+        "Kenya's Data Protection Act and the Office of the Data Protection Commissioner have moved from awareness to enforcement. Published decisions and guidance emphasise lawful basis, transparency to data subjects, security of processing, and the duty to notify breaches within the statutory window.",
+        "Organisations that treat registration with the ODPC as the end of compliance are exposed. Registration is a starting point. The operational questions are whether processing is mapped, whether consent or another lawful basis is documented, and whether security measures are proportionate to the risk.",
+      ],
+    },
+    {
+      h: "Priorities for 2026 compliance programmes",
+      p: [
+        "Complete or refresh a processing inventory that covers systems, vendors and cross-border transfers. Many mid-market organisations still cannot answer where personal data actually lives.",
+        "Review vendor contracts for data protection clauses and transfer mechanisms. Cloud and SaaS providers are in scope even when the brand is international.",
+        "Test breach detection and notification playbooks against the Act's timelines. A tabletop exercise is cheaper than a late notification finding.",
+        "Align privacy work with ISO 27001 or equivalent security controls. Security of processing is both a legal duty and a certification requirement for many of our clients.",
+      ],
+    },
+    {
+      h: "Lessons for groups operating in and outside Kenya",
+      p: [
+        "Global operators often underestimate local registration and guidance while over-indexing on EU GDPR templates. Kenya-specific notices, retention and subject access processes are still required.",
+        "Conversely, a strong ISO 27001 or SOC 2 programme is useful evidence of security of processing, but it does not replace the accountability and transparency duties under the Act.",
+      ],
+    },
+    {
+      h: "How AACL supports data protection programmes",
+      p: [
+        "We help organisations map processing, close ODPC registration and policy gaps, and integrate data protection with ISO 27001 and broader compliance retainers. Delivery is practical and evidence-led, onsite in Nairobi or remote for regional and international groups.",
+      ],
+    },
+  ],
+  "integrated-management-systems": [
+    {
+      h: "Why separate systems become expensive",
+      p: [
+        "When ISO 9001, ISO 14001, ISO 45001 and ISO 27001 are run as four parallel manuals, you pay four times for document control, internal audit scheduling, management review and corrective action tracking. Staff learn four slightly different ways of describing the same process.",
+        "Certification body time also multiplies. Integrated audits are available from most major registrars once the system is genuinely integrated — not merely stapled together.",
+      ],
+    },
+    {
+      h: "What real integration looks like",
+      p: [
+        "One process map per value stream, with quality, environment, safety and information security requirements attached where they apply. One risk register with domains, not four siloed registers. One internal audit programme that samples across standards. One management review agenda that covers performance of the whole system.",
+        "Clause-level alignment in the High Level Structure (HLS) makes this possible. The work is organisational, not documentary: process owners must own the combined requirements.",
+      ],
+    },
+    {
+      h: "Where integration pays back fastest",
+      p: [
+        "Manufacturing and multi-site operations with three or more certificates. Financial services combining ISO 27001 with operational resilience and quality obligations. Security printers already carrying GSMA SAS who also need ISO 27001 and quality systems.",
+        "Typical savings show up in reduced audit days, fewer duplicated non-conformities, and clearer accountability. Soft benefits include less training load and a single source of truth for procedures.",
+      ],
+    },
+    {
+      h: "How AACL designs IMS programmes",
+      p: [
+        "We start with a shared process architecture, not a merged manual. Gap assessments are run once across the target standards, documentation is rationalised, and internal auditors are trained to work across domains. Certification support is coordinated with your registrar for integrated surveillance where possible.",
+        "Available onsite in Kenya or remote for international groups. Talk to us if you are carrying three or more certificates and the overhead is becoming the product.",
+      ],
+    },
+  ],
+  "third-party-risk-in-financial-services": [
+    {
+      h: "Why third-party risk is now a board topic",
+      p: [
+        "Core banking, payments, cloud, customer support and even parts of compliance are frequently delivered by vendors. A material outage or data incident at a critical third party is a material incident for the bank. Regulators in Kenya and internationally increasingly expect formal third-party risk management, not informal relationship management.",
+        "The difficulty is volume. A mid-sized institution can have hundreds of suppliers. Treating all of them with the same questionnaire wastes effort and still misses the concentration risk in the top ten.",
+      ],
+    },
+    {
+      h: "A simple maturity model",
+      p: [
+        "Level 1 — Inventory only: a list of vendors with contracts on file. Level 2 — Tiering: criticality rating based on data access, customer impact and substitutability. Level 3 — Risk-based assurance: questionnaires, certifications (ISO 27001, SOC 2, PCI DSS) and contractual rights calibrated to tier. Level 4 — Continuous monitoring: performance SLAs, security ratings, incident obligations and periodic re-assessment. Level 5 — Integrated: third-party risk feeds enterprise risk, operational resilience and board reporting.",
+        "Most institutions we assess sit between Level 2 and Level 3. The jump to Level 4 requires tooling and clear ownership, not only more spreadsheets.",
+      ],
+    },
+    {
+      h: "What good looks like in practice",
+      p: [
+        "A living inventory owned by procurement and risk jointly. Exit and concentration analysis for the critical tier. Right to audit and evidence clauses that are actually exercised. Alignment with ISO 27001 Annex A supplier controls and with PCI DSS where card data is involved.",
+        "For security printing and telecom clients, third-party risk also covers production subcontractors and hosting partners that fall inside GSMA SAS scope — scheme requirements do not stop at the factory gate.",
+      ],
+    },
+    {
+      h: "How AACL supports third-party risk programmes",
+      p: [
+        "We design tiering models, assurance programmes and board reporting for banks, payment firms and regulated manufacturers. Engagements can stand alone or sit inside a broader ISO 27001, PCI DSS or SMaaS retainer. Onsite in Kenya or remote worldwide.",
+      ],
+    },
+  ],
 };
