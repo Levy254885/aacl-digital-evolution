@@ -31,61 +31,6 @@ export const Route = createFileRoute("/gsma-sas-kenya")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: absUrl(PATH) }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                { "@type": "ListItem", position: 1, name: "Home", item: absUrl("/") },
-                { "@type": "ListItem", position: 2, name: "Services", item: absUrl("/services") },
-                { "@type": "ListItem", position: 3, name: "GSMA SAS Audit", item: absUrl(PATH) },
-              ],
-            },
-            {
-              "@type": "Service",
-              name: "GSMA SAS Audit Preparation (SAS-UP & SAS-SM)",
-              provider: { "@type": "Organization", name: "AACL Global", url: absUrl("/") },
-              areaServed: ["Kenya", "Africa", "Worldwide"],
-              description: DESC,
-              url: absUrl(PATH),
-            },
-            {
-              "@type": "FAQPage",
-              mainEntity: [
-                {
-                  "@type": "Question",
-                  name: "What is a GSMA SAS audit?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "A GSMA SAS audit assesses whether a security printing or UICC production site meets the Security Accreditation Scheme requirements (SAS-UP for UICC production and SAS-SM for subscription management). AACL prepares sites for these audits with gap assessment, control implementation and evidence packs.",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "What is the difference between GSMA SAS-UP and SAS-SM?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "SAS-UP covers UICC (SIM) production environments. SAS-SM covers subscription management systems. AACL supports preparation for both schemes.",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "Do you support GSMA SAS audits in Kenya and internationally?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Yes. We deliver onsite in Kenya and remote or hybrid support for sites worldwide.",
-                  },
-                },
-              ],
-            },
-          ],
-        }),
-      },
-    ],
   }),
   component: GsmaSasKenyaPage,
 });
@@ -175,31 +120,26 @@ function GsmaSasKenyaPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-muted/40">
+      <section className="py-12 bg-muted/40">
         <div className="container-x max-w-3xl">
-          <Reveal>
-            <h2 className="font-display text-2xl mb-6">GSMA SAS FAQs</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="font-semibold">What is a GSMA SAS audit?</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  A formal assessment of whether a security printing or UICC production site meets GSMA Security Accreditation Scheme requirements (SAS-UP or SAS-SM).
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold">SAS-UP vs SAS-SM?</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  SAS-UP covers UICC (SIM) production. SAS-SM covers subscription management. We support both.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold">Do you work only in Kenya?</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  No. We deliver onsite in Kenya and remote or hybrid support worldwide.
-                </p>
-              </div>
-            </div>
-          </Reveal>
+          <h2 className="font-display text-xl mb-4">Related reading</h2>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            <li>
+              <Link to="/insights/$slug" params={{ slug: "gsma-audit-what-to-expect" }} className="hover:text-[var(--navy)]">
+                GSMA audit: what to expect on the day
+              </Link>
+            </li>
+            <li>
+              <Link to="/insights/$slug" params={{ slug: "gsma-sas-preparing-for-your-first-audit" }} className="hover:text-[var(--navy)]">
+                GSMA SAS: Preparing for Your First Scheme Audit
+              </Link>
+            </li>
+            <li>
+              <Link to="/gsma-audit" className="hover:text-[var(--navy)]">
+                GSMA audit preparation service
+              </Link>
+            </li>
+          </ul>
         </div>
       </section>
     </PageShell>
