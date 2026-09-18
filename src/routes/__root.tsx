@@ -89,7 +89,7 @@ const ORG_JSONLD = {
       logo: absUrl("/favicon.png"),
       image: absUrl("/og-share.jpg"),
       description:
-        "AACL Global is a worldwide ISO certification and security compliance consultancy. Headquartered in Nairobi, delivering onsite or remote anywhere in the world.",
+        "AACL Global is a worldwide ISO certification, GSMA SAS and security compliance consultancy. Headquartered in Nairobi, Kenya. ISO 27001, ISO 9001, SMaaS and security printing audits — onsite or remote worldwide.",
       telephone: "+254 719 876 524",
       email: "info@aacl.co.ke",
       address: {
@@ -122,7 +122,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "keywords",
         content:
-          "global ISO certification, ISO 27001, ISO 9001, ISO 45001, ISO 22301, ISO 14001, PCI DSS, GSMA SAS, SAS-UP, SAS-SM, security compliance consultancy, remote ISO consultants, international standards, ISO certification worldwide",
+          "ISO certification Kenya, ISO 27001 Kenya, ISO 27001 consultancy Nairobi, ISO 9001 Kenya cost, ISO 9001 consultants Kenya, GSMA SAS Kenya, security printing audit, SMaaS Kenya, outsourced CISO Kenya, best ISO consultants Kenya, how much does ISO cost in Kenya, global ISO certification, ISO 27001, ISO 9001, ISO 45001, ISO 22301, ISO 14001, PCI DSS, GSMA SAS, SAS-UP, SAS-SM, security compliance consultancy, remote ISO consultants, international standards, ISO certification worldwide, AACL Global",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "AACL Global | Audits and Assurance Consult Ltd" },
