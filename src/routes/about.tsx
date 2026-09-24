@@ -10,11 +10,23 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About AACL Global | Worldwide ISO & Security Compliance Consultancy" },
-      { name: "description", content: "AACL Global is a worldwide consultancy in security certification, compliance, ISO management systems and enterprise risk. Headquartered in Nairobi, delivering onsite or remote." },
-      { property: "og:title", content: "About AACL Global" },
-      { property: "og:description", content: "Worldwide assurance consultancy for regulated organisations. Onsite or remote, wherever you operate." },
-      { name: "twitter:title", content: "About AACL Global" },
-      { name: "twitter:description", content: "Worldwide assurance consultancy for regulated organisations. Onsite or remote, wherever you operate." },
+      {
+        name: "description",
+        content:
+          "AACL Global is a worldwide consultancy for ISO certification, security standards, compliance and enterprise risk. Headquartered in Nairobi. Onsite or remote, anywhere you operate.",
+      },
+      { property: "og:title", content: "About AACL Global | Worldwide Consultancy" },
+      {
+        property: "og:description",
+        content:
+          "Worldwide assurance consultancy for regulated organisations. Same senior practitioners onsite or remote — Europe, US, Africa, Asia and beyond.",
+      },
+      { name: "twitter:title", content: "About AACL Global | Worldwide Consultancy" },
+      {
+        name: "twitter:description",
+        content:
+          "Worldwide assurance consultancy for regulated organisations. Onsite or remote, wherever you operate.",
+      },
       { property: "og:url", content: absUrl("/about") },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -47,9 +59,9 @@ function AboutPage() {
         ]}
       />
       <PageHero
-        eyebrow="Who we are"
+        eyebrow="Worldwide consultancy"
         title="Compliance Expertise Without Borders."
-        lead="AACL Global works with organizations across Europe, the US, Africa, Asia and beyond. Wherever you're headquartered, you get the same highly qualified and certified lead consultants and auditors, the same rigorous standards, and superior results."
+        lead="AACL Global is a worldwide practice. We work with organisations across Europe, the United States, Africa, Asia and the Middle East. Wherever you are headquartered, you get the same senior lead consultants and auditors, the same rigorous standards, and the same results — onsite or remote."
         image="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2000&q=80"
       />
 
@@ -65,36 +77,49 @@ function AboutPage() {
             <Reveal>
               <p>
                 <strong className="text-foreground">AACL Global</strong> is the trading name of{" "}
-                <strong className="text-foreground">{SITE.name}</strong>, a professional consultancy
-                focused on security, compliance and ISO management systems. The firm is headquartered at{" "}
-                {SITE.address.line1}, {SITE.address.line2}, {SITE.address.city}, {SITE.address.country},
-                and delivers engagements onsite or remotely for organisations in Africa and international markets.
+                <strong className="text-foreground">{SITE.name}</strong> — a worldwide consultancy focused on
+                security, compliance and ISO management systems. We are headquartered at {SITE.address.line1},{" "}
+                {SITE.address.line2}, {SITE.address.city}, {SITE.address.country}, and deliver every engagement
+                onsite or remotely for clients across continents.
               </p>
             </Reveal>
             <Reveal delay={80}>
               <p>
                 Core work includes physical and cybersecurity risk assessments, ISO management systems
                 consultancy (including ISO 9001, ISO/IEC 27001, ISO 45001 and related standards), security
-                standards implementation and audits, Security Manager as a Service, statutory compliance
-                support, and continuous compliance through eCompliance.
+                standards implementation and audits (including GSMA SAS and PCI DSS), Security Manager as a
+                Service, statutory compliance support, and continuous compliance through eCompliance.
               </p>
             </Reveal>
             <Reveal delay={120}>
               <p>
                 Sectors supported include security printing, banking and financial services, manufacturing,
                 hospitality, pharmaceuticals, food and beverage, technology, telecommunications, aviation
-                and private security. Contact:{" "}
-                <a href={`mailto:${SITE.email}`} className="text-[var(--gold)] underline">{SITE.email}</a>
+                and private security — worldwide. Contact:{" "}
+                <a href={`mailto:${SITE.email}`} className="text-[var(--gold)] underline">
+                  {SITE.email}
+                </a>
                 {" "}·{" "}
-                <a href={`tel:${SITE.phone.replace(/\s/g, "")}`} className="text-[var(--gold)] underline">{SITE.phone}</a>.
+                <a href={`tel:${SITE.phone.replace(/\s/g, "")}`} className="text-[var(--gold)] underline">
+                  {SITE.phone}
+                </a>
+                .
               </p>
             </Reveal>
             <Reveal delay={160}>
               <div className="flex flex-wrap gap-3 pt-2">
-                <Link to="/services" className="btn-outline-navy">Services</Link>
-                <Link to="/industries" className="btn-outline-navy">Industries</Link>
-                <Link to="/ecompliance" className="btn-outline-navy">eCompliance</Link>
-                <Link to="/contact" className="btn-gold">Contact AACL</Link>
+                <Link to="/services" className="btn-outline-navy">
+                  Services
+                </Link>
+                <Link to="/industries" className="btn-outline-navy">
+                  Industries
+                </Link>
+                <Link to="/iso-certification" className="btn-outline-navy">
+                  Worldwide regions
+                </Link>
+                <Link to="/contact" className="btn-gold">
+                  Contact AACL
+                </Link>
               </div>
             </Reveal>
           </div>
@@ -106,13 +131,33 @@ function AboutPage() {
           <div className="lg:col-span-5">
             <Reveal>
               <div className="eyebrow mb-6">Who we are</div>
-              <h2 className="font-display text-4xl leading-tight">A practice built by lead auditors, security engineers and former corporate leaders.</h2>
+              <h2 className="font-display text-4xl leading-tight">
+                A practice built by lead auditors, security engineers and former corporate leaders.
+              </h2>
             </Reveal>
           </div>
           <div className="lg:col-span-7 space-y-6 text-muted-foreground leading-relaxed">
-            <Reveal delay={100}><p>AACL was founded to close the gap between global assurance standards and the operational realities of complex regulated industries. Our consultants have led security, compliance and audit functions inside major banks, telecommunications operators, security printers and manufacturers before joining the practice.</p></Reveal>
-            <Reveal delay={200}><p>We work with boards, executive teams and operational leaders on programmes that materially reduce enterprise risk, achieve internationally recognised certifications and satisfy demanding regulatory environments.</p></Reveal>
-            <Reveal delay={300}><p>Every engagement is delivered by named senior practitioners, evidence-based and structured for sustainment. Not one-off deliverables.</p></Reveal>
+            <Reveal delay={100}>
+              <p>
+                AACL was founded to close the gap between global assurance standards and the operational realities of
+                complex regulated industries — wherever those organisations operate. Our consultants have led security,
+                compliance and audit functions inside major banks, telecommunications operators, security printers and
+                manufacturers before joining the practice.
+              </p>
+            </Reveal>
+            <Reveal delay={200}>
+              <p>
+                We work with boards, executive teams and operational leaders on programmes that materially reduce
+                enterprise risk, achieve internationally recognised certifications and satisfy demanding regulatory
+                environments in multiple jurisdictions.
+              </p>
+            </Reveal>
+            <Reveal delay={300}>
+              <p>
+                Every engagement is delivered by named senior practitioners, evidence-based and structured for
+                sustainment. Not one-off deliverables. Available onsite or remote, worldwide.
+              </p>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -121,16 +166,36 @@ function AboutPage() {
         <div className="container-x">
           <Reveal>
             <div className="eyebrow mb-4">Our values</div>
-            <h2 className="font-display text-4xl md:text-5xl max-w-2xl leading-tight mb-14">The principles that shape every engagement.</h2>
+            <h2 className="font-display text-4xl md:text-5xl max-w-2xl leading-tight mb-14">
+              The principles that shape every engagement.
+            </h2>
           </Reveal>
           <div className="grid md:grid-cols-2 gap-px bg-border">
             {[
-              { t: "Practical over theoretical", d: "We favour management systems that field teams actually use over documentation that satisfies auditors and no one else." },
-              { t: "Evidence-based decision making", d: "Recommendations are backed by measurement, benchmark and defensible analysis. Not opinion." },
-              { t: "Tailored engagement design", d: "No two organisations carry the same risk profile. We calibrate every programme to your context, sector and maturity." },
-              { t: "Long-term partnership", d: "Certification is a milestone, not an outcome. We measure success in sustained compliance and improved resilience." },
-              { t: "Knowledge transfer", d: "Every engagement builds your internal capability. Through training, mentoring and structured handover." },
-              { t: "Executive discretion", d: "We handle sensitive information with the confidentiality and professionalism our clients expect." },
+              {
+                t: "Practical over theoretical",
+                d: "We favour management systems that field teams actually use over documentation that satisfies auditors and no one else.",
+              },
+              {
+                t: "Evidence-based decision making",
+                d: "Recommendations are backed by measurement, benchmark and defensible analysis. Not opinion.",
+              },
+              {
+                t: "Tailored engagement design",
+                d: "No two organisations carry the same risk profile. We calibrate every programme to your context, sector and maturity — in any country you operate.",
+              },
+              {
+                t: "Long-term partnership",
+                d: "Certification is a milestone, not an outcome. We measure success in sustained compliance and improved resilience.",
+              },
+              {
+                t: "Knowledge transfer",
+                d: "Every engagement builds your internal capability. Through training, mentoring and structured handover.",
+              },
+              {
+                t: "Executive discretion",
+                d: "We handle sensitive information with the confidentiality and professionalism our clients expect, worldwide.",
+              },
             ].map((v, i) => (
               <Reveal key={v.t} delay={i * 70}>
                 <div className="bg-background p-10">
@@ -148,12 +213,29 @@ function AboutPage() {
         <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
           <Reveal>
             <div className="eyebrow eyebrow-light mb-6">Global reach</div>
-            <h2 className="font-display text-4xl md:text-5xl leading-tight text-white">Headquartered in Nairobi. Delivering worldwide. Onsite or remote.</h2>
-            <p className="mt-6 text-white/70 leading-relaxed">From our base at Vision Towers in Westlands we serve clients across Africa, Europe, the UK, the US and Asia, combining local presence with globally benchmarked expertise. Every engagement is available Onsite or Remote, Worldwide.</p>
-            <Link to="/contact" className="btn-outline-gold mt-8 inline-flex">Talk to Us <ArrowRight size={14} /></Link>
+            <h2 className="font-display text-4xl md:text-5xl leading-tight text-white">
+              One worldwide practice. Headquartered in Nairobi. Delivered onsite or remote.
+            </h2>
+            <p className="mt-6 text-white/70 leading-relaxed">
+              From Vision Towers in Westlands, Nairobi, we support clients across Africa, Europe, the United Kingdom,
+              the United States, the Middle East and Asia-Pacific. Same consultants. Same standards. Same quality —
+              wherever your operations sit.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link to="/contact" className="btn-outline-gold inline-flex">
+                Talk to Us <ArrowRight size={14} />
+              </Link>
+              <Link to="/iso-certification" className="btn-outline-gold inline-flex">
+                ISO by region
+              </Link>
+            </div>
           </Reveal>
           <Reveal delay={120}>
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80" alt="Consultants collaborating" className="w-full h-[500px] object-cover" />
+            <img
+              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80"
+              alt="AACL Global consultants collaborating worldwide"
+              className="w-full h-[500px] object-cover"
+            />
           </Reveal>
         </div>
       </section>
