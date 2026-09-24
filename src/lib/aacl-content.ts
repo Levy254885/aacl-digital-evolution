@@ -12,3 +12,32 @@ export const SITE = {
     country: "Kenya",
   },
 };
+
+// TEMPORARY STUB - RESTORE IMMEDIATELY FROM MAIN IF THIS APPEARS
+export const NAV = [
+  { label: "About", to: "/about" },
+  { label: "Services", to: "/services" },
+  { label: "Industries", to: "/industries" },
+  { label: "Insights", to: "/insights" },
+  { label: "Contact", to: "/contact" },
+];
+
+export type ServiceMeta = {
+  slug: string;
+  number: string;
+  title: string;
+  short: string;
+  summary: string;
+  challenges: string[];
+  methodology: { title: string; body: string }[];
+  deliverables: string[];
+  standards: string[];
+  industries: string[];
+  faqs: { q: string; a: string }[];
+  detail: string[];
+  image: string;
+};
+
+export const SERVICES: ServiceMeta[] = [];
+export const INDUSTRIES: any[] = [];
+export const INSIGHTS: any[] = [];
