@@ -44,12 +44,12 @@ export function SiteFooter() {
                 className="h-7 w-auto object-contain brightness-0 invert"
               />
               <span className="mt-3 block text-[9px] uppercase tracking-[0.14em] text-white/40">
-                Audits &amp; Assurance Consult Ltd
+                Audits & Assurance Consult Ltd
               </span>
             </div>
 
             <p className="text-sm leading-[1.9] max-w-sm">
-              At AACL, we believe in clarity, credibility and systems that turn compliance into lasting trust.
+              At AACL, we believe in clarity, credibility and systems that turn compliance into lasting trust. Headquartered in Nairobi, delivering onsite or remote worldwide.
             </p>
             {/* Social profiles: add official URLs only when verified. No placeholder links. */}
           </div>
@@ -74,22 +74,47 @@ export function SiteFooter() {
                 ))}
               </ul>
               <ul className="space-y-4 text-sm">
-                {SERVICES.slice(0, 5).map((s) => (
+                <li>
+                  <Link to="/iso-27001-certification-kenya" className="footer-dash hover:text-white transition-colors">
+                    ISO 27001 Kenya
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/gsma-sas-kenya" className="footer-dash hover:text-white transition-colors">
+                    GSMA SAS Kenya
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/pci-dss-certification-kenya" className="footer-dash hover:text-white transition-colors">
+                    PCI DSS Kenya
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/iso-certification-cost-kenya" className="footer-dash hover:text-white transition-colors">
+                    ISO Cost Kenya
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/best-iso-consultants-kenya" className="footer-dash hover:text-white transition-colors">
+                    Best ISO Consultants Kenya
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/smaas-kenya" className="footer-dash hover:text-white transition-colors">
+                    SMaaS Kenya
+                  </Link>
+                </li>
+                {SERVICES.slice(0, 2).map((s) => (
                   <li key={s.slug}>
                     <Link
                       to="/services/$slug"
                       params={{ slug: s.slug }}
                       className="footer-dash hover:text-white transition-colors"
                     >
-                      {s.title}
+                      {s.title.length > 36 ? s.short : s.title}
                     </Link>
                   </li>
                 ))}
-                <li>
-                  <Link to="/industries/$slug" params={{ slug: INDUSTRIES[0].slug }} className="footer-dash hover:text-white transition-colors">
-                    {INDUSTRIES[0].name}
-                  </Link>
-                </li>
               </ul>
             </div>
           </div>
