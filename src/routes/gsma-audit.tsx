@@ -34,38 +34,85 @@ export const Route = createFileRoute("/gsma-audit")({
   component: GsmaAuditPage,
 });
 
+const steps = [
+  "Pre-audit gap assessment against current GSMA SAS requirements",
+  "Remediation support for physical and logical controls",
+  "Evidence packs and documentation the auditor expects",
+  "Internal walkthrough before the formal GSMA audit",
+  "Onsite or remote support during the audit itself",
+  "Non-conformity closure and sustainment between cycles",
+];
+
+const faqs = [
+  {
+    q: "What is a GSMA audit?",
+    a: "Under the GSMA Security Accreditation Scheme, appointed auditors assess physical premises, personnel, production processes, information security and supply-chain controls at UICC production (SAS-UP) or subscription management (SAS-SM) sites.",
+  },
+  {
+    q: "How long does preparation take?",
+    a: "Depends on current control maturity. First-time sites often need several months of remediation; renewal sites with continuous compliance need a focused readiness cycle.",
+  },
+  {
+    q: "Do you support both SAS-UP and SAS-SM?",
+    a: "Yes. We support UICC/eUICC production sites and subscription management platforms.",
+  },
+];
+
 function GsmaAuditPage() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="GSMA audit"
+        eyebrow="GSMA audit · SAS-UP · SAS-SM"
         title="GSMA audit preparation and SAS audit support."
         lead="Ready your site for a GSMA Security Accreditation Scheme audit. Practical gap assessment, control work and evidence packs for SAS-UP and SAS-SM."
         image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2000&q=80"
       />
+
       <section className="py-16 bg-background">
         <div className="container-x max-w-3xl">
           <Reveal>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              A <strong>GSMA audit</strong> under the Security Accreditation Scheme is a formal assessment of physical and logical security controls at UICC production or subscription management sites. AACL Global prepares organisations so the audit is predictable and successful.
+              A <strong>GSMA audit</strong> under the Security Accreditation Scheme is a formal assessment of physical
+              and logical security controls at UICC production or subscription management sites. AACL Global prepares
+              organisations so the audit is predictable and successful — from Nairobi and international locations.
             </p>
           </Reveal>
-          <Reveal delay={60}>
-            <ul className="mt-8 space-y-3 text-muted-foreground">
-              {[
-                "Pre-audit gap assessment against GSMA SAS requirements",
-                "Remediation support for physical and logical controls",
-                "Evidence packs and documentation the auditor expects",
-                "Internal walkthrough before the formal GSMA audit",
-                "Onsite or remote support during the audit itself",
-              ].map((item) => (
-                <li key={item} className="flex gap-3 items-start">
+        </div>
+      </section>
+
+      <section className="py-16 bg-[var(--navy-deep)] text-[var(--bone)]">
+        <div className="container-x">
+          <Reveal>
+            <h2 className="font-display text-3xl mb-8">How we prepare you</h2>
+          </Reveal>
+          <div className="grid md:grid-cols-2 gap-6">
+            {steps.map((item, i) => (
+              <Reveal key={i} delay={i * 35}>
+                <div className="flex gap-3 items-start">
                   <CheckCircle2 className="h-5 w-5 text-[var(--gold)] shrink-0 mt-0.5" />
                   <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-background">
+        <div className="container-x max-w-3xl">
+          <Reveal>
+            <h2 className="font-display text-3xl mb-8">Frequently asked questions</h2>
           </Reveal>
+          <div className="space-y-6">
+            {faqs.map((faq, i) => (
+              <Reveal key={i} delay={i * 40}>
+                <div>
+                  <h3 className="font-display text-lg mb-2">{faq.q}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
           <Reveal delay={120}>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
@@ -87,21 +134,35 @@ function GsmaAuditPage() {
 
       <section className="py-12 bg-muted/40">
         <div className="container-x max-w-3xl">
-          <h2 className="font-display text-xl mb-4">Related reading</h2>
+          <h2 className="font-display text-xl mb-4">Related reading & services</h2>
           <ul className="space-y-2 text-sm text-muted-foreground">
+            <li>
+              <Link to="/gsma-sas-kenya" className="hover:text-[var(--navy)]">
+                GSMA SAS Kenya service page
+              </Link>
+            </li>
+            <li>
+              <Link to="/services/security-standards-implementation" className="hover:text-[var(--navy)]">
+                Security Standards Implementation & Audits
+              </Link>
+            </li>
+            <li>
+              <Link to="/industries/security-printing" className="hover:text-[var(--navy)]">
+                Security Printing industry
+              </Link>
+            </li>
             <li>
               <Link to="/insights/$slug" params={{ slug: "gsma-audit-what-to-expect" }} className="hover:text-[var(--navy)]">
                 GSMA audit: what to expect on the day and how to prepare
               </Link>
             </li>
             <li>
-              <Link to="/insights/$slug" params={{ slug: "gsma-sas-preparing-for-your-first-audit" }} className="hover:text-[var(--navy)]">
+              <Link
+                to="/insights/$slug"
+                params={{ slug: "gsma-sas-preparing-for-your-first-audit" }}
+                className="hover:text-[var(--navy)]"
+              >
                 GSMA SAS: Preparing for Your First Scheme Audit
-              </Link>
-            </li>
-            <li>
-              <Link to="/gsma-sas-kenya" className="hover:text-[var(--navy)]">
-                GSMA SAS Kenya service page
               </Link>
             </li>
           </ul>
